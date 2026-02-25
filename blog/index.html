@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolling Square Blog — Tech Insights, Guides & Product News</title>
+  <meta name="description" content="Expert guides, how-tos, and product insights from Rolling Square — Swiss-designed Bluetooth trackers and tech accessories trusted in 122+ countries.">
+  <meta property="og:title" content="Rolling Square Blog">
+  <meta property="og:description" content="Expert guides and product insights from Rolling Square.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://rollingsquare.com/cdn/shop/files/ACPD_1_grande.webp?v=1762959634">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://rollingsquare.com/cdn/shop/files/ACPD_1_grande.webp?v=1762959634">
+  <link rel="canonical" href="https://rollingsquare.com/blogs/news">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0D0D0D;
+      --white: #FFFFFF;
+      --bg: #F7F7F5;
+      --accent: #E8352A;
+      --text: #1A1A1A;
+      --muted: #6B6B6B;
+      --border: #E2E2DC;
+      --card-bg: #FFFFFF;
+      --font: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      --max-w: 1240px;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--black); border-bottom: 1px solid #222;
+    }
+    .header-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-icon { width: 34px; height: 34px; display: block; filter: invert(1); }
+    .logo-name { font-size: 15px; color: var(--white); letter-spacing: 0.3px; }
+    .logo-name .w-regular { font-weight: 400; }
+    .logo-name .w-bold { font-weight: 800; }
+    nav { display: flex; gap: 28px; }
+    nav a {
+      color: #B0B0B0; text-decoration: none; font-size: 14px; font-weight: 500;
+      transition: color 0.15s;
+    }
+    nav a:hover, nav a.active { color: var(--white); }
+    .header-cta {
+      background: var(--accent); color: var(--white);
+      padding: 8px 18px; border-radius: 6px;
+      text-decoration: none; font-size: 13px; font-weight: 600;
+      transition: opacity 0.15s;
+    }
+    .header-cta:hover { opacity: 0.88; }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: var(--black); color: var(--white);
+      padding: 80px 24px 72px;
+      text-align: center;
+    }
+    .hero-label {
+      display: inline-block; background: var(--accent);
+      color: white; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 3px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800; line-height: 1.1; letter-spacing: -1px;
+      max-width: 680px; margin: 0 auto 20px;
+    }
+    .hero p { font-size: 18px; color: #AAAAAA; max-width: 560px; margin: 0 auto; }
+
+    /* ── MAIN CONTENT ── */
+    main { max-width: var(--max-w); margin: 0 auto; padding: 60px 24px 80px; }
+
+    /* ── SECTION HEADINGS ── */
+    .section-header {
+      display: flex; align-items: baseline; gap: 16px;
+      margin-bottom: 32px; padding-bottom: 16px;
+      border-bottom: 2px solid var(--black);
+    }
+    .section-header h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.3px; }
+    .section-header .count { font-size: 14px; color: var(--muted); font-weight: 500; }
+
+    /* ── FEATURED ARTICLE ── */
+    .featured-article {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; background: var(--card-bg);
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+      margin-bottom: 60px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+    .featured-img {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+      min-height: 380px;
+      display: flex; flex-direction: column;
+      align-items: flex-start; justify-content: flex-end;
+      padding: 36px; position: relative; overflow: hidden;
+    }
+    .featured-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='400' height='400' viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='200' cy='200' r='160' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='120' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='1'/%3E%3Ccircle cx='200' cy='200' r='80' fill='none' stroke='rgba(255,255,255,0.08)' stroke-width='1'/%3E%3C/svg%3E") center/cover;
+    }
+    .device-icon {
+      font-size: 72px; margin-bottom: 20px;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4));
+    }
+    .featured-img-title { color: white; font-size: 13px; font-weight: 600; opacity: 0.7; letter-spacing: 1px; text-transform: uppercase; }
+    .featured-body { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
+    .lang-badges { display: flex; gap: 8px; margin-bottom: 18px; }
+    .lang-badge {
+      padding: 3px 10px; border-radius: 4px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+    }
+    .lang-badge.es { background: #FFF3E0; color: #E65100; }
+    .lang-badge.en { background: #E3F2FD; color: #1565C0; }
+    .lang-badge.new { background: var(--accent); color: white; }
+    .featured-body h3 {
+      font-size: clamp(20px, 2.5vw, 28px); font-weight: 800;
+      line-height: 1.25; letter-spacing: -0.5px; margin-bottom: 14px;
+    }
+    .featured-body p { color: var(--muted); font-size: 15px; line-height: 1.65; margin-bottom: 24px; }
+    .meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .meta-row span { font-size: 13px; color: var(--muted); }
+    .meta-row .dot { width: 3px; height: 3px; background: var(--border); border-radius: 50%; }
+    .read-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--black); color: white;
+      padding: 12px 24px; border-radius: 8px;
+      text-decoration: none; font-size: 14px; font-weight: 600;
+      transition: background 0.15s; width: fit-content;
+    }
+    .read-btn:hover { background: #333; }
+    .read-btn svg { width: 14px; height: 14px; }
+
+    /* ── ARTICLE GRID ── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .article-card {
+      background: var(--card-bg); border-radius: 10px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .article-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .card-img {
+      height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; position: relative;
+    }
+    .card-img.android { background: linear-gradient(135deg, #1b5e20, #2e7d32); }
+    .card-img.apple { background: linear-gradient(135deg, #37474f, #546e7a); }
+    .card-img.tracker { background: linear-gradient(135deg, #1a237e, #283593); }
+    .card-img.emergency { background: linear-gradient(135deg, #b71c1c, #c62828); }
+    .card-body { padding: 24px; }
+    .card-tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .tag {
+      padding: 3px 9px; border-radius: 4px; font-size: 11px;
+      font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .tag.how-to { background: #F3E5F5; color: #6A1B9A; }
+    .tag.guide { background: #E8F5E9; color: #2E7D32; }
+    .tag.comparison { background: #FFF8E1; color: #F57F17; }
+    .tag.geo { background: #FCE4EC; color: #880E4F; }
+    .card-body h3 { font-size: 17px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; letter-spacing: -0.2px; }
+    .card-body p { font-size: 14px; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+    .card-meta { display: flex; align-items: center; justify-content: space-between; }
+    .card-meta span { font-size: 12px; color: var(--muted); }
+    .card-meta .arrow {
+      width: 28px; height: 28px; background: var(--bg);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .article-card:hover .arrow { background: var(--black); color: white; }
+
+    /* ── STATS BANNER ── */
+    .stats-banner {
+      background: var(--black); color: white; border-radius: 12px;
+      padding: 48px 40px; margin: 60px 0;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+      text-align: center;
+    }
+    .stat-item { border-right: 1px solid #333; }
+    .stat-item:last-child { border-right: none; }
+    .stat-number { font-size: 36px; font-weight: 800; letter-spacing: -1px; color: white; }
+    .stat-label { font-size: 13px; color: #888; margin-top: 6px; }
+
+    /* ── NEWSLETTER ── */
+    .newsletter {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      border-radius: 12px; padding: 48px 40px;
+      display: flex; align-items: center; gap: 40px;
+    }
+    .newsletter-text { flex: 1; }
+    .newsletter-text h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .newsletter-text p { color: #5D4037; font-size: 15px; }
+    .newsletter-form { display: flex; gap: 10px; flex-shrink: 0; }
+    .newsletter-form input {
+      padding: 12px 18px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1);
+      font-size: 14px; width: 260px; font-family: var(--font);
+      background: rgba(255,255,255,0.9);
+    }
+    .newsletter-form button {
+      padding: 12px 22px; background: var(--black); color: white;
+      border: none; border-radius: 8px; font-size: 14px; font-weight: 600;
+      cursor: pointer; font-family: var(--font); white-space: nowrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black); color: #888;
+      padding: 48px 24px 32px;
+    }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px; margin-bottom: 40px;
+    }
+    .footer-brand .logo-name { color: white; font-size: 18px; }
+    .footer-brand p { font-size: 14px; color: #666; margin-top: 12px; line-height: 1.6; max-width: 260px; }
+    .footer-col h4 { color: white; font-size: 13px; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .footer-col a { display: block; color: #666; font-size: 14px; text-decoration: none; margin-bottom: 10px; transition: color 0.15s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom {
+      border-top: 1px solid #222; padding-top: 24px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-bottom p { font-size: 13px; }
+    .ces-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: #1a1a1a; border: 1px solid #333;
+      padding: 8px 16px; border-radius: 6px; font-size: 12px; color: #888;
+    }
+    .ces-star { color: #FFB800; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .featured-article { grid-template-columns: 1fr; }
+      .featured-img { min-height: 260px; }
+      .stats-banner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav { display: none; }
+      .hero h1 { font-size: 28px; }
+      .stats-banner { grid-template-columns: repeat(2, 1fr); padding: 32px 20px; }
+      .newsletter { flex-direction: column; }
+      .newsletter-form { flex-direction: column; width: 100%; }
+      .newsletter-form input { width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="https://rollingsquare.com" class="logo">
+      <img src="assets/logo-icon.svg" alt="Rolling Square" class="logo-icon">
+      <span class="logo-name"><span class="w-regular">ROLLING</span><span class="w-bold">SQUARE</span></span>
+    </a>
+    <nav>
+      <a href="#">Products</a>
+      <a href="#" class="active">Blog</a>
+      <a href="#">About</a>
+      <a href="#">Support</a>
+    </nav>
+    <a href="https://rollingsquare.com" class="header-cta">Shop Now</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Blog & Guides</div>
+  <h1>Insights, Guides &amp; Tech Tips</h1>
+  <p>Expert how-tos, comparison guides, and product insights to help you find, track, and protect what matters most.</p>
+</div>
+
+<!-- MAIN -->
+<main>
+
+  <!-- FEATURED SECTION -->
+  <div class="section-header">
+    <h2>Featured</h2>
+    <span class="count">New this month</span>
+  </div>
+
+  <div class="featured-article">
+    <div class="featured-img">
+      <div class="device-icon">📍</div>
+      <div class="featured-img-title">New Guide — February 2026</div>
+    </div>
+    <div class="featured-body">
+      <div class="lang-badges">
+        <span class="lang-badge es">ES</span>
+        <span class="lang-badge new">New</span>
+      </div>
+      <h3>Cómo encontrar un dispositivo perdido: guía completa para Android, iPhone y objetos personales (2026)</h3>
+      <p>La guía definitiva en español: configura Encontrar mi dispositivo en Android e iPhone paso a paso, compara ambos sistemas y descubre cómo proteger también tu cartera, llaves y equipaje con rastreadores Bluetooth compatibles con ambas plataformas.</p>
+      <div class="meta-row">
+        <span>Rolling Square Team</span>
+        <div class="dot"></div>
+        <span>Febrero 2026</span>
+        <div class="dot"></div>
+        <span>~12 min lectura</span>
+      </div>
+      <a href="como-encontrar-dispositivo-perdido-guia-completa.html" class="read-btn">
+        Leer guía completa
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ALL ARTICLES GRID -->
+  <div class="section-header" style="margin-top:20px;">
+    <h2>All Articles</h2>
+    <span class="count">Latest guides</span>
+  </div>
+
+  <div class="articles-grid">
+
+    <!-- English version of Find My Device -->
+    <a href="how-to-find-lost-device-complete-guide.html" class="article-card" hreflang="en">
+      <div class="card-img apple">📱</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag how-to">How-To</span>
+          <span class="lang-badge en" style="font-size:10px;padding:2px 7px;">EN</span>
+        </div>
+        <h3>How to Find a Lost Device: Complete Guide for Android, iPhone & Personal Items (2026)</h3>
+        <p>Step-by-step setup for Find My Device on Android and Find My on iPhone, plus how to extend protection to wallets, keys, and luggage with Bluetooth trackers.</p>
+        <div class="card-meta">
+          <span>February 2026 · 12 min read</span>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Placeholder article 2 -->
+    <a href="#" class="article-card">
+      <div class="card-img tracker">🔵</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag comparison">Comparison</span>
+          <span class="lang-badge en" style="font-size:10px;padding:2px 7px;">EN</span>
+        </div>
+        <h3>AirCard Pro Dual vs AirTag: Which Bluetooth Tracker is Right for You?</h3>
+        <p>Side-by-side comparison of the thinnest Find My card tracker vs Apple's AirTag, covering thickness, dual-network support, battery life, and real-world use cases.</p>
+        <div class="card-meta">
+          <span>Coming Soon</span>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Placeholder article 3 -->
+    <a href="#" class="article-card">
+      <div class="card-img android">🤖</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag guide">Guide</span>
+          <span class="lang-badge en" style="font-size:10px;padding:2px 7px;">EN</span>
+        </div>
+        <h3>Android Find Hub Explained: How Google's Tracking Network Works in 2026</h3>
+        <p>Everything you need to know about Google's rebranded Find Hub network — what it covers, how offline tracking works, and which accessories are compatible.</p>
+        <div class="card-meta">
+          <span>Coming Soon</span>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Placeholder article 4 -->
+    <a href="#" class="article-card">
+      <div class="card-img emergency">🆘</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag how-to">How-To</span>
+          <span class="lang-badge es" style="font-size:10px;padding:2px 7px;">ES</span>
+        </div>
+        <h3>¿Te robaron el teléfono? Guía de emergencia paso a paso para Android e iPhone</h3>
+        <p>Qué hacer exactamente en los primeros 30 minutos después de perder o que te roben el teléfono: rastrear, bloquear, borrar, y reportar al operador.</p>
+        <div class="card-meta">
+          <span>Próximamente</span>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Placeholder article 5 -->
+    <a href="#" class="article-card">
+      <div class="card-img" style="background:linear-gradient(135deg,#4a148c,#6a1b9a);">💼</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag guide">Guide</span>
+          <span class="lang-badge en" style="font-size:10px;padding:2px 7px;">EN</span>
+        </div>
+        <h3>Best Bluetooth Trackers for Travel Luggage in 2026</h3>
+        <p>Which tracker fits best in your carry-on, wallet, and passport holder? We compare size, network coverage, and battery life for frequent travelers.</p>
+        <div class="card-meta">
+          <span>Coming Soon</span>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Placeholder article 6 -->
+    <a href="#" class="article-card">
+      <div class="card-img" style="background:linear-gradient(135deg,#004d40,#00695c);">🔋</div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag comparison">Comparison</span>
+          <span class="lang-badge es" style="font-size:10px;padding:2px 7px;">ES</span>
+        </div>
+        <h3>Rastreadores recargables vs batería de botón: ¿cuál conviene más en 2026?</h3>
+        <p>Comparamos el costo real a largo plazo, la comodidad y el impacto ambiental de los rastreadores con batería recargable inalámbrica frente a los modelos con CR2032.</p>
+        <div class="card-meta">
+          <span>Próximamente</span>
+          <div class="arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- STATS BANNER -->
+  <div class="stats-banner">
+    <div class="stat-item">
+      <div class="stat-number">2.2M+</div>
+      <div class="stat-label">Products delivered globally</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">122+</div>
+      <div class="stat-label">Countries reached</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4×</div>
+      <div class="stat-label">CES Innovation Awards</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2.2mm</div>
+      <div class="stat-label">Thinnest tracker (AirCard Pro)</div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="newsletter">
+    <div class="newsletter-text">
+      <h3>Stay ahead of the tech curve</h3>
+      <p>New guides, product updates, and GEO insights — delivered monthly. No spam, unsubscribe anytime.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="your@email.com">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="https://rollingsquare.com" class="logo">
+          <img src="assets/logo-icon.svg" alt="Rolling Square" class="logo-icon">
+          <span class="logo-name"><span class="w-regular">ROLLING</span><span class="w-bold">SQUARE</span></span>
+        </a>
+        <p>Swiss-designed Bluetooth trackers and tech accessories. Protecting what matters, everywhere you go.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <a href="https://rollingsquare.com/products/aircardpro-dual">AirCard Pro Dual</a>
+        <a href="https://rollingsquare.com/products/airnotchpro-dual">AirNotch Pro Dual</a>
+        <a href="https://rollingsquare.com">All Products</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="https://rollingsquare.com/pages/about">About Us</a>
+        <a href="https://rollingsquare.com">CES Awards</a>
+        <a href="https://rollingsquare.com">Press</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="https://rollingsquare.com/pages/contact">Contact</a>
+        <a href="https://rollingsquare.com">Setup Guides</a>
+        <a href="https://rollingsquare.com">Warranty</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Rolling Square. All rights reserved.</p>
+      <div class="ces-badge">
+        <span class="ces-star">★</span>
+        <span>4× CES Innovation Award Winner</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
