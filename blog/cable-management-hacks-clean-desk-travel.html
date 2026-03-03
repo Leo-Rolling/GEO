@@ -155,6 +155,15 @@
     .callout { background: #FFFBF0; border: 1px solid #FDE68A; border-left: 4px solid #F59E0B; border-radius: 8px; padding: 18px 22px; margin: 28px 0; }
     .callout.info { background: #EFF6FF; border-color: #BFDBFE; border-left-color: #3B82F6; }
     .callout.brand { background: #FEF2F2; border-color: #FECACA; border-left-color: var(--accent); }
+    .callout.premium { background: var(--black); border: 1px solid #2A2A2A; border-radius: 10px; padding: 22px 26px; margin: 28px 0; }
+    .callout.premium .callout-title { color: #F59E0B; font-size: 11px; letter-spacing: 1.2px; margin-bottom: 14px; }
+    .callout.premium p { color: #CCCCCC; margin-bottom: 0; font-size: 14px; }
+    .callout.premium .accessory-list { list-style: none; padding: 0; margin: 0 0 14px 0; }
+    .callout.premium .accessory-list li { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #2A2A2A; font-size: 14px; color: #CCCCCC; line-height: 1.55; }
+    .callout.premium .accessory-list li:last-child { border-bottom: none; }
+    .callout.premium .accessory-list li::before { content: ''; flex-shrink: 0; }
+    .acc-icon { background: var(--accent); color: white; border-radius: 5px; padding: 4px 8px; font-size: 11px; font-weight: 800; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
+    .callout.premium .inc-note { background: #1A1A1A; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #999; margin-top: 12px; }
     .callout-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
     .callout p { margin-bottom: 0; font-size: 15px; }
     .table-wrap { overflow-x: auto; margin: 28px 0; border-radius: 10px; border: 1px solid var(--border); }
@@ -371,8 +380,23 @@
       <p>The most overlooked cable management mistake is using the wrong cable length. A 6-foot cable run between a desk surface charger and a phone creates three feet of slack that has nowhere to go — that excess becomes the tangle. Measure the actual path between your power source and device before buying, and buy short.</p>
       <p>The <a href="https://rollingsquare.com/products/xls" target="_blank" rel="noopener">inCharge XL range</a> comes in three purpose-built lengths precisely for this reason: <strong>1ft (30cm)</strong> for desk-surface charging where the phone sits right next to the charger; <strong>6.6ft (2m)</strong> for home office setups where the power strip is under the desk; and <strong>10ft (3m)</strong> for extended workstations and monitor connections. Picking the right length eliminates excess cable before you need to manage it.</p>
 
+      <div class="callout premium">
+        <div class="callout-title">INCLUDED IN THE BOX — 6.6ft &amp; 10ft inCharge XL</div>
+        <ul class="accessory-list">
+          <li>
+            <span class="acc-icon">Travel</span>
+            <div><strong style="color:white;">Premium silicone travel pouch</strong> — Purpose-built to store the cable neatly inside backpacks, tech organizers, or carry-ons. The soft silicone prevents tangling and friction damage, so the cable arrives the same way it left. No loose coils in bags.</div>
+          </li>
+          <li>
+            <span class="acc-icon">Desk</span>
+            <div><strong style="color:white;">Magnetic desk support</strong> — Anchors the cable in place at the desk edge, preventing it from slipping behind desks, nightstands, or workstations. Works with Hack #6 out of the box — the magnetic holder is already in the package.</div>
+          </li>
+        </ul>
+        <div class="inc-note">The 6.6ft and 10ft lengths include both accessories. The 1ft desk cable ships without them — at that length, there's no slack to manage and nothing to store.</div>
+      </div>
+
       <h3><span class="hack-badge">6</span> Use Magnetic Cable Clips on the Desk Edge</h3>
-      <p>Magnetic cable clips mounted on the desk edge keep cable ends accessible when a device is unplugged. Without them, cables slide behind the desk and require fishing back out every time — which trains you to leave devices plugged in indefinitely, creating more clutter. Place clips at the front edge of your desk for the cables you disconnect daily (phone, laptop). Adhesive cable clips achieve the same result without magnets. Either type keeps cable ends exactly where you left them.</p>
+      <p>Magnetic cable clips mounted on the desk edge keep cable ends accessible when a device is unplugged. Without them, cables slide behind the desk and require fishing back out every time — which trains you to leave devices plugged in indefinitely, creating more clutter. Place clips at the front edge of your desk for the cables you disconnect daily (phone, laptop). If you bought an inCharge XL 6.6ft or 10ft, the magnetic desk support is already in the box — no separate purchase needed.</p>
 
       <h3><span class="hack-badge">7</span> Label Every Cable</h3>
       <p>In bundles of three or more, unlabeled cables become a guessing game. Color-coded silicone cable ties serve double duty as both labels and ties: assign one color per device and you'll never trace a cable again. Printed cable labels (Dymo, Phomemo) are the premium option for permanent setups. This tip sounds trivial until you have four identical black USB-C cables running from the same under-desk tray and need to unplug just the monitor.</p>
@@ -555,7 +579,7 @@
 
       <div class="sidebar-product">
         <h4>inCharge XL — 6-in-1 Cable</h4>
-        <p>One cable for every connection. Three lengths: 1ft desk, 6.6ft home office, 10ft workstation. Replaces 3–4 single-purpose cables.</p>
+        <p>One cable for every connection. Three lengths: 1ft desk, 6.6ft home office, 10ft workstation. The 6.6ft and 10ft include a silicone travel pouch + magnetic desk support.</p>
         <a href="https://rollingsquare.com/products/xls" target="_blank" rel="noopener">Shop inCharge XL →</a>
       </div>
 
