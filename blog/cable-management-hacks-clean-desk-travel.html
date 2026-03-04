@@ -159,11 +159,16 @@
     .callout.premium .callout-title { color: #F59E0B; font-size: 11px; letter-spacing: 1.2px; margin-bottom: 14px; }
     .callout.premium p { color: #CCCCCC; margin-bottom: 0; font-size: 14px; }
     .callout.premium .accessory-list { list-style: none; padding: 0; margin: 0 0 14px 0; }
-    .callout.premium .accessory-list li { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid #2A2A2A; font-size: 14px; color: #CCCCCC; line-height: 1.55; }
+    .callout.premium .accessory-list li { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #2A2A2A; font-size: 14px; color: #CCCCCC; line-height: 1.55; flex-wrap: wrap; }
     .callout.premium .accessory-list li:last-child { border-bottom: none; }
     .callout.premium .accessory-list li::before { content: ''; flex-shrink: 0; }
     .acc-icon { background: var(--accent); color: white; border-radius: 5px; padding: 4px 8px; font-size: 11px; font-weight: 800; white-space: nowrap; flex-shrink: 0; margin-top: 1px; }
     .callout.premium .inc-note { background: #1A1A1A; border-radius: 6px; padding: 10px 14px; font-size: 13px; color: #999; margin-top: 12px; }
+    .acc-preview { width: 100%; margin-bottom: 18px; border-radius: 8px; overflow: hidden; }
+    .acc-preview img { width: 100%; max-height: 260px; object-fit: cover; object-position: center; display: block; border-radius: 8px; }
+    .acc-text { flex: 1; min-width: 180px; }
+    .acc-img { width: 130px; min-width: 130px; height: 110px; object-fit: cover; border-radius: 7px; flex-shrink: 0; display: block; }
+    @media (max-width: 500px) { .acc-img { width: 100%; height: 160px; min-width: unset; } }
     .callout-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
     .callout p { margin-bottom: 0; font-size: 15px; }
     .table-wrap { overflow-x: auto; margin: 28px 0; border-radius: 10px; border: 1px solid var(--border); }
@@ -356,9 +361,12 @@
 
       <p>The goal isn't zero cables — it's <strong>minimum viable cables</strong>. Going from 7 to 3 is achievable for most people before buying a single cable management accessory. Do this first. It makes every subsequent hack easier.</p>
 
-      <div class="callout brand">
-        <div class="callout-title">Rolling Square inCharge XL</div>
-        <p>6-in-1 braided cable handling USB-C, Lightning, Micro-USB, and USB-A. Available in 1ft, 6.6ft, and 10ft. One cable replaces three to four single-purpose cables. <a href="https://rollingsquare.com/collections/cables" target="_blank" rel="noopener">Browse the inCharge cable collection →</a></p>
+      <div class="callout brand" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap;">
+        <img src="https://rollingsquare.com/cdn/shop/files/inChargeXLM_2m_Carousels-01_700x700_crop_top.jpg?v=1713176027" alt="inCharge XL 2m 6-in-1 cable" style="width:110px;height:110px;object-fit:cover;border-radius:8px;flex-shrink:0;">
+        <div>
+          <div class="callout-title">Rolling Square inCharge XL</div>
+          <p>6-in-1 braided cable handling USB-C, Lightning, Micro-USB, and USB-A. Available in 1ft, 6.6ft, and 10ft. The 6.6ft and 10ft include a silicone travel pouch + magnetic desk support in the box. <a href="https://rollingsquare.com/collections/cables" target="_blank" rel="noopener">Browse the inCharge cable collection →</a></p>
+        </div>
       </div>
 
       <!-- H2: DESK HACKS -->
@@ -382,14 +390,19 @@
 
       <div class="callout premium">
         <div class="callout-title">INCLUDED IN THE BOX — 6.6ft &amp; 10ft inCharge XL</div>
+        <div class="acc-preview">
+          <img src="https://rollingsquare.com/cdn/shop/files/inChargeXLM_2m_Carousels-02_700x700_crop_top.jpg?v=1713176029" alt="inCharge XL 2m with silicone travel pouch and magnetic desk support included">
+        </div>
         <ul class="accessory-list">
           <li>
             <span class="acc-icon">Travel</span>
-            <div><strong style="color:white;">Premium silicone travel pouch</strong> — Purpose-built to store the cable neatly inside backpacks, tech organizers, or carry-ons. The soft silicone prevents tangling and friction damage, so the cable arrives the same way it left. No loose coils in bags.</div>
+            <div class="acc-text"><strong style="color:white;">Premium silicone travel pouch</strong> — Purpose-built to store the cable neatly inside backpacks, tech organizers, or carry-ons. The soft silicone prevents tangling and friction damage, so the cable arrives the same way it left. No loose coils in bags.</div>
+            <img class="acc-img" src="https://rollingsquare.com/cdn/shop/files/inChargeXLM_2m_Carousels-08_700x700_crop_top.jpg?v=1713176031" alt="Premium silicone travel pouch for inCharge XL cable">
           </li>
           <li>
             <span class="acc-icon">Desk</span>
-            <div><strong style="color:white;">Magnetic desk support</strong> — Anchors the cable in place at the desk edge, preventing it from slipping behind desks, nightstands, or workstations. Works with Hack #6 out of the box — the magnetic holder is already in the package.</div>
+            <div class="acc-text"><strong style="color:white;">Magnetic desk support</strong> — Anchors the cable in place at the desk edge, preventing it from slipping behind desks, nightstands, or workstations. Works with Hack #6 out of the box — the magnetic holder is already in the package.</div>
+            <img class="acc-img" src="https://rollingsquare.com/cdn/shop/files/inChargeXLM_2m_Carousels-06_700x700_crop_top.jpg?v=1713176030" alt="Magnetic desk support attached to laptop with inCharge XL cable">
           </li>
         </ul>
         <div class="inc-note">The 6.6ft and 10ft lengths include both accessories. The 1ft desk cable ships without them — at that length, there's no slack to manage and nothing to store.</div>
