@@ -117,14 +117,16 @@
     nav { display: flex; gap: 28px; }
     nav a { color: #888; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.15s; }
     nav a:hover, nav a.active { color: white; }
+    .lang-switcher { display: flex; gap: 6px; }
+    .lang-btn { padding: 5px 11px; border-radius: 5px; font-size: 12px; font-weight: 600; text-decoration: none; letter-spacing: 0.5px; transition: all 0.15s; border: 1px solid transparent; }
+    .lang-btn.active { background: var(--accent); color: white; }
+    .lang-btn:not(.active) { border-color: #444; color: #888; }
+    .lang-btn:not(.active):hover { border-color: #888; color: white; }
     .breadcrumb { background: white; border-bottom: 1px solid var(--border); padding: 14px 24px; }
     .breadcrumb-inner { max-width: var(--max-w); margin: 0 auto; display: flex; gap: 8px; align-items: center; }
     .breadcrumb a { color: var(--muted); text-decoration: none; font-size: 13px; }
     .breadcrumb a:hover { color: var(--text); }
     .breadcrumb span { color: var(--muted); font-size: 13px; }
-    .lang-switch { margin-left: auto; font-size: 13px; }
-    .lang-switch a { color: var(--accent); text-decoration: none; font-weight: 600; }
-    .lang-switch a:hover { text-decoration: underline; }
     .article-wrap { max-width: var(--max-w); margin: 0 auto; padding: 48px 24px 80px; display: grid; grid-template-columns: 1fr 280px; gap: 60px; align-items: start; }
     .article-header { margin-bottom: 40px; }
     .article-meta-top { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
@@ -254,6 +256,10 @@
       <a href="#">Nosotros</a>
       <a href="#">Soporte</a>
     </nav>
+    <div class="lang-switcher">
+      <a href="best-tech-gifts-2026-gadget-lovers-travelers.html" class="lang-btn">EN</a>
+      <a href="#" class="lang-btn active">ES</a>
+    </div>
   </div>
 </header>
 
@@ -263,7 +269,6 @@
     <a href="index.html">Blog</a>
     <span>&rsaquo;</span>
     <span>20 Mejores Regalos Tech 2026</span>
-    <div class="lang-switch"><a href="best-tech-gifts-2026-gadget-lovers-travelers.html">Read in English</a></div>
   </div>
 </div>
 
