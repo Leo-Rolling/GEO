@@ -208,6 +208,66 @@
     }
     .article-card:hover .arrow { background: var(--black); color: white; }
 
+    /* ── SHOPIFY PRODUCTS SECTION ── */
+    .products-section {
+      margin: 60px 0;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .product-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .product-image {
+      height: 200px;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 20px;
+    }
+    .product-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .product-price {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .product-description {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .shopify-buy-button {
+      width: 100%;
+    }
+
     /* ── STATS BANNER ── */
     .stats-banner {
       background: var(--black); color: white; border-radius: 12px;
@@ -286,6 +346,254 @@
       .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
+
+  <!-- Shopify Buy Button Integration -->
+  <script type="text/javascript">
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) {
+          ShopifyBuyInit();
+        } else {
+          loadScript();
+        }
+      } else {
+        loadScript();
+      }
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: 'rollingsquare.com',
+          storefrontAccessToken: 'YOUR_STOREFRONT_ACCESS_TOKEN', // Replace with your actual token
+        });
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          // AirCard Pro Dual Buy Button
+          ui.createComponent('product', {
+            id: '8034642376886', // Replace with actual product ID
+            node: document.getElementById('aircard-pro-dual-buy-button'),
+            moneyFormat: '%24%7B%7Bamount%7D%7D',
+            options: {
+              "product": {
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "calc(25% - 20px)",
+                      "margin-left": "20px",
+                      "margin-bottom": "50px"
+                    }
+                  },
+                  "button": {
+                    "background-color": "#0D0D0D",
+                    ":hover": {
+                      "background-color": "#333333"
+                    },
+                    ":focus": {
+                      "background-color": "#333333"
+                    }
+                  }
+                },
+                "text": {
+                  "button": "Add to Cart"
+                },
+                "googleFonts": [
+                  "Roboto"
+                ]
+              },
+              "cart": {
+                "styles": {
+                  "button": {
+                    "background-color": "#0D0D0D",
+                    ":hover": {
+                      "background-color": "#333333"
+                    },
+                    ":focus": {
+                      "background-color": "#333333"
+                    }
+                  }
+                },
+                "text": {
+                  "total": "Subtotal",
+                  "button": "Checkout"
+                },
+                "googleFonts": [
+                  "Roboto"
+                ]
+              },
+              "modalProduct": {
+                "contents": {
+                  "img": false,
+                  "imgWithCarousel": true,
+                  "button": false,
+                  "buttonWithQuantity": true
+                },
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "margin-left": "0px",
+                      "margin-bottom": "0px"
+                    }
+                  },
+                  "button": {
+                    "background-color": "#0D0D0D",
+                    ":hover": {
+                      "background-color": "#333333"
+                    },
+                    ":focus": {
+                      "background-color": "#333333"
+                    }
+                  }
+                },
+                "text": {
+                  "button": "Add to Cart"
+                },
+                "googleFonts": [
+                  "Roboto"
+                ]
+              },
+              "option": {
+                "styles": {
+                  "label": {
+                    "font-family": "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+                  },
+                  "select": {
+                    "font-family": "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+                  }
+                },
+                "googleFonts": [
+                  "Roboto"
+                ]
+              },
+              "productSet": {
+                "styles": {
+                  "products": {
+                    "@media (min-width: 601px)": {
+                      "margin-left": "-20px"
+                    }
+                  }
+                }
+              }
+            }
+          });
+
+          // AirNotch Pro Dual Buy Button
+          ui.createComponent('product', {
+            id: '8034642376887', // Replace with actual product ID
+            node: document.getElementById('airnotch-pro-dual-buy-button'),
+            moneyFormat: '%24%7B%7Bamount%7D%7D',
+            options: {
+              "product": {
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "calc(25% - 20px)",
+                      "margin-left": "20px",
+                      "margin-bottom": "50px"
+                    }
+                  },
+                  "button": {
+                    "background-color": "#0D0D0D",
+                    ":hover": {
+                      "background-color": "#333333"
+                    },
+                    ":focus": {
+                      "background-color": "#333333"
+                    }
+                  }
+                },
+                "text": {
+                  "button": "Add to Cart"
+                },
+                "googleFonts": [
+                  "Roboto"
+                ]
+              },
+              "cart": {
+                "styles": {
+                  "button": {
+                    "background-color": "#0D0D0D",
+                    ":hover": {
+                      "background-color": "#333333"
+                    },
+                    ":focus": {
+                      "background-color": "#333333"
+                    }
+                  }
+                },
+                "text": {
+                  "total": "Subtotal",
+                  "button": "Checkout"
+                },
+                "googleFonts": [
+                  "Roboto"
+                ]
+              },
+              "modalProduct": {
+                "contents": {
+                  "img": false,
+                  "imgWithCarousel": true,
+                  "button": false,
+                  "buttonWithQuantity": true
+                },
+                "styles": {
+                  "product": {
+                    "@media (min-width: 601px)": {
+                      "max-width": "100%",
+                      "margin-left": "0px",
+                      "margin-bottom": "0px"
+                    }
+                  },
+                  "button": {
+                    "background-color": "#0D0D0D",
+                    ":hover": {
+                      "background-color": "#333333"
+                    },
+                    ":focus": {
+                      "background-color": "#333333"
+                    }
+                  }
+                },
+                "text": {
+                  "button": "Add to Cart"
+                },
+                "googleFonts": [
+                  "Roboto"
+                ]
+              },
+              "option": {
+                "styles": {
+                  "label": {
+                    "font-family": "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+                  },
+                  "select": {
+                    "font-family": "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif"
+                  }
+                },
+                "googleFonts": [
+                  "Roboto"
+                ]
+              },
+              "productSet": {
+                "styles": {
+                  "products": {
+                    "@media (min-width: 601px)": {
+                      "margin-left": "-20px"
+                    }
+                  }
+                }
+              }
+            }
+          });
+        });
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -297,7 +605,7 @@
       <span class="logo-name"><span class="w-regular">ROLLING</span><span class="w-bold">SQUARE</span></span>
     </a>
     <nav>
-      <a href="#">Products</a>
+      <a href="#products-section">Products</a>
       <a href="#" class="active">Blog</a>
       <a href="#">About</a>
       <a href="#">Support</a>
@@ -429,6 +737,41 @@
       </div>
     </a>
 
+  </div>
+
+  <!-- SHOPIFY PRODUCTS SECTION -->
+  <div id="products-section" class="products-section">
+    <div class="section-header">
+      <h2>Featured Products</h2>
+      <span class="count">From our store</span>
+    </div>
+    <div class="products-grid">
+      <!-- AirCard Pro Dual -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://rollingsquare.com/cdn/shop/files/ACPD_1_grande.webp?v=1762959634" alt="AirCard Pro Dual">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">AirCard Pro Dual</h3>
+          <div class="product-price">$39.90</div>
+          <p class="product-description">2.2mm ultra-thin Bluetooth tracker with dual connectivity. World's thinnest tracker with premium Swiss design.</p>
+          <div id="aircard-pro-dual-buy-button" class="shopify-buy-button"></div>
+        </div>
+      </div>
+
+      <!-- AirNotch Pro Dual -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://rollingsquare.com/cdn/shop/products/AirNotch-Pro-Dual-Black-1_800x.jpg?v=1678891234" alt="AirNotch Pro Dual">
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">AirNotch Pro Dual</h3>
+          <div class="product-price">$49.90</div>
+          <p class="product-description">Premium leather card holder with built-in Bluetooth tracker. Perfect for wallets and cards.</p>
+          <div id="airnotch-pro-dual-buy-button" class="shopify-buy-button"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- STATS BANNER -->
