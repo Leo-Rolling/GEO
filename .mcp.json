@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sitefire": {
+      "type": "http",
+      "url": "https://app.sitefire.ai/api/mcp"
+    }
+  }
+}

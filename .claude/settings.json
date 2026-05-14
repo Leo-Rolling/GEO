@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add blog/cable-management-hacks-clean-desk-travel.html blog/index.html)",
+      "Bash(git push)",
+      "Bash(git add blog/cable-management-hacks-clean-desk-travel.html)",
+      "Read(//private/tmp/**)",
+      "Read(//Users/leonardodol/**)",
+      "Bash(git add blog/cable-management-hacks-clean-desk-travel.html blog/assets/incharge-xl-desk-support.png)",
+      "Bash(git push origin main)",
+      "Bash(git add blog/best-tech-gifts-2026-gadget-lovers-travelers.html)",
+      "Bash(git add blog/index.html)",
+      "Bash(git add blog/assets/cover-best-tech-gifts.png blog/assets/cover-cable-management.png blog/assets/cover-lost-device-guide.jpg blog/index.html)",
+      "Bash(git add blog/best-tech-gifts-2026-gadget-lovers-travelers.html blog/mejores-regalos-tecnologicos-2026-gadget-lovers-viajeros.html blog/cable-management-hacks-clean-desk-travel.html blog/trucos-gestion-cables-escritorio-limpio-viaje.html)"
+    ],
+    "additionalDirectories": [
+      "/Users/leonardodol/Desktop"
+    ]
+  },
+  "enabledMcpjsonServers": ["sitefire"]
+}

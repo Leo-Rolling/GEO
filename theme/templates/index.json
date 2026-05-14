@@ -1,0 +1,1170 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "home_banner_ct4rPB": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_QrmGbr": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_WxYgY6": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_XpyhpB": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_rgEPJT": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_QrmGbr",
+        "usp_WxYgY6",
+        "usp_XpyhpB",
+        "usp_rgEPJT"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_video": "shopify://files/videos/DESKTOP.mp4",
+        "mobile_video": "shopify://files/videos/MOBILE ULTIMATE.mp4",
+        "heading": "THE [VALENTINE'S] SPECIAL",
+        "subtitle": "Buy 1, get 1 at -50%. For your favorite person.",
+        "shop": "https://rollingsquare.com/collections/valentines-day",
+        "m_label": "SHOP THE PAIR",
+        "d_label": "SHOP THE PAIR"
+      }
+    },
+    "home_banner_67wfmf": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_WdzhR4": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_MgwT4r": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_nx8kGf": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_JGeRkc": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_WdzhR4",
+        "usp_MgwT4r",
+        "usp_nx8kGf",
+        "usp_JGeRkc"
+      ],
+      "settings": {
+        "desktop_video": "shopify://files/videos/xl website main_4ddb90b6-73de-4adb-b606-15cf5e5a1266.mp4",
+        "mobile_video": "shopify://files/videos/xl website mobile new.mp4",
+        "heading": "THE [LIFEHACKERS] COMPANY",
+        "subtitle": "Patented and awarded tech products that solve everyday problems.",
+        "shop": "shopify://collections/all",
+        "m_label": "SEE EVERYTHING",
+        "d_label": "SEE EVERYTHING"
+      }
+    },
+    "home_banner_TAPTGW": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_YbUVaU": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_Hr67Px": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_mRm4jT": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_d3qYFe": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_YbUVaU",
+        "usp_Hr67Px",
+        "usp_mRm4jT",
+        "usp_d3qYFe"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_video": "shopify://files/videos/D.mp4",
+        "mobile_video": "shopify://files/videos/M.mp4",
+        "heading": "HAPPY [LUNAR] NEW YEAR!",
+        "subtitle": "20% off until Friday midnight",
+        "shop": "https://rollingsquare.com/discount/LUNAR26?redirect=/collections/all",
+        "m_label": "SHOP 20% OFF",
+        "d_label": "SHOP 20% OFF"
+      }
+    },
+    "home_banner_QWYGwH": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_9Fpbbn": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_DaXxpE": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_X8k8gk": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_g7xjih": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_9Fpbbn",
+        "usp_DaXxpE",
+        "usp_X8k8gk",
+        "usp_g7xjih"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_video": "shopify://files/videos/DESKTOP VIDEO.mp4",
+        "mobile_video": "shopify://files/videos/FINAL MOBILE 6.mp4",
+        "heading": "[Pro dual] trackers are LIVE NOW 🚀",
+        "subtitle": "Switch between Apple & Google with no need to change your tracker.",
+        "shop": "https://rollingsquare.com/collections/holiday-special",
+        "m_label": "BUY 2 GET 1 FREE",
+        "d_label": "BUY 2 GET 1 FREE"
+      }
+    },
+    "home_banner_6w9VBC": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_iprnjf": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_y89UqD": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_j33PTh": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_cq4Gxa": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_iprnjf",
+        "usp_y89UqD",
+        "usp_j33PTh",
+        "usp_cq4Gxa"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_video": "shopify://files/videos/bfcm_homepage_banner_2.mp4",
+        "mobile_video": "shopify://files/videos/Untitled design (5).mp4",
+        "heading": "Black Friday SALE 🛍️",
+        "subtitle": "Up to 70% off our classics and new gear!",
+        "shop": "shopify://collections/rolling-square-black-friday-sale-2025",
+        "m_label": "SHOP DEALS NOW",
+        "d_label": "SHOP DEALS NOW"
+      }
+    },
+    "home_banner_wwHarT": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_dyCpTx": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_bc7dzQ": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_QpmkeD": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_nLJnXx": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_dyCpTx",
+        "usp_bc7dzQ",
+        "usp_QpmkeD",
+        "usp_nLJnXx"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_video": "shopify://files/videos/CM Desktop video_de28af9e-ea24-4e27-9b00-3ec8c0cdca0f.mp4",
+        "mobile_video": "shopify://files/videos/CM Mobile video_67409d3a-13a3-4929-8c66-040c7ec75b3e.mp4",
+        "heading": "[CYBER MONDAY] SALE 🛍️",
+        "subtitle": "Up to 70% off our classics and new gear!",
+        "shop": "shopify://collections/cyber-monday",
+        "m_label": "SHOP DEALS NOW",
+        "d_label": "SHOP DEALS NOW"
+      }
+    },
+    "home_banner_F4DdpK": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_PhXB3K": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_KXQNX7": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_UBhj4j": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_UJPXab": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_PhXB3K",
+        "usp_KXQNX7",
+        "usp_UBhj4j",
+        "usp_UJPXab"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "CYBER MONDAY SALE 👾",
+        "subtitle": "Shop our lifehacking devices at up to 70% off.",
+        "d_img": "shopify://shop_images/Frame_418.jpg",
+        "m_img": "shopify://shop_images/CYBER_MONDAY_34a7bc14-af30-482b-8fc4-d1f5d2879e10.png",
+        "shop": "shopify://collections/cyber-monday",
+        "m_label": "SHOP NOW",
+        "d_label": "SHOP NOW"
+      }
+    },
+    "home_banner_LhLymE": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_QtphwN": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_TWQcnR": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_gdCmtb": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_LBzxxD": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_QtphwN",
+        "usp_TWQcnR",
+        "usp_gdCmtb",
+        "usp_LBzxxD"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "HAPPY ST. PATRICK'S DAY! ☘️",
+        "subtitle": "Bringing you luck and innovation.",
+        "d_img": "shopify://shop_images/final_absolute.jpg",
+        "m_img": "shopify://shop_images/final_mobile_64fcd02b-5a15-45e2-a4f4-f2d0a5a449d8.jpg",
+        "shop": "https://rollingsquare.com/collections",
+        "m_label": "EXPLORE NOW",
+        "d_label": "EXPLORE NOW",
+        "trustpilot": "shopify://shop_images/Trust_white.png"
+      }
+    },
+    "home_banner_DdL7bJ": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_fKV8MQ": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_tzgFpQ": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_cpEFhh": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_GjyqGx": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_fKV8MQ",
+        "usp_tzgFpQ",
+        "usp_cpEFhh",
+        "usp_GjyqGx"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "heading": "HALLOWEEN SALE 🎃",
+        "subtitle": "Code: SPOOKY30 for 30% off everything for 5 days only 👻",
+        "d_img": "shopify://shop_images/final_banner_Una_cf8dccbf-ca29-475f-b07c-f1170d9689ce.jpg",
+        "m_img": "shopify://shop_images/finals_mobile-17.jpg",
+        "shop": "https://rollingsquare.com/discount/SPOOKY30?redirect=/collections/all",
+        "m_label": "SHOP 30% OFF",
+        "d_label": "EXPLORE NOW",
+        "trustpilot": "shopify://shop_images/Trust_white.png"
+      }
+    },
+    "home_banner_CJ6Mj4": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_CU3eRx": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_xB9aBn": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_NmFQmY": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_xJbJLG": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_CU3eRx",
+        "usp_xB9aBn",
+        "usp_NmFQmY",
+        "usp_xJbJLG"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Happy [11th Birthday] to us!",
+        "subtitle": "Shop our lifehacking devices at up to 50% off",
+        "d_img": "shopify://shop_images/Website_design_rs_biday_mobile.jpg",
+        "m_img": "shopify://shop_images/cover_site_2.jpg",
+        "shop": "https://sale.rollingsquare.com/trackers",
+        "m_label": "SHOP NOW",
+        "d_label": "SHOP NOW",
+        "trustpilot": "shopify://shop_images/Trust_white.png"
+      }
+    },
+    "home_banner_wPh6dw": {
+      "type": "home-banner",
+      "blocks": {
+        "usp_pAawK8": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "OVER 2.2 MLN PRODUCTS SOLD"
+          }
+        },
+        "usp_QQF6BJ": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp_JfwCEU": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp_X6QnVG": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        }
+      },
+      "block_order": [
+        "usp_pAawK8",
+        "usp_QQF6BJ",
+        "usp_JfwCEU",
+        "usp_X6QnVG"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Black Friday SALE 🛍️",
+        "subtitle": "Up to 70% off our classics and new gear!",
+        "d_img": "shopify://shop_images/final_f6237df4-9594-4ab8-977e-b6122f1e1759.jpg",
+        "m_img": "shopify://shop_images/final_mobile_bf.jpg",
+        "shop": "https://rollingsquare.com/collections/rolling-square-black-friday-sale-2025",
+        "m_label": "SHOP DEALS NOW",
+        "d_label": "SHOP DEALS NOW",
+        "trustpilot": "shopify://shop_images/Trust_white.png"
+      }
+    },
+    "dba99321-4b5d-4bf0-9109-1e271ddaa925": {
+      "type": "hot-sellers",
+      "settings": {
+        "title": "[BEST] SELLERS",
+        "subtitle": "Warning: they may improve your everyday life.",
+        "promo_img": "shopify://shop_images/Frame_346_1.webp",
+        "promo_title": "BECOME A LIFEHACKER",
+        "promo_subtitle": "Unlock simplicity with our best sellers.",
+        "hots": [
+          "aircardpro-dual",
+          "airnotchpro-dual",
+          "edgepro-core",
+          "incharge®-xs-240w-4in1-keyring-cable",
+          "supertiny-the-smallest-65w-gan-charger-ever",
+          "xlm",
+          "edgepro",
+          "tau-2-a-new-kind-of-power-bank",
+          "pocket-travel-adapter",
+          "power-bank-10000-mah",
+          "magsafe-car-mount"
+        ],
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_3.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/section_icon_3.svg"
+      }
+    },
+    "db2b8d30-e2b6-430d-9617-8edc31eb8e19": {
+      "type": "media-about-us",
+      "blocks": {
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_11.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/210x70_Logo_Wired.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Asset_20_8c6df301-7fa5-4684-9c07-c0d81333b693.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/210x70_Logo_TNW.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_10.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/210x70_Logo_CultOfMac.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/210x70_maclife.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/210x70_gear_hungry.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/210x70_gizmodo_V2.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-10": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/210x70_product_hunt.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-11": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_14.png"
+          }
+        },
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-12": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Mask_group_12.png"
+          }
+        },
+        "shop_jPNYFi": {
+          "type": "shop",
+          "settings": {
+            "img": "shopify://shop_images/222_05adb7ad-de81-4dce-ab02-87fe2eff88e0.png",
+            "link": "shopify://collections/cables",
+            "heading": "CABLES",
+            "color": "#000000"
+          }
+        },
+        "shop_bfiA6Y": {
+          "type": "shop",
+          "settings": {
+            "img": "shopify://shop_images/Black_open_cables.png",
+            "link": "shopify://collections/charging",
+            "heading": "CHARGING",
+            "color": "#000000"
+          }
+        },
+        "shop_BawhgV": {
+          "type": "shop",
+          "settings": {
+            "img": "shopify://shop_images/front_front_apple.png",
+            "link": "shopify://collections/tracking",
+            "heading": "TRACKING",
+            "color": "#000000"
+          }
+        },
+        "shop_L4BGgP": {
+          "type": "shop",
+          "settings": {
+            "img": "shopify://shop_images/EPK01.png",
+            "link": "shopify://collections/productivity",
+            "heading": "PRODUCTIVITY",
+            "color": "#000000"
+          }
+        },
+        "shop_ngy97G": {
+          "type": "shop",
+          "settings": {
+            "img": "shopify://shop_images/piccolo_new_persp.png",
+            "link": "shopify://collections/travel-accessories",
+            "heading": "TRAVEL",
+            "color": "#000000"
+          }
+        },
+        "shop_TFWdE4": {
+          "type": "shop",
+          "settings": {
+            "img": "shopify://shop_images/Frame_127.png",
+            "link": "shopify://collections/old-products",
+            "heading": "CLEARANCE",
+            "color": "#da291c"
+          }
+        }
+      },
+      "block_order": [
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-4",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-1",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-2",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-3",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-5",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-6",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-7",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-8",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-9",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-10",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-11",
+        "template--21685088616767__db2b8d30-e2b6-430d-9617-8edc31eb8e19-image-12",
+        "shop_jPNYFi",
+        "shop_bfiA6Y",
+        "shop_BawhgV",
+        "shop_L4BGgP",
+        "shop_ngy97G",
+        "shop_TFWdE4"
+      ],
+      "settings": {
+        "title": "SHOP BY [CATEGORY]",
+        "desc": "They’re the kind of functional, multipurpose gadgets that could change your life.",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/Rs-1.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/Rs-1.svg"
+      }
+    },
+    "5e48fcdb-abc4-4752-9b25-dea725f91f7f": {
+      "type": "shop-by-type",
+      "blocks": {
+        "image_1_UNbwgX": {
+          "type": "image_1",
+          "settings": {
+            "heading": "AirCard Pro",
+            "subtitle": "Wireless charging, Card-sized Bluetooth tracker for Apple and Android",
+            "cta": "shopify://products/aircard-pro-android-apple-bluetooth-tracker",
+            "media": "shopify://shop_images/Group_1111.jpg",
+            "media2": "shopify://shop_images/Group_1110.jpg"
+          }
+        },
+        "image_1_4h99m9": {
+          "type": "image_1",
+          "settings": {
+            "heading": "Supertiny",
+            "subtitle": "The smallest 65W GaN Charger ever",
+            "cta": "shopify://products/supertiny-the-smallest-65w-gan-charger-ever",
+            "media": "shopify://shop_images/Frame_387.webp",
+            "media2": "shopify://shop_images/Frame_388.webp"
+          }
+        },
+        "image_1_MprmPi": {
+          "type": "image_1",
+          "settings": {
+            "heading": "inCharge XS",
+            "subtitle": "240W 4in1 Keyring Ultra-Fast Cable",
+            "cta": "shopify://products/incharge®-xs-240w-4in1-keyring-cable",
+            "media": "shopify://shop_images/Frame_377.webp",
+            "media2": "shopify://shop_images/Frame_378.webp"
+          }
+        },
+        "template--21793242349887__5e48fcdb-abc4-4752-9b25-dea725f91f7f-image_1-1": {
+          "type": "image_1",
+          "settings": {
+            "heading": "AirNotch Pro",
+            "subtitle": "The loudest, sturdiest Bluetooth tracker ever, for Apple and Android",
+            "cta": "shopify://products/airnotch-pro-android-apple-bluetooth-tracker",
+            "media": "shopify://shop_images/Group_1113.jpg",
+            "media2": "shopify://shop_images/Group_1112.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_1_UNbwgX",
+        "image_1_4h99m9",
+        "image_1_MprmPi",
+        "template--21793242349887__5e48fcdb-abc4-4752-9b25-dea725f91f7f-image_1-1"
+      ],
+      "settings": {
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_6.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/section_icon_6.svg"
+      }
+    },
+    "trustpilot_Bc7GxN": {
+      "type": "trustpilot",
+      "blocks": {
+        "usp_XPKM7w": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_59.png",
+            "uspRichText": "<p><strong>3x Red Dot Design Awards</strong></p>"
+          }
+        },
+        "usp_Vb6KMj": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/IFForumDesignLogo_svg.webp",
+            "uspRichText": "<p><strong>1x IF Design <br/>Award</strong></p>"
+          }
+        },
+        "usp_bnrdj3": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_57.png",
+            "uspRichText": "<p><strong>4x CES Innovation Awards</strong></p>"
+          }
+        },
+        "usp_fJzRY6": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_58.png",
+            "uspRichText": "<p><strong>1x Good Design Award</strong></p>"
+          }
+        },
+        "review_AXW9fi": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Monica T.",
+            "reviewTitle": "Great quality product, amazing value",
+            "reviewDetail": "Nice quality and isn't bulkier than it needs to be. Being able to carry it around with my keys ensure I never forget it in my EDC is so handy, and the protective cap keeps it safe from dust and weather. Great product, would definitely recommend and am even considering getting the longer version for trips!",
+            "reviewDate": "inCharge X"
+          }
+        },
+        "review_eJE3Q7": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Russell Hubbard",
+            "reviewTitle": "I actually KNOW where my wallet is.",
+            "reviewDetail": "It's always nice to find a product which actually performs as advertised. This AirCard, Is That Product! Very happy with the design, build quality and capability of this card. Well done, Rollingsquare! Looking for more great things in the future.",
+            "reviewDate": "AirCard"
+          }
+        },
+        "review_Eww3B7": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Georgios Kouvaras",
+            "reviewTitle": "TOTALLY SATISFIED CUSTOMER",
+            "reviewDetail": "Guys, your rolling square cables ROCK!!! I have all the sizes (keyring, 20cm, 2m and 3m) and they all work perfectly. Even the 3m with a Lumix camera connected to macBook for photo shooting. Flawless, great quality and versatility! (looking forward for TAU 2, the small charger from Kickstarter!)",
+            "reviewDate": "inCharge XL"
+          }
+        },
+        "review_YBJwQT": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Bence Dudás",
+            "reviewTitle": "Quality product, quality team",
+            "reviewDetail": "Even though international shipping lost my parcel, the team did their best to get me my order, and it arrived completely in the end. The products are high quality and they work flawlessly. I can only say they have my full support! 5 stars!",
+            "reviewDate": "Service"
+          }
+        },
+        "review_TzixDa": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Guenther Bauer",
+            "reviewTitle": "Incredible job guys",
+            "reviewDetail": "Incredible job guys! Not only is AirCard a top product, beautiful and yet functional, your customer service is top notch! The original shipment was lost by the logistic company. After writing the problem to the folks at Rolling Square a replacement shipment was on its way in no time. Thanks a lot for such a great service! I'd wish other companies would act like you do!",
+            "reviewDate": "AirCard"
+          }
+        },
+        "review_WTAKRG": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Madeleine Carlozzi",
+            "reviewTitle": "Game changer...",
+            "reviewDetail": "Love my long charger that charges all my different gadgets...it's a game changer. And my magnet I've attached to my iPad Air I use for my iPhone... love having the option to jump from using one screen to the other... another game changer. Such simple, reasonably priced items that are so well designed and thought out ...definitely recommend!!",
+            "reviewDate": "inCharge XL"
+          }
+        },
+        "review_bdkwnB": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Hugh P.",
+            "reviewTitle": "Great product!",
+            "reviewDetail": "Great product. Great service. Saved my wife's life as she never understands all the different cables!",
+            "reviewDate": "inCharge X"
+          }
+        }
+      },
+      "block_order": [
+        "usp_XPKM7w",
+        "usp_Vb6KMj",
+        "usp_bnrdj3",
+        "usp_fJzRY6",
+        "review_AXW9fi",
+        "review_eJE3Q7",
+        "review_Eww3B7",
+        "review_YBJwQT",
+        "review_TzixDa",
+        "review_WTAKRG",
+        "review_bdkwnB"
+      ],
+      "settings": {
+        "scoreImg": "shopify://shop_images/5stars.png",
+        "totalReviews": "",
+        "heading": "3+ MLN PRODUCTS SOLD",
+        "richDesc": "<p>For over a decade, we've delivered millions of products worldwide and won the best awards in technology and design, all made possible by the support of over 720,000 lifehackers like us, fueling our success with crucial feedback and support.</p>",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/RS-4.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/RS-4.svg"
+      }
+    },
+    "review_slider_yt7tJD": {
+      "type": "review-slider",
+      "blocks": {
+        "review_xGWp9a": {
+          "type": "review",
+          "settings": {
+            "reviewMedia": "shopify://files/videos/videoplayback.mp4",
+            "reviewer": "Appleinsider",
+            "review": "It's a key ring with Find My built in. The body\nof it is aluminum with durable plastic on the front and the back. It's sealed, making it durable, impact-proof, and IP68 water and dust resistance.",
+            "product": "airnotch-pro-android-apple-bluetooth-tracker",
+            "cta_text": "SEE"
+          }
+        },
+        "review_TGFcJH": {
+          "type": "review",
+          "settings": {
+            "reviewMedia": "shopify://files/videos/Apple's Modular & Portable Setup _ The Power Of Magnets.mp4",
+            "reviewer": "9to5Mac",
+            "review": "When a company is able to then innovate a little bit further and go even past all that MagSafe to accommodate even more devices, is even that much better.",
+            "product": "edgepro",
+            "cta_text": "SEE"
+          }
+        },
+        "review_Rxphnf": {
+          "type": "review",
+          "settings": {
+            "reviewMedia": "shopify://files/videos/Rolling Square inCharge XL Review (1 Month of Use).mp4",
+            "reviewer": "Pack Hacker",
+            "review": "So they have a good amount of experience iterating on this style of cable. The cap here is really interesting.",
+            "product": "xlm",
+            "cta_text": "SEE"
+          }
+        }
+      },
+      "block_order": [
+        "review_xGWp9a",
+        "review_TGFcJH",
+        "review_Rxphnf"
+      ],
+      "settings": {
+        "heading": "WORLD-CLASS CREATORS [CHOOSE] ROLLING SQUARE",
+        "bkColor": "#000000",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_8.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/section_icon_8.svg"
+      }
+    },
+    "02d8cb45-8904-456e-a8df-9d0db5f8597c": {
+      "type": "something-else",
+      "blocks": {
+        "33060275-9783-43fa-93b0-e925ecf53f37": {
+          "type": "else",
+          "settings": {
+            "media": "shopify://shop_images/Frame_382.webp",
+            "media2": "shopify://shop_images/Frame_381.webp",
+            "heading": "EDGE Pro Core",
+            "subtitle": "Bring true modularity to your workstation",
+            "cta": "shopify://products/edgepro-core"
+          }
+        },
+        "5e5d4cd0-1227-4428-a707-e9e45f9554b3": {
+          "type": "else",
+          "settings": {
+            "media": "shopify://shop_images/Frame_384.webp",
+            "media2": "shopify://shop_images/Frame_383.webp",
+            "heading": "inCharge XL",
+            "subtitle": "The 100W Swiss army knife of cables",
+            "cta": "shopify://collections/incharge-xl"
+          }
+        },
+        "f9d0b25b-f4af-463f-bcf3-3a2dc35ac422": {
+          "type": "else",
+          "settings": {
+            "media": "shopify://shop_images/Frame_386.webp",
+            "media2": "shopify://shop_images/Frame_385.webp",
+            "heading": "TAU 2",
+            "subtitle": "Emergency universal keyring power bank",
+            "cta": "shopify://products/tau-2-a-new-kind-of-power-bank"
+          }
+        },
+        "c4856bd3-388b-4514-b6f0-4bc52f76e42c": {
+          "type": "else",
+          "settings": {
+            "media": "shopify://shop_images/Group_1096_91a04116-8659-47aa-bc22-e9c74b3da3bd.jpg",
+            "media2": "shopify://shop_images/Group_1095.jpg",
+            "heading": "AirCard",
+            "subtitle": "Bluetooth wallet tracker for Apple Find My",
+            "cta": "shopify://products/aircard"
+          }
+        }
+      },
+      "block_order": [
+        "33060275-9783-43fa-93b0-e925ecf53f37",
+        "5e5d4cd0-1227-4428-a707-e9e45f9554b3",
+        "f9d0b25b-f4af-463f-bcf3-3a2dc35ac422",
+        "c4856bd3-388b-4514-b6f0-4bc52f76e42c"
+      ],
+      "settings": {
+        "heading": "WHO SEEKS, [FINDS]",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_5.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/section_icon_5.svg"
+      }
+    },
+    "why_rolling_square_E8bET3": {
+      "type": "why-rolling-square",
+      "blocks": {
+        "usp_CbXXrG": {
+          "type": "usp",
+          "settings": {
+            "image": "shopify://shop_images/local_shipping_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "<p><strong>FAST, FREE SHIPPING</strong></p>",
+            "subtitle": "<p>Fast and free worldwide shipping for purchases over $80, with optional shipping protection.</p>"
+          }
+        },
+        "usp_XeF3pL": {
+          "type": "usp",
+          "settings": {
+            "image": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "<p><strong>30-DAYS RISK-FREE TRIAL</strong></p>",
+            "subtitle": "<p>Return within 30 days if you're not satisfied. No questions asked.</p>"
+          }
+        },
+        "usp_AY7wNc": {
+          "type": "usp",
+          "settings": {
+            "image": "shopify://shop_images/support_agent_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "<p><strong>CUSTOMER SUPPORT</strong></p>",
+            "subtitle": "<p>A world-class customer support team is available 24 hours a day, 7 days a week.</p>"
+          }
+        },
+        "usp_VxHqRx": {
+          "type": "usp",
+          "settings": {
+            "image": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "<p><strong>2 YEARS WARRANTY</strong></p>",
+            "subtitle": "<p>Our products are designed to perform for life and are protected with a 2-year warranty.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "usp_CbXXrG",
+        "usp_XeF3pL",
+        "usp_AY7wNc",
+        "usp_VxHqRx"
+      ],
+      "settings": {
+        "heading": "[WHY] ROLLING SQUARE?",
+        "subtitle": "Our journey began in 2014. Now, 11 years later, we're leading a change towards useful tech that solves everyday problems, exactly like a square that's now rolling.",
+        "bkcolor": "#f5f5f7",
+        "cta": "shopify://collections",
+        "usp": "shopify://shop_images/grey_tick_cc36e871-891a-4b0d-8488-6791deed2d4b.svg",
+        "usp_text": "Free Shipping on all orders over 80$.",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_1.svg",
+        "show_decoration_mobile": false
+      }
+    },
+    "featured_blog_geo01": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "FROM THE [BLOG]",
+        "subtitle": "Practical guides and lifehacks tested by our team — from finding lost devices to picking the right cable for your iPhone.",
+        "blog_handle": "news",
+        "limit": 5
+      }
+    },
+    "explore_KyJHNz": {
+      "type": "explore",
+      "blocks": {
+        "page_AbmeGP": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/ABOUT_US_d27de4f9-6687-4eb4-8fa9-3d17916b753d.jpg",
+            "heading": "ABOUT US",
+            "link": "https://more.rollingsquare.com/index.html"
+          }
+        },
+        "page_EVD9t8": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/LIFEHACKERS_MANIFESTO.jpg",
+            "heading": "LIFEHACKERS MANIFESTO",
+            "link": "https://more.rollingsquare.com/manifesto.html"
+          }
+        },
+        "page_kYzkCg": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/COMMUNITY.jpg",
+            "heading": "COMMUNITY",
+            "link": "https://more.rollingsquare.com/commmunity-new.html"
+          }
+        },
+        "page_G4xxxB": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/CAREERS_8b65dff6-d340-4742-aac2-d1bec61fc917.jpg",
+            "heading": "CAREERS",
+            "link": "https://more.rollingsquare.com/careers.html"
+          }
+        },
+        "page_anCQnz": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/Asset_240_ac6224e4-2a65-481b-8a92-cd6c1d8676ac.jpg",
+            "heading": "SELL OUR PRODUCTS",
+            "link": "https://more.rollingsquare.com/wholesale.html"
+          }
+        }
+      },
+      "block_order": [
+        "page_AbmeGP",
+        "page_EVD9t8",
+        "page_kYzkCg",
+        "page_G4xxxB",
+        "page_anCQnz"
+      ],
+      "settings": {
+        "heading": "[HACK YOUR LIFE] WITH ROLLING SQUARE",
+        "newsletter": "Join our vibrant community and be the first to know about life hacks, product launches, special deals, and much more!",
+        "klaviyo_list_id": "TGCuQi",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_7.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/section_icon_7.svg"
+      }
+    }
+  },
+  "order": [
+    "home_banner_ct4rPB",
+    "home_banner_67wfmf",
+    "home_banner_TAPTGW",
+    "home_banner_QWYGwH",
+    "home_banner_6w9VBC",
+    "home_banner_wwHarT",
+    "home_banner_F4DdpK",
+    "home_banner_LhLymE",
+    "home_banner_DdL7bJ",
+    "home_banner_CJ6Mj4",
+    "home_banner_wPh6dw",
+    "dba99321-4b5d-4bf0-9109-1e271ddaa925",
+    "db2b8d30-e2b6-430d-9617-8edc31eb8e19",
+    "5e48fcdb-abc4-4752-9b25-dea725f91f7f",
+    "trustpilot_Bc7GxN",
+    "review_slider_yt7tJD",
+    "02d8cb45-8904-456e-a8df-9d0db5f8597c",
+    "why_rolling_square_E8bET3",
+    "featured_blog_geo01",
+    "explore_KyJHNz"
+  ]
+}

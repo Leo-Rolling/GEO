@@ -1,0 +1,937 @@
+<style>
+
+  .p_price_down_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font: normal normal 600 12px/15px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+    border-radius: 3px;
+    width: fit-content;
+    padding: 3px 9px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.p_price_down_badge svg {
+    width: 11px;
+    height: 11px;
+    display: block;
+    flex: 0 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+    .p_price_down_badge {
+        font: normal normal 600 9px/15px Montserrat;
+        padding: 1px 6px;
+        gap: 4px;
+    }
+
+    .p_price_down_badge svg {
+        width: 9px;
+        height: 9px;
+    }
+}
+
+    h1.p_meta_title,
+    .p_meta_title {
+        font: normal normal bold 28px/32px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        margin: 0 0 15px 0;
+    }
+
+    .p_meta_price {
+        font: normal normal 500 26px/25px Montserrat;
+        color: black;
+    }
+
+    .p_meta_now_price {
+        font: normal normal 500 26px/25px Montserrat;
+        letter-spacing: 0px;
+        color: #DA291C;
+    }
+
+    .p_meta_was_price {
+        font: normal normal 500 15px/15px Montserrat;
+        letter-spacing: 0px;
+        color: #8B8B8B;
+        text-decoration: line-through;
+        margin: 0 9px;
+    }
+
+    .p_saving_percent {
+        font: normal normal 500 12px/15px Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        background: #DA291C;
+        border-radius: 3px;
+        width: fit-content;
+        padding: 3px 8px;
+    }
+
+    .p_meta_price_holder {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .option_title {
+        font: normal normal bold 16px/21px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        margin-bottom: 11px;
+    }
+
+    .meta_quantity_holder .option_title {
+        margin-right: 8px;
+    }
+
+    span.option_value {
+        color: #8B8B8B;
+        font-weight: 500;
+    }
+
+    .s_meta_var {
+        width: 60px;
+        height: 60px;
+        border: 2px solid #DFDFE1;
+        border-radius: 100px;
+        overflow: hidden;
+        padding: 7px;
+        position: relative;
+        margin-right: 8px;
+        user-select: none;
+    }
+
+    .sticky_options_holder .s_meta_var {
+        width: 38px;
+        height: 38px;
+        padding: 4px;
+        background: white;
+        margin-right: 6px;
+    }
+
+    .s_meta_var.selected {
+        border-color: black;
+    }
+
+    .s_meta_var.out_of_stock {
+        pointer-events: none;
+        opacity: .6;
+    }
+
+    .s_meta_var.out_of_stock::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100%;
+        height: 2px;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background-color: #DFDFE1;
+    }
+
+    .s_meta_var img {
+        opacity: .4;
+    }
+
+    .s_meta_var.selected img {
+        opacity: 1;
+    }
+
+    .variants_holder {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .meta_variant_options_holder {
+        margin-bottom: 30px;
+    }
+
+    .meta_quantity_holder {
+        align-items: center;
+        margin-bottom: 33px;
+    }
+
+    .meta_quantity_save_wrapper {
+        display: flex;
+        align-items: center;
+    }
+    
+    .sticky_quantity_selector {
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        height: 45px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #DFDFE1;
+        border-radius: 5px;
+        align-items: center;
+        margin-right: 28px;
+        user-select: none;
+    }
+
+    .pdp_save_more {
+        background: #1761FF;
+        color: white;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 5px;
+        padding: 12px 20px;
+        font-size: 16px;
+        display: none;
+    }
+
+    .pdp_save_more[index="1"] {
+        display: block;
+        background: linear-gradient(90deg, rgba(229,233,12,1) 0%, rgba(233,198,12,1) 100%);
+    }
+
+    .pdp_save_more[index="2"] {
+        background: linear-gradient(90deg, rgba(255,153,0,1) 0%, rgba(255,107,0,1) 100%);
+    }
+
+    .pdp_save_more[index="3"] {
+        background: linear-gradient(90deg, rgba(218,41,28,1) 0%, rgba(218,28,85,1) 100%);
+    }
+
+    .pdp_save_more[index="4"] {
+        background: linear-gradient(90deg, #1761FF 0%, #1766FF 100%);
+    }
+
+    .main_cta {
+        height: 55px;
+        background: #17E260;
+        border-radius: 5px;
+        text-align: center;
+        font: normal normal bold 18px/24px Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-bottom: 16px;
+    }
+
+@media (min-width: 1367px) {
+    .main_cta:hover {
+        background: #1761FF;
+    }
+}
+
+    .sold_out.main_cta {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    .product_txt_part .jdgm-hidden {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    .pdp_meta_review span.jdgm-prev-badge__text {
+        text-decoration: underline;
+        font: normal normal 500 15px/25px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        visibility: visible !important;
+    }
+
+    .pdp_meta_review {
+        margin-bottom: 7px;
+        cursor: pointer;
+    }
+
+    .pdp_meta_review * {
+        pointer-events: none;
+    }
+    
+    .quantity-selector__btn {
+        width: 20px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    
+    input#quantity-input,
+    input#meta_quantity-input {
+        width: 50px;
+        padding: 0;
+        text-align: center;
+        border: none;
+        font: normal normal 500 17px/21px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        text-transform: uppercase;
+    }
+
+    input#quantity-input::-webkit-inner-spin-button, 
+    input#quantity-input::-webkit-outer-spin-button,
+    input#meta_quantity-input::-webkit-inner-spin-button, 
+    input#meta_quantity-input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    input#quantity-input,
+    input#meta_quantity-input {
+        -moz-appearance: textfield; /* Firefox */
+    }
+
+
+    @media screen and (max-width: 1100px) {
+        .pdp_save_more {
+            font-size: 12px;
+            padding: 10px 12px;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        h1.p_meta_title,
+        .p_meta_title {
+            font: normal normal bold 20px/24px Montserrat;
+            margin: 0 0 7px 0;
+        }
+      .needsclick{
+        display:none !important;
+      }
+
+        .sticky_quantity_selector {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .p_meta_price {
+            font: normal normal 500 19px/25px Montserrat;
+        }
+
+        .p_meta_now_price {
+            font: normal normal 500 19px/25px Montserrat;
+        }
+
+        .p_meta_was_price {
+            font: normal normal 500 12px/15px Montserrat;
+            margin: 0 5px;
+        }
+
+        .p_saving_percent {
+            font: normal normal 500 9px/15px Montserrat;
+            padding: 1px 6px;
+        }
+
+        .option_title {
+            font: normal normal bold 14px/21px Montserrat;
+            margin-bottom: 8px;
+        }
+
+        .sticky_options_holder .option_title {
+            font: normal normal 500 12px/21px Montserrat;
+        }
+
+        .p_meta_price_holder {
+            margin-bottom: 20px;
+        }
+        
+        .meta_variant_options_holder {
+            margin-bottom: 20px;
+        }
+
+        .main_cta {
+            height: 50px;
+            font: normal normal bold 17px/24px Montserrat;
+            margin-bottom: 11px;
+        }
+
+        .pdp_meta_review span.jdgm-prev-badge__text {
+            text-decoration: none;
+            font: normal normal 500 13px/1 Montserrat;
+        }
+
+        .meta_quantity_holder {
+            margin-bottom: 23px;
+        }
+
+    }
+
+</style>
+<div style="display:none;">
+{%- if cart.discount_applications.size > 0 -%}
+  {%- for da in cart.discount_applications -%}
+    {%- if da.value_type == 'percentage' -%}
+        <div title="{{ da.value }}% Off" 
+      {%- else -%}
+        <div title="{{ da.total_allocated_amount | money }} Off" 
+      {%- endif -%}
+    style="
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 15px;
+        font: bold 16px/21px Montserrat;
+      font-weight:700;
+          margin-top: 0px;
+    margin-bottom: 20px;
+    ">
+      <span style="
+        background-color: #fff2f2;
+        color:rgb(237, 96, 88);
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        padding: 3px 8px;
+        border-radius: 6px;
+        border: 3px dashed rgb(237, 96, 88);
+        font: bold 16px/21px Montserrat;
+      ">{{ da.title | upcase }}</span>
+      <span style="color:rgb(237, 96, 88);">
+        Discount applied at checkout
+      </span>
+    </div>
+  {%- endfor -%}
+{%- endif -%}
+</div>
+
+{% assign product_collection_handles = product.collections | map: 'handle' %}
+
+{% if product_collection_handles contains 'holiday-special' %}
+  <a href="https://rollingsquare.com/collections/holiday-special"><div class="order_eta" style="
+    display:inline-block;
+    margin:0;
+background-color:#E63946;
+    padding:10px;
+color:#fff;
+    border-radius:8px;
+    cursor:pointer;">
+    🎁 Buy 2, Get 1 Free
+  </div></a>
+{% endif %}
+
+
+  {% if product.metafields.custom.top_message %}
+    <div class="order_eta" style="
+display:inline-block;
+margin:0;
+    background-color:#f0f3f7;
+padding:10px;
+border-radius:8px;
+cursor:pointer;">{{ product.metafields.custom.top_message }}</div>
+{%- endif -%}
+
+
+
+<div class="pdp_meta_review" style="margin-top:10px;" onclick="$('.nav_item.for_review').trigger('click');">
+    {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
+</div>
+         
+<h1 class="p_meta_title">{{ product.title }}</h1>
+<div class="p_meta_price_holder">
+    {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+        <div class="p_meta_now_price">{{ product.selected_or_first_available_variant.price | money }}</div>
+        <div class="p_meta_was_price">{{ product.selected_or_first_available_variant.compare_at_price | money }}</div>
+
+        {% if product.id == 10119032373567 %}
+            <div class="p_price_down_badge">
+                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 4H12.2L9.4 1.2L10.5 0L15.5 5L10.5 10L9.4 8.8L12.2 6H4.5V11.5C4.5 12.33 5.17 13 6 13H13V14.5H6C4.34 14.5 3 13.16 3 11.5V4Z" fill="currentColor"/>
+                </svg>
+                <span>Price is down this week</span>
+            </div>
+        {% else %}
+            <div class="p_saving_percent">SAVE {{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100 | divided_by: product.selected_or_first_available_variant.compare_at_price }}%</div>
+        {% endif %}
+
+    {% else %}
+        <div class="p_meta_price">{{ product.selected_or_first_available_variant.price | money }}</div>
+    {% endif %}
+</div>
+
+{% if product.has_only_default_variant == false %}
+    {% if product.options.size == 1 %}
+        {% include 'variants_pane_with_one_option' %}
+    {% else %}
+        {% include 'multiple_options_variants_holder' %}
+
+    {% endif %}
+
+{% endif %}
+
+
+{% if product.id == 10119032373567 or product.id == 9818290422079 %}
+<script>
+(() => {
+  // Skip if variant is already set via URL
+  const qs = new URLSearchParams(location.search);
+  if (qs.has('variant')) return;
+
+  // Country → desired plug
+  const COUNTRY = {{ localization.country.iso_code | json }};
+  const desiredByCountry = {
+  // --- North America ---
+  US: "US", CA: "US", MX: "US",
+  // --- Central & South America ---
+  AR: "EU", BO: "EU", BR: "EU", CL: "EU", CO: "EU", CR: "US",
+  CU: "US", DO: "US", EC: "EU", GT: "US", HN: "US", NI: "US",
+  PA: "US", PE: "EU", PR: "US", PY: "EU", SV: "US", UY: "EU", VE: "EU",
+
+  // --- Europe (mostly EU plug) ---
+  AL: "EU", AD: "EU", AT: "EU", BA: "EU", BE: "EU", BG: "EU", BY: "EU",
+  CH: "EU", CY: "EU", CZ: "EU", DE: "EU", DK: "EU", EE: "EU", ES: "EU",
+  FI: "EU", FR: "EU", GR: "EU", HR: "EU", HU: "EU", IS: "EU", IT: "EU",
+  LT: "EU", LU: "EU", LV: "EU", MC: "EU", MD: "EU", ME: "EU", MK: "EU",
+  MT: "EU", NL: "EU", NO: "EU", PL: "EU", PT: "EU", RO: "EU", RS: "EU",
+  SE: "EU", SI: "EU", SK: "EU", SM: "EU", UA: "EU", VA: "EU",
+
+  // --- UK & Commonwealth territories using UK plug ---
+  GB: "UK", IE: "UK", HK: "UK", SG: "UK", MY: "UK", CY: "UK",
+  AE: "UK", KW: "UK", QA: "UK", BH: "UK", OM: "UK",
+  NG: "UK", GH: "UK", KE: "UK", TZ: "UK", UG: "UK", ZM: "UK", ZW: "UK",
+  PK: "UK", BD: "UK", LK: "UK", HK: "UK", MO: "UK",
+
+  // --- Asia ---
+  CN: "EU", JP: "US", KR: "EU", TW: "EU", TH: "EU", VN: "EU", ID: "EU",
+  PH: "US", IN: "UK", NP: "EU", KH: "EU", LA: "EU", BN: "UK", MM: "EU",
+
+  // --- Middle East ---
+  IL: "EU", SA: "UK", AE: "UK", OM: "UK", KW: "UK", QA: "UK", BH: "UK",
+  JO: "EU", LB: "EU", TR: "EU", IR: "EU",
+
+  // --- Africa ---
+  DZ: "EU", EG: "EU", MA: "EU", TN: "EU", ZA: "UK", MZ: "EU", AO: "EU",
+  BJ: "EU", BW: "UK", BF: "EU", CM: "EU", CI: "EU", CD: "EU", CG: "EU",
+  ET: "EU", GM: "UK", GN: "EU", KE: "UK", LR: "EU", MG: "EU", ML: "EU",
+  MU: "UK", MW: "UK", NA: "UK", NG: "UK", RW: "EU", SC: "UK", SD: "EU",
+  SN: "EU", TG: "EU", TZ: "UK", UG: "UK", ZM: "UK", ZW: "UK",
+
+  // --- Oceania & Pacific Islands (default to EU since no AU plug) ---
+  NZ: "EU", FJ: "EU", PG: "EU", WS: "EU", TO: "EU", SB: "EU", KI: "EU", TV: "EU", NR: "EU", VU: "EU",
+
+};
+
+  const desired = desiredByCountry[COUNTRY];
+  if (!desired) return;
+
+  const run = () => {
+    const items = document.querySelectorAll('.variants_holder .s_meta_var');
+    if (!items.length) return;
+
+    // Find the matching variant element
+    const match = Array.from(items).find(el =>
+      (el.getAttribute('var_title') || '').trim().toLowerCase() === desired.toLowerCase()
+    );
+    if (!match) return;
+
+    // Avoid double-click if it’s already selected
+    if (match.classList.contains('selected')) return;
+
+    // Simulate a gentle, delayed click
+    setTimeout(() => {
+      match.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+      match.click?.();
+    }, 200);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+{% endif %}
+
+<script>
+(() => {
+  // --- helpers to sync sticky UIs ---
+  const syncStickyFrom = ({ id, title, imgUrl }) => {
+    // 1) Mobile sticky label
+    const mobileLabel = document.querySelector('.meta_variant_options_holder .option_value');
+    if (mobileLabel && title) mobileLabel.textContent = title;
+
+    // 2) Desktop sticky select + preview
+    const stickySel = document.getElementById('sticky_dropdown');
+    if (stickySel && id) {
+      if ([...stickySel.options].some(o => String(o.value) === String(id))) {
+        stickySel.value = String(id);
+        stickySel.dispatchEvent(new Event('input',  { bubbles: true }));
+        stickySel.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+      const opt    = [...stickySel.options].find(o => String(o.value) === String(id));
+      const swatch = document.querySelector('.sticky_cta_variant_dropdown .variant_option_color_img');
+      if (swatch) {
+        const styleUrl = opt?.getAttribute('swatch_style'); // "url(//...jpg)"
+        const vImgUrl  = opt?.getAttribute('v_img_url') || imgUrl;
+        if (styleUrl) swatch.style.background = styleUrl;
+        else if (vImgUrl) swatch.style.background = `url(${vImgUrl})`;
+        swatch.style.backgroundSize = 'cover';
+        swatch.style.backgroundPosition = 'center';
+      }
+    }
+  };
+
+  const syncFromTile = (tileEl) => {
+    if (!tileEl) return;
+    const id    = tileEl.getAttribute('var_id');
+    const title = tileEl.getAttribute('var_title');
+    const img   = tileEl.querySelector('img')?.getAttribute('src');
+    syncStickyFrom({ id, title, imgUrl: img });
+  };
+
+  // 1) Delegate clicks on tiles → sync sticky UIs
+  const attachTileClickSync = () => {
+    document.addEventListener('click', (e) => {
+      const tile = e.target.closest?.('.variants_holder .s_meta_var');
+      if (!tile) return;
+      // sync after theme handles the click/change
+      setTimeout(() => syncFromTile(tile), 0);
+    });
+  };
+
+  // 2) Observe selection class changes on tiles (covers programmatic changes)
+  const observeTileSelection = () => {
+    const holder = document.querySelector('.variants_holder');
+    if (!holder) return;
+    new MutationObserver(() => {
+      const sel = holder.querySelector('.s_meta_var.selected');
+      if (sel) syncFromTile(sel);
+    }).observe(holder, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  };
+
+  // 3) Watch the hidden variant id input
+  const observeVariantIdInput = () => {
+    const idInput = document.querySelector('form[action*="/cart/add"] [name="id"]');
+    if (!idInput) return;
+    new MutationObserver(() => {
+      const val = idInput.value;
+      if (!val) return;
+      const tile = document.querySelector(`.variants_holder .s_meta_var[var_id="${val}"]`);
+      if (tile) syncFromTile(tile);
+    }).observe(idInput, { attributes: true, attributeFilter: ['value'] });
+  };
+
+  // 4) Listen to common custom events from themes
+  const attachVariantChangeSync = () => {
+    const handler = (e) => {
+      const v = e.detail?.variant || e.detail;
+      if (!v) return;
+      const tileById = document.querySelector(`.variants_holder .s_meta_var[var_id="${v.id}"]`);
+      if (tileById) { syncFromTile(tileById); return; }
+      const guess = (v.option1 || v.title || '').trim();
+      const tileByTitle = document.querySelector(`.variants_holder .s_meta_var[var_title="${guess}"]`);
+      if (tileByTitle) syncFromTile(tileByTitle);
+    };
+    document.addEventListener('variant:change', handler);
+    document.addEventListener('product:variant-change', handler);
+  };
+
+  // 5) Keep sticky dropdown changes in sync back to tiles + mobile label
+  const attachStickyDropdownSync = () => {
+    const stickySel = document.getElementById('sticky_dropdown');
+    if (!stickySel) return;
+    stickySel.addEventListener('change', () => {
+      const id    = stickySel.value;
+      const opt   = stickySel.options[stickySel.selectedIndex];
+      const title = (opt?.text || '').trim();
+      const img   = opt?.getAttribute('v_img_url') || '';
+      // Update sticky (self) + mobile label immediately
+      syncStickyFrom({ id, title, imgUrl: img });
+      // Also reflect selection in tiles
+      const tile = document.querySelector(`.variants_holder .s_meta_var[var_id="${id}"]`);
+      if (tile && !tile.classList.contains('selected')) {
+        // simulate the same click users would do
+        tile.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+        tile.click?.();
+      }
+    });
+  };
+
+  // Initial sync once (from current selected tile if present)
+  const initialSync = () => {
+    const sel = document.querySelector('.variants_holder .s_meta_var.selected');
+    if (sel) syncFromTile(sel);
+  };
+
+  const run = () => {
+    // Only activate on pages that have at least one of the UIs
+    if (!document.querySelector('.variants_holder') && !document.getElementById('sticky_dropdown')) return;
+
+    initialSync();
+    attachTileClickSync();
+    observeTileSelection();
+    observeVariantIdInput();
+    attachVariantChangeSync();
+    attachStickyDropdownSync();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+
+
+  {% if product.id == 9713899602239 %}
+    <div class="order_eta" style="
+display:inline-block;
+margin:0;
+background-color:#f0f3f7;
+padding:10px;
+border-radius:8px;
+margin-bottom:10px;
+margin-top:-10px;
+cursor:pointer;">🫢 <b>Psst!</b><br>You could also get the brand new <a style="text-decoration:underline;" href="https://rollingsquare.com/products/aircard%E2%84%A2-pro-dual-android-apple-bluetooth-tracker"><b>AirCard Pro Dual</b></a>, that works with both Apple and Android!</div>
+{%- endif -%}
+
+<div class="meta_quantity_holder">
+    <div class="option_title">Quantity:</div>
+    <div class="meta_quantity_save_wrapper">
+        <div class="sticky_quantity_selector 111">
+            <div class="quantity-selector__btn" id="meta_quantity_decrease">
+                <img src="{{ 'minus_round.svg' | asset_url }}" alt="quantity">
+            </div>
+            <input type="number" class="quantity-selector__input" name="quantity" aria-label="quantity" id="meta_quantity-input" value="1" min="1">
+            <div class="quantity-selector__btn" id="meta_quantity_increase">
+                <img src="{{ 'plus_round.svg' | asset_url }}" alt="quantity">
+            </div>
+        </div>
+        {% liquid
+            assign cartQuantity = 0
+            for item in cart.items
+                if item.product == product
+                    assign cartQuantity = cartQuantity | plus: item.quantity
+                endif
+            endfor
+        %}
+        <div class="pdp_save_message">
+            {% if product.metafields.custom.buy_more_save_more %}
+                {% for saveMore in product.metafields.custom.buy_more_save_more.value %}
+                    {% render 'pdp_save_more', saveMore: saveMore, index: forloop.index %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% if product.available %}
+    {% include 'order_eta_holder' %}
+{% endif %}
+  
+
+{% if product.selected_or_first_available_variant.price == 0 %}
+  
+    {% else %}
+<div class="main_cta_holder">
+    {% if product.available %}
+        
+      {% if product.id == 9818290422079999 %}
+        <div id="product-add-to-cart" class="main_cta has_hover_effect" var_id="{{ product.selected_or_first_available_variant.id }}"  onclick="add_v_to_cart(this.getAttribute('var_id'), $('#meta_quantity-input').val());">
+           PRE-ORDER
+        </div>
+        <div class="order_eta" style="text-align: center; display: block; margin-top: -5px;">⚠️ Limited Stock</div>
+        {% else %}
+        <div id="product-add-to-cart" class="main_cta has_hover_effect" var_id="{{ product.selected_or_first_available_variant.id }}"  onclick="add_v_to_cart(this.getAttribute('var_id'), $('#meta_quantity-input').val());">
+            {{ section.settings.cta_btn_txt }}
+        </div>
+        {% endif %}
+    {% else %}
+
+      
+{% if product.id == 9110416261439 %}
+  
+  {% assign asin_code = 'B0C8NMF1K2' %}
+
+{% if localization.country.iso_code == 'US' %}
+  <a href="https://www.amazon.com/dp/{{ asin_code }}" aria-label="Get it on Amazon">
+    <div class="main_cta has_hover_effect" style="background-color:#223040;">
+      GET IT ON
+      <img src="https://backer.tools/images/amazon_logo.webp" style="margin-left:10px; width:auto; height:1em;">
+    </div>
+  </a>
+{% elsif localization.country.iso_code == 'FR' %}
+  <a href="https://www.amazon.fr/dp/{{ asin_code }}" aria-label="Get it on Amazon">
+    <div class="main_cta has_hover_effect" style="background-color:#223040;">
+      GET IT ON
+      <img src="https://backer.tools/images/amazon_logo.webp" style="margin-left:10px; width:auto; height:1em;">
+    </div>
+  </a>
+{% elsif localization.country.iso_code == 'IT' %}
+  <a href="https://www.amazon.it/dp/{{ asin_code }}" aria-label="Get it on Amazon">
+    <div class="main_cta has_hover_effect" style="background-color:#223040;">
+      GET IT ON
+      <img src="https://backer.tools/images/amazon_logo.webp" style="margin-left:10px; width:auto; height:1em;">
+    </div>
+  </a>
+{% elsif localization.country.iso_code == 'GB' %}
+  <a href="https://www.amazon.co.uk/dp/{{ asin_code }}" aria-label="Get it on Amazon">
+    <div class="main_cta has_hover_effect" style="background-color:#223040;">
+      GET IT ON
+      <img src="https://backer.tools/images/amazon_logo.webp" style="margin-left:10px; width:auto; height:1em;">
+    </div>
+  </a>
+{% elsif localization.country.iso_code == 'NL' %}
+  <a href="https://www.amazon.nl/dp/{{ asin_code }}" aria-label="Get it on Amazon">
+    <div class="main_cta has_hover_effect" style="background-color:#223040;">
+      GET IT ON
+      <img src="https://backer.tools/images/amazon_logo.webp" style="margin-left:10px; width:auto; height:1em;">
+    </div>
+  </a>
+{% elsif localization.country.iso_code == 'DE' or localization.country.iso_code == 'CH' or localization.country.iso_code == 'AT' or localization.country.iso_code == 'BE' or localization.country.iso_code == 'BG' or localization.country.iso_code == 'HR' or localization.country.iso_code == 'CY' or localization.country.iso_code == 'CZ' or localization.country.iso_code == 'DK' or localization.country.iso_code == 'EE' or localization.country.iso_code == 'FI' or localization.country.iso_code == 'GR' or localization.country.iso_code == 'HU' or localization.country.iso_code == 'IE' or localization.country.iso_code == 'LV' or localization.country.iso_code == 'LT' or localization.country.iso_code == 'LU' or localization.country.iso_code == 'MT' or localization.country.iso_code == 'PL' or localization.country.iso_code == 'PT' or localization.country.iso_code == 'RO' or localization.country.iso_code == 'SK' or localization.country.iso_code == 'SI' %}
+  <a href="https://www.amazon.de/dp/{{ asin_code }}" aria-label="Get it on Amazon">
+    <div class="main_cta has_hover_effect" style="background-color:#223040;">
+      GET IT ON
+      <img src="https://backer.tools/images/amazon_logo.webp" style="margin-left:10px; width:auto; height:1em;">
+    </div>
+  </a>
+{% elsif localization.country.iso_code == 'ES' %}
+  <a href="https://www.amazon.es/dp/{{ asin_code }}" aria-label="Get it on Amazon">
+    <div class="main_cta has_hover_effect" style="background-color:#223040;">
+      GET IT ON
+      <img src="https://backer.tools/images/amazon_logo.webp" style="margin-left:10px; width:auto; height:1em;">
+    </div>
+  </a>
+{% else %}
+  <div class="main_cta sold_out">SOLD OUT</div>
+{% endif %}
+
+  
+{% else %}
+  <div class="main_cta sold_out">SOLD OUT</div>
+{% endif %}
+      
+    {% endif %}
+
+    <!-- Swym button on product pages -->
+    <div class="swym-wishlist-button-bar"></div>
+    <!-- Swym button on product pages -->
+</div>
+
+{% endif %}
+<div class="pay_with_ease">
+    {% include 'pay_with_ease2' %}
+</div>
+
+<div class="desc_below_ease_pay_holder">
+    {% include 'desc_below_ease_pay_holder' %}
+</div>
+
+<div>{% include 'product_details_panel' %}</div>
+
+{%- comment -%}
+<div>{% include 'testimonials_slider' %}</div>
+{%- endcomment -%}
+
+<script>
+    const variant_image_ids = {
+        {% for variant in product.variants %}
+            {% if variant.image %}
+                '{{ variant.id }}': {{ variant.image.id }},
+            {% endif %}
+        {% endfor %}
+    };
+
+    
+const variant_price_htmls = {
+    {% for variant in product.variants %}
+        {% capture price_html %}
+            {% if variant.compare_at_price > variant.price %}
+                <div class="p_meta_now_price">{{ variant.price | money }}</div>
+                <div class="p_meta_was_price">{{ variant.compare_at_price | money }}</div>
+                    <div class="p_saving_percent">SAVE {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}%</div>
+
+            {% else %}
+                <div class="p_meta_price">{{ variant.price | money }}</div>
+            {% endif %}
+        {% endcapture %}
+        '{{ variant.id }}': `{{ price_html | strip }}`,
+    {% endfor %}
+};
+
+  const variant_price_only_htmls = {
+        {% for variant in product.variants %}
+            {% capture price_only %}
+                {{ variant.price | money }}
+            {% endcapture %}
+            '{{ variant.id }}': `{{ price_only | strip }}`,
+        {% endfor %}
+    };
+
+    function update_pdp_slider_img(v_id) {
+        var img_id = variant_image_ids[v_id];
+
+        if (img_id != undefined) {
+            var swiper_index = parseInt($('[img_id="' + img_id + '"]').parent().attr('index'));
+            swiper2.slideTo(swiper_index);
+            mobile_m_swiper.slideTo(swiper_index);
+        }
+    }
+
+    function update_price_html(v_id) {
+        var price_html = variant_price_htmls[v_id];
+        var price_only = variant_price_only_htmls[v_id];
+        $('.p_meta_price_holder').html(price_html);
+        $('.sticky_mob_add_to_cart_price').html(price_only);
+      
+    }
+
+    $('#meta_quantity_decrease').on('click', function() {
+        var currentValue = parseInt($('#meta_quantity-input').val());
+        if (currentValue > 1) {
+            $('#meta_quantity-input').val(currentValue - 1);
+            update_promo_banner(currentValue - 1);
+        }
+    });
+
+    // Increase quantity
+    $('#meta_quantity_increase').on('click', function() {
+        var currentValue = parseInt($('#meta_quantity-input').val());
+        $('#meta_quantity-input').val(currentValue + 1);
+        update_promo_banner(currentValue + 1);
+    });
+
+    $('input#meta_quantity-input').change(function () {
+        var quantity = parseInt($(this).val());
+        if (quantity < 1) {
+            quantity = 1;
+        }
+
+        $(this).val(quantity);
+        update_promo_banner(quantity);
+    });
+
+    function update_promo_banner(quantity) {
+        $('.pdp_save_more').hide();
+        var quantities_array = [];
+        $('.pdp_save_more').each(function () {
+            var s_quan = parseInt($(this).attr('quantity'));
+            quantities_array.push(s_quan);
+        });
+
+        var quantity_to_show = findNumber(quantities_array, quantity);
+        $(`.pdp_save_more[quantity="${quantity_to_show}"]`).show();
+    }
+
+    function findNumber(arr, x) {
+        let greaterNums = arr.filter(num => num > x);
+        if (greaterNums.length > 0) {
+            return Math.min(...greaterNums);
+        } else {
+            return Math.max(...arr);
+        }
+    }
+
+    const updateProductPage = () => {
+        fetch('{{ request.path }}?section_id={{ section.id }}')
+        .then(res => res.text())
+        .then(res => {
+            $('.pdp_save_message').replaceWith($(res).find('.pdp_save_message'));
+        })
+    };
+</script>
+

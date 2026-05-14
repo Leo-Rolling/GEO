@@ -1,0 +1,320 @@
+<style>
+    .pdp_upsell_h {
+        font: normal normal bold 15px/21px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        margin-bottom: 12px;
+    }
+
+    .pdp_upsell_body {
+        background: #F7F7F7;
+        border-radius: 6px;
+        padding: 24px 26px;
+    }
+
+    .p_upsell_checkbox {
+        width: 18px;
+        min-width: 18px;
+        height: 18px;
+        border: 1px solid #000000;
+        border-radius: 2px;
+        background: white;
+        position: absolute;
+        left: 0;
+        top: 37px;
+        cursor: pointer;
+    }
+
+    .s_pdp_upsell_item.selected .p_upsell_checkbox::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform:translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+        background-color: black;
+        border-radius: 1px;
+    }
+
+    .s_pdp_upsell_item {
+        display: flex;
+        position: relative;
+        padding-left: 25px;
+        border-bottom: 1px solid #DFDFE1;
+        margin-bottom: 26px;
+    }
+
+    .p_upsell_img {
+        width: 96px;
+        min-width: 96px;
+        margin-right: 10px;
+        margin-bottom: 12px;
+        cursor: pointer;
+    }
+
+    .p_upsell_title {
+        font: normal normal bold 14px/18px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+    }
+
+    .s_upsell_price {
+        font: normal normal 500 16px/1 Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        margin-left: auto;    
+      margin-top: 2px;
+    }
+
+    .p_upsell_title_price {
+        display: flex;
+        margin-bottom: 8px;
+    }
+
+    .p_upsell_title_variants {
+        width: 100%;
+    }
+
+    .s_p_upsell_var {
+        display: flex;
+        width: 25px;
+        height: 25px;
+        border: 1px solid #E1E1E1;
+        border-radius: 100px;
+        position: relative;
+        margin-right: 2px;
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex: none;
+    }
+
+    .s_p_upsell_var.selected {
+        border-color: black;
+        border-width: 1px;
+    }
+
+    .s_p_upsell_var > div {
+        /* position: absolute; */
+        width: 19px;
+        height: 19px;
+        border-radius: 100px;
+        /* left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); */
+        background-size: 100%;
+        flex: none;
+    }
+
+    .p_upsell_variants {
+        display: flex;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .p_upsell_subtotal {
+        display: flex;
+        justify-content: space-between;
+        font: normal normal bold 16px/21px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        text-transform: uppercase;
+    }
+
+    .add_all_upsell_to_cart {
+        height: 55px;
+        background: #000000;
+        border-radius: 5px;
+        font: normal normal bold 18px/21px Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-top: 9px;
+    }
+    .add_all_upsell_to_cart:hover {
+        opacity: 0.7;
+    }
+    .inactive.add_all_upsell_to_cart {
+        pointer-events: none;
+        opacity: .5;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .p_upsell_title_price {
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .p_upsell_title {
+            margin-bottom: 4px;
+        }
+
+    }
+
+    @media screen and (max-width: 900px) {
+        .p_upsell_img {
+            width: 81px;
+            min-width: 81px;
+            margin-bottom: 16px;
+        }
+
+        .p_upsell_title {
+            font: normal normal bold 12px/16px Montserrat;
+        }
+
+        .s_upsell_price {
+            font: normal normal 500 14px/1 Montserrat;
+        }
+
+        .s_p_upsell_var {
+            width: 17px;
+            height: 17px;
+            border: 1px solid #E1E1E1;
+        }
+
+        .s_p_upsell_var > div {
+            width: 13px;
+            height: 13px;
+        }
+
+        .s_pdp_upsell_item {
+            margin-bottom: 16px;
+        }
+
+        .p_upsell_subtotal {
+            font: normal normal bold 14px/21px Montserrat;
+        }
+
+        .add_all_upsell_to_cart {
+            height: 48px;
+            font: normal normal bold 17px/21px Montserrat;
+            margin-top: 12px;
+        }
+
+        .pdp_upsell_body {
+            padding: 18px 12px;
+        }
+
+        .p_upsell_checkbox {
+            top: 30px;
+        }
+
+    }
+
+</style>
+
+<div class="pdp_upsell_h">FREQUENTLY BOUGHT TOGETHER</div>
+<div class="pdp_upsell_body">
+    <div class="pdp_upsell_items_holder">
+        {% assign total_price = 0 %}
+        {% for upsell_p in product.metafields.custom.products_for_frequently_bought_together_section.value %}
+            {% assign upsell_p = product %}
+            {% assign total_price = total_price | plus: upsell_p.price %}
+            {% include 'pdp_upsell_item', product: upsell_p %}
+        {% endfor %}
+    </div>
+    <div class="p_upsell_subtotal">
+        <div>subtotal:</div>
+        <div class="p_upsell_subtotal_price">{{ total_price | money }}</div>
+    </div>
+    <div class="add_all_upsell_to_cart">{{ section.settings.upsell_btn_txt }}</div>
+
+    {% if total_price == 0 %}
+        <style>
+            .cross_sell_holder {display: none;}
+        </style>
+    {% endif %}
+
+</div>
+
+<script>
+    $('.s_p_upsell_var').click(function () {
+        $(this).parent().find('.s_p_upsell_var').removeClass('selected');
+        $(this).addClass('selected');
+        $(this).closest('.s_pdp_upsell_item').addClass('selected');
+        const price = $(this).data('price');
+
+        if (price) {
+            $(this).closest('.s_pdp_upsell_item').find('.s_upsell_price').html(price);
+        }
+
+        var v_img_url = $(this).attr('v_img_url');
+        if (v_img_url) {
+            $(this).closest('.s_pdp_upsell_item').find('.p_upsell_img img').attr('src', v_img_url);
+        }
+
+        $(this).closest('.s_pdp_upsell_item').attr('price', $(this).attr('price'));
+        update_upsells_subtotal();
+    });
+
+    $('.p_upsell_checkbox, .p_upsell_img').click(function () {
+        $(this).closest('.s_pdp_upsell_item').toggleClass('selected');
+
+        update_upsells_subtotal();
+    });
+
+    $('.add_all_upsell_to_cart').click(function () {
+        var data_to_add = [];
+        $('.s_pdp_upsell_item.selected').each(function () {
+            var s_item = {
+                id: $(this).find('.s_p_upsell_var.selected').attr('v_id'),
+                quantity: 1,
+                "properties": {
+                    "__pdp_bundle": 'true',
+                }
+            };
+
+            data_to_add.push(s_item);
+        });
+
+        if (data_to_add.length == 0) return;
+        
+        console.log(data_to_add);
+        $.ajax({
+            url: '/cart/add.js',
+            dataType: 'json',
+            type: 'post',
+            data: {
+                items: data_to_add
+            }
+        }).then(res => {
+            console.log('bundle added');
+            update_cart_content();
+            open_slider_cart();
+        });
+
+    });
+
+    function update_upsells_subtotal() {
+        var subtotal = 0;
+        $('.s_pdp_upsell_item.selected').each(function () {
+            var s_price = parseInt($(this).attr('price')) / 100;
+            subtotal += s_price;
+        });
+
+        $('.p_upsell_subtotal_price').text('{{ cart.currency.symbol }} ' + subtotal.toFixed(2));
+        if (subtotal == 0) {
+            $('.add_all_upsell_to_cart').addClass('inactive');
+        } else {
+            $('.add_all_upsell_to_cart').removeClass('inactive');
+        }
+
+    }
+
+</script>
+
+{%- comment -%}
+<div class="variants_titles">
+    {% for product in collections['all'].products %}
+        {% for variant in product.variants %}
+            {{ variant.title }},
+            {% endfor %}
+            {{ product.options.size }}-{{ product.handle }}
+    {% endfor %}
+</div>
+{%- endcomment -%}    

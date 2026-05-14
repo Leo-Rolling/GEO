@@ -1,0 +1,12 @@
+{%- comment -%}
+  Multilang title helper.
+  Usage: {% render 'multilang' with article.title %}
+  Splits on "|" into .lang1 / .lang2 spans when enable_multilang is on.
+{%- endcomment -%}
+
+{%- if settings.enable_multilang and multilang contains '|' -%}
+  <span class="lang1">{{ multilang | split: '|' | first | strip }}</span>
+  <span class="lang2">{{ multilang | split: '|' | last  | strip }}</span>
+{%- else -%}
+  {{ multilang | split: '|' | first | strip }}
+{%- endif -%}

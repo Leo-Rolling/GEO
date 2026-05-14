@@ -1,0 +1,308 @@
+{% assign _section = section.id | prepend: '#sn_' %}
+{% assign blog_handle = section.settings.blog_handle | default: 'news' %}
+{% assign limit = section.settings.limit | default: 5 %}
+{% assign layout = section.settings.layout | default: 'asymmetric' %}
+{% assign grid_modifier_class = '' %}
+{% if layout == 'compact' or limit <= 3 %}{% assign grid_modifier_class = 'fb-grid-compact' %}{% endif %}
+
+{%- capture section_content -%}
+<style>
+  {{ _section }} .featured-blog {
+    background: #ffffff;
+    padding: 80px 24px;
+    width: 100%;
+  }
+  {{ _section }} .fb-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  {{ _section }} .fb-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  {{ _section }} .fb-header h2 {
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.05;
+    color: #000;
+    margin: 0 0 12px 0;
+  }
+  {{ _section }} .fb-header h2 .accent {
+    color: #17e260;
+  }
+  {{ _section }} .fb-header .fb-subtitle {
+    font-size: 17px;
+    color: #555;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  {{ _section }} .fb-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    grid-auto-flow: row;
+  }
+  {{ _section }} .fb-grid-compact {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  {{ _section }} .fb-grid-compact .fb-card.featured {
+    grid-row: auto;
+    grid-column: auto;
+  }
+  {{ _section }} .fb-grid-compact .fb-card.featured .fb-img {
+    aspect-ratio: 16 / 9;
+  }
+  {{ _section }} .fb-grid-compact .fb-card.featured .fb-body {
+    padding: 18px 22px 22px;
+    gap: 8px;
+  }
+  {{ _section }} .fb-grid-compact .fb-card.featured h3 {
+    font-size: 19px;
+    line-height: 1.25;
+  }
+  {{ _section }} .fb-grid-compact .fb-card.featured .fb-excerpt {
+    font-size: 14px;
+    -webkit-line-clamp: 2;
+  }
+  {{ _section }} .fb-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    background: #fff;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    color: inherit;
+  }
+  {{ _section }} .fb-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    border-color: #17e260;
+  }
+  {{ _section }} .fb-card.featured {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+  }
+  {{ _section }} .fb-img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    background: #f0f0f0;
+    overflow: hidden;
+  }
+  {{ _section }} .fb-card.featured .fb-img {
+    aspect-ratio: 16 / 10;
+  }
+  {{ _section }} .fb-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  {{ _section }} .fb-card:hover .fb-img img {
+    transform: scale(1.04);
+  }
+  {{ _section }} .fb-body {
+    padding: 18px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  {{ _section }} .fb-card.featured .fb-body {
+    padding: 26px 30px 30px;
+    gap: 12px;
+  }
+  {{ _section }} .fb-tag {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #17e260;
+    font-weight: 700;
+  }
+  {{ _section }} .fb-card h3 {
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0;
+    color: #000;
+  }
+  {{ _section }} .fb-card.featured h3 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+  {{ _section }} .fb-excerpt {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  {{ _section }} .fb-card.featured .fb-excerpt {
+    font-size: 15px;
+    -webkit-line-clamp: 3;
+  }
+  {{ _section }} .fb-meta {
+    font-size: 12px;
+    color: #888;
+    margin-top: auto;
+    padding-top: 6px;
+  }
+  {{ _section }} .fb-cta {
+    color: #17e260;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  {{ _section }} .fb-cta-row {
+    text-align: center;
+    margin-top: 40px;
+  }
+  {{ _section }} .fb-all-cta {
+    display: inline-block;
+    background: #17e260;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    transition: background 0.15s ease;
+  }
+  {{ _section }} .fb-all-cta:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  @media (max-width: 920px) {
+    {{ _section }} .featured-blog { padding: 56px 16px; }
+    {{ _section }} .fb-header h2 { font-size: 32px; }
+    {{ _section }} .fb-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    {{ _section }} .fb-card.featured {
+      grid-row: auto;
+      grid-column: auto;
+    }
+    {{ _section }} .fb-card.featured h3 { font-size: 22px; }
+    {{ _section }} .fb-card.featured .fb-img { aspect-ratio: 16 / 9; }
+  }
+</style>
+
+<section id="sn_{{ section.id }}" class="featured-blog">
+  <div class="fb-inner">
+    <div class="fb-header">
+      <h2>{{ section.settings.heading | replace: '[', '<span class="accent">' | replace: ']', '</span>' }}</h2>
+      {% if section.settings.subtitle != blank %}
+      <p class="fb-subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    {% assign blog_obj = blogs[blog_handle] %}
+    {% if blog_obj.articles_count > 0 %}
+    <div class="fb-grid {{ grid_modifier_class }}">
+      {% for article in blog_obj.articles limit: limit %}
+        {% assign clean_title = article.title | split: '|' | first | strip %}
+        {% assign card_class = 'fb-card' %}
+        {% if forloop.first %}{% assign card_class = 'fb-card featured' %}{% endif %}
+        <a class="{{ card_class }}" href="{{ article.url }}">
+          {% if article.image %}
+          <div class="fb-img">
+            <img src="{{ article.image | image_url: width: 1000 }}"
+                 alt="{{ article.image.alt | default: clean_title | escape }}"
+                 loading="lazy"
+                 width="1000"
+                 height="563">
+          </div>
+          {% endif %}
+          <div class="fb-body">
+            <span class="fb-tag">{% if article.tags.size > 0 %}{{ article.tags | first }}{% else %}Guide{% endif %}</span>
+            <h3>{{ clean_title }}</h3>
+            {% if article.excerpt_or_content %}
+            <p class="fb-excerpt">{{ article.excerpt_or_content | strip_html | truncate: 180 }}</p>
+            {% endif %}
+            <span class="fb-meta">{{ article.published_at | date: '%b %d, %Y' }} · {% if article.user %}{{ article.user.first_name }} {{ article.user.last_name }}{% else %}Rolling Square Team{% endif %}</span>
+            <span class="fb-cta">Read article →</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="fb-cta-row">
+      <a href="/blogs/{{ blog_handle }}" class="fb-all-cta">See all articles →</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{%- endcapture -%}
+
+{{ section_content }}
+
+{% schema %}
+{
+  "name": "Featured Blog",
+  "tag": "section",
+  "class": "section-featured-blog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Use [brackets] to apply the green accent color, e.g. FROM THE [BLOG]",
+      "default": "FROM THE [BLOG]"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Practical guides and lifehacks from the Rolling Square team."
+    },
+    {
+      "type": "text",
+      "id": "blog_handle",
+      "label": "Blog handle",
+      "info": "Shopify blog handle (default: news)",
+      "default": "news"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Number of articles",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "info": "Asymmetric = 1 large + small cards (best for homepage). Compact = 3 equal columns (best for product/collection pages).",
+      "options": [
+        { "value": "asymmetric", "label": "Asymmetric (1 hero + cards)" },
+        { "value": "compact", "label": "Compact (3 equal columns)" }
+      ],
+      "default": "asymmetric"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Blog",
+      "category": "Blog"
+    }
+  ]
+}
+{% endschema %}

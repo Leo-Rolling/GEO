@@ -1,0 +1,4 @@
+<div class="pdp_save_more" quantity="{{ saveMore.quantity }}" index="{{ index }}">
+    {%- assign saveMoney = saveMore.discount.value | money_without_trailing_zeros -%}
+    {{ saveMore.schema | replace: '[quantity]', saveMore.quantity | replace: '[money]', saveMoney }}
+</div>

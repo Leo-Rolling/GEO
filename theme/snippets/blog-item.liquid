@@ -1,0 +1,40 @@
+<article class="rs-blog-card">
+  {% if article.image %}
+    <a href="{{ article.url }}" class="rs-blog-card__image" aria-label="{% render 'multilang' with article.title %}">
+      <img
+        src="{{ article.image | img_url: '1200x675', crop: 'center' }}"
+        alt="{{ article.title | escape }}"
+        loading="lazy"
+        width="1200"
+        height="675"
+      >
+    </a>
+  {% endif %}
+
+  {% if section.settings.blog_show_date %}
+    <time class="rs-blog-card__date" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+      {{ article.published_at | date: '%B %d, %Y' }}
+    </time>
+  {% endif %}
+
+  <h2 class="rs-blog-card__title">
+    <a href="{{ article.url }}">
+      {% render 'multilang' with article.title %}
+    </a>
+  </h2>
+
+  <div class="rs-blog-card__excerpt">
+    {% if settings.enable_multilang and article.excerpt_or_content contains '[lang2]' %}
+      {% assign _parts = article.excerpt_or_content | split: '[lang2]' %}
+      <span class="lang1">{{ _parts[0] | strip_html | truncatewords: 40 }}</span>
+      <span class="lang2">{{ _parts[1] | strip_html | truncatewords: 40 }}</span>
+    {% else %}
+      {{ article.excerpt_or_content | strip_html | truncatewords: 40 }}
+    {% endif %}
+  </div>
+
+  <a href="{{ article.url }}" class="rs-blog-card__link" {% if settings.enable_multilang %}data-translate="blogs.article.read_more"{% endif %}>
+    Continue reading
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </a>
+</article>

@@ -1,0 +1,314 @@
+{% if section.settings.blog_post != blank %}
+  {% assign limit = section.settings.blog_post %}
+{% else %}
+  {% assign limit = 6 %}
+{% endif %}
+
+{% paginate blog.articles by limit %}
+
+<div class="content-blog blog-default rs-blog-grid">
+  <div class="rs-blog-list">
+    {% for article in blog.articles %}
+      {% render 'blog-item' with article as article %}
+    {% endfor %}
+  </div>
+
+  {% if paginate.pages > 1 %}
+    <nav class="rs-pagination" aria-label="Blog pagination">
+      {% render 'pagination' paginate: paginate %}
+    </nav>
+  {% endif %}
+</div>
+{% endpaginate %}
+
+
+<style>
+  /* ── RS Blog Listing — Scoped Styles ── */
+
+  /* Multilang: hide second language by default */
+  .lang2 { display: none; }
+  body.show-lang2 .lang1 { display: none; }
+  body.show-lang2 .lang2 { display: block; }
+  .rs-blog-card__title .lang2,
+  .rs-blog-card__excerpt .lang2 { display: none; }
+  body.show-lang2 .rs-blog-card__title .lang1,
+  body.show-lang2 .rs-blog-card__excerpt .lang1 { display: none; }
+  body.show-lang2 .rs-blog-card__title .lang2,
+  body.show-lang2 .rs-blog-card__excerpt .lang2 { display: inline; }
+
+  .rs-blog-listing {
+    background: #fff;
+  }
+
+  .rs-blog-listing .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Blog Header */
+  .rs-blog-header {
+    text-align: center;
+    padding: 60px 0 48px;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 56px;
+  }
+
+  .rs-blog-header h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #111;
+    margin: 0 0 12px;
+    line-height: 1.1;
+  }
+
+  .rs-blog-header h1 a {
+    color: #111;
+    text-decoration: none;
+  }
+
+  .rs-blog-tagline {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  /* Blog List — single-column stack */
+  .rs-blog-list {
+    max-width: 900px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+  }
+
+  /* Card Spacing */
+  .rs-blog-list .rs-blog-card {
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .rs-blog-list .rs-blog-card:last-child {
+    border-bottom: none;
+  }
+
+  /* Card Image */
+  .rs-blog-card__image {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .rs-blog-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .rs-blog-card__image:hover img {
+    transform: scale(1.03);
+  }
+
+  /* Card Date */
+  .rs-blog-card__date {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #999;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  /* Card Title */
+  .rs-blog-card__title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #111;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .rs-blog-card__title a {
+    color: #111;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .rs-blog-card__title a:hover {
+    color: #E8352A;
+  }
+
+  /* Card Excerpt */
+  .rs-blog-card__excerpt {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0 0 16px;
+  }
+
+  /* Continue Reading Link */
+  .rs-blog-card__link {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease, gap 0.2s ease;
+  }
+
+  .rs-blog-card__link:hover {
+    color: #E8352A;
+    gap: 10px;
+  }
+
+  .rs-blog-card__link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  /* Pagination */
+  .rs-pagination {
+    text-align: center;
+    padding: 40px 0 60px;
+  }
+
+  .rs-pagination .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .rs-pagination .pagination li a,
+  .rs-pagination .pagination li span {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .rs-pagination .pagination li a:hover {
+    background: #f5f5f5;
+    color: #111;
+  }
+
+  .rs-pagination .pagination li.active span,
+  .rs-pagination .pagination li span.current {
+    background: #111;
+    color: #fff;
+    border-radius: 6px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .rs-blog-header {
+      padding: 40px 0 32px;
+      margin-bottom: 40px;
+    }
+
+    .rs-blog-header h1 {
+      font-size: 2rem;
+    }
+
+    .rs-blog-tagline {
+      font-size: 1rem;
+    }
+
+    .rs-blog-list .rs-blog-card {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+    }
+
+    .rs-blog-card__title {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* Override existing theme excerpt alignment */
+  .halo-blog-content .article-details .article-excerpt {
+    text-align: {{ section.settings.blog_text_align }};
+  }
+</style>
+
+<script>
+(function(){
+  var KEY = 'rs_lang';
+  var params = new URLSearchParams(window.location.search);
+  var stored = localStorage.getItem(KEY);
+  var lang = params.get('lang') === 'es' ? 'lang2' : (stored === 'lang2' ? 'lang2' : 'lang1');
+  if (lang === 'lang2') document.body.classList.add('show-lang2');
+})();
+</script>
+
+{% schema %}
+  {
+    "name": "Blog Default",
+    "class": "col-12",
+    "settings": [
+      {
+        "type": "text",
+        "id": "blog_post",
+        "label": "Blog post per page",
+        "default": "6"
+      },
+      {
+        "type": "select",
+        "id": "blog_text_align",
+        "label": "Blog Text Align",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left",
+        "info": "Default Value: Left"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,632 @@
+{% assign _ss = section.settings %}
+{% assign _section = section.id | prepend: '#sn_' %}
+
+{%- capture section_content -%}
+<style>
+    {{ _section }} .footer_section {
+        width: 100%;
+        background: #000;
+        position: relative;
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-image: url({{ 'footer_bg_desktop.png' | asset_url }});
+    }
+
+    {{ _section }} .footer_content {
+        width: 100%;
+        max-width: 1920px;
+        margin: auto;
+
+    }
+
+    {{ _section }} .footer_top {
+        display: flex;
+        justify-content: space-between;
+        /* max-width: 1680px; */
+        padding: 0 160px;
+        margin: 0 auto 42px;
+    }
+
+    {{ _section }} .contact_section {
+        width: 537px;
+        border-right: 1px solid #646464;
+        padding-right: 20px;
+        padding-top: 80.5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    {{ _section }} .heading {
+        font: normal normal bold 24px/29px Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        margin-bottom: 12px;
+        max-width: 300px;
+    }
+
+    {{ _section }} .newsletter_form {
+        max-width: 430px;
+        position: relative;
+    }
+
+    {{ _section }} .signup_desc {
+        font: normal normal normal 17px/24px Basier Square Mono;
+        letter-spacing: 0px;
+        color: #8B8B8B;
+        max-width: 435px;
+        margin-bottom: 15px;
+    }
+
+    {{ _section }} .links_part {
+        width: calc(100% - 537px);
+        padding-top: 80.5px;
+        padding-left: 107px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    {{ _section }} .link_group {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    {{ _section }} .s_footer_links:not(:last-of-type) {
+        margin-right: 20px;
+    }
+
+    {{ _section }} .links_subheading {
+        font: normal normal bold 17px/20px Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        margin-bottom: 21px;
+    }
+
+    {{ _section }} .s_footer_link_block {
+        display: flex;
+        flex-direction: column;
+        word-break: break-word;
+    }
+
+    {{ _section }} .s_footer_link_block > div:not(:last-of-type) {
+        margin-bottom: 17px;
+    }
+
+    {{ _section }} .s_footer_link_block div {
+        font: normal normal normal 14px/19px BR Hendrix;
+        letter-spacing: 0px;
+        color: #000000;
+    }
+
+    {{ _section }} .s_footer_link_block a {
+        text-decoration: none;
+        font: normal normal normal 14px/18px Basier Square Mono;
+        letter-spacing: 0px;
+        color: #8B8B8B;
+    }
+
+    {{ _section }} .s_footer_link_block a:hover {
+        text-decoration: underline; 
+    }
+
+    {{ _section }} .footer_bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* max-width: 1680px; */
+        padding: 27px 160px 32px;
+        margin: auto;
+    }
+
+    {{ _section }} a.s_ft_bt_link {
+        font: normal normal normal 12px/18px Basier Square Mono;
+        letter-spacing: 0px;
+        color: #8B8B8B;
+        border-right: 1px solid;
+        padding-right: 10px;
+        margin-right: 10px;
+    }
+
+    {{ _section }} a.s_ft_bt_link:last-of-type {
+        border-right: none;
+        padding-right: 10px;
+        margin-right: 10px;
+    }
+
+    {{ _section }} .copyright {
+        font: normal normal normal 12px/18px Basier Square Mono;
+        letter-spacing: 0px;
+        color: #8B8B8B;
+    }
+
+    {{ _section }} .payments {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    {{ _section }} .payments svg {
+        width: 34px;
+        margin-right: 5px;
+        stroke: unset;
+    }
+    
+    {{ _section }} .payments svg:last-of-type {
+        margin-right: 0;
+    }
+
+    {{ _section }} button.Subscribe {
+        width: 136px;
+        height: 49px;
+        background: #1761FF;
+        top: 3px;
+        right: 3px;
+        position: absolute;
+        text-align: center;
+        font: normal normal bold 16px/21px Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        outline: none;
+        border: none;
+        border-radius: 4px;
+    }
+
+    {{ _section }} button.Subscribe:hover {
+        background-color: #17E260;
+    }
+
+    {{ _section }} input#NewsletterForm--footer {
+        height: 55px;
+        border: none;
+        color: #000000;
+        width: 100%;
+        border-radius: 4px;
+        font: normal normal normal 15px/18px Basier Square Mono;
+        letter-spacing: 0px;
+        padding: 0 17px;
+    }
+
+    {{ _section }} .country_selector {
+        display: flex;
+        text-align: right;
+        padding-right: 25px;
+        align-items: center;
+        text-align-last: end;
+        color: white;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        outline: none !important;
+        box-shadow: none !important;
+        font: normal normal normal 15px/18px Basier Square Mono;
+        appearance: none !important;
+        -moz-appearance: none !important;
+        -webkit-appearance: none !important;
+        background-repeat: no-repeat;
+        background-size: 12px;
+        background-position: right;
+        background-image: url({{ 'dropdown_white.svg' | asset_url }});
+    }
+
+    {{ _section }} .country_selector option {
+        color: black;
+    }
+
+    {{ _section }} .social_and_currency {
+        /* max-width: 1680px; */
+        padding: 0 160px;
+        margin: auto;
+    }
+
+    {{ _section }} .social_curr_border_holder {
+        padding: 17.5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #646464;
+        border-bottom: 1px solid #646464;
+    }
+
+    {{ _section }} a.s_social {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        border: 1px solid #FFFFFF;
+        border-radius: 100px;
+        justify-content: center;
+        align-items: center;
+        margin-right: 8px;
+    }
+
+    {{ _section }} a.s_social:last-of-type {
+        margin-right: 0;
+    }
+
+    {{ _section }} a.s_social img {
+        height: 18px;
+    }
+
+    {{ _section }} .socials_holder {
+        display: flex;
+    }
+
+    {{ _section }} .footer_bt_links {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 1500px) {
+        {{ _section }} .contact_section {
+            width: 480px;
+        }
+
+        {{ _section }} .links_part {
+            width: calc(100% - 480px);
+            padding-left: 20px;
+        }
+
+        {{ _section }} .footer_top,
+        {{ _section }} .social_and_currency {
+            padding: 0 110px;
+        }
+
+        {{ _section }} .footer_bottom {
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+
+    }
+
+    @media screen and (max-width: 1150px) {
+        {{ _section }} .contact_section {
+            margin: auto;
+            width: 100%;
+            padding: 40px 15px 0;
+            border: none;
+        }
+
+        {{ _section }} .s_footer_links {
+            width: 50%;
+            padding-right: 10px;
+        }
+
+        {{ _section }} .s_footer_link_block > div:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
+
+        {{ _section }} a.s_ft_bt_link {
+            font-size: 11px;
+            padding-right: 5px;
+            margin-right: 5px;
+        }
+
+        {{ _section }} .s_footer_links:not(:last-of-type) {
+            margin-right: 0;
+        }
+
+        .s_footer_links:nth-child(1),
+        {{ _section }} .s_footer_links:nth-child(2) {
+            margin-bottom: 31px;
+        }
+
+        {{ _section }} .links_subheading {
+            font: normal normal bold 15px/19px Montserrat;
+            margin-bottom: 9px;
+        }
+
+        {{ _section }} .s_footer_link_block a {
+            font-size: 13px;
+        }
+
+        {{ _section }} .footer_bottom {
+            flex-direction: column-reverse;
+            justify-content: center;
+            height: unset;
+            padding: 0 0 109px;
+        }
+
+        {{ _section }} .footer_section {
+            background-size: 100%;
+            background-position: bottom;
+            background-image: url({{ 'footer_bg_mobile.png' | asset_url }});
+        }
+
+        {{ _section }} .footer_content {
+            display: block;
+            padding: 0;
+        }
+
+        {{ _section }} .footer_top {
+            display: block;
+            padding: 0 0;
+            margin-bottom: 0;
+        }
+
+        {{ _section }} .heading {
+            width: 100%;
+            max-width: unset;
+            text-align: left;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        {{ _section }} .newsletter_form {
+            max-width: unset;
+        }
+
+        {{ _section }} .signup_desc {
+            width: 100%;
+            font-size: 14px;
+            line-height: 18px;
+            max-width: unset;
+            margin-bottom: 15px;
+        }
+
+        {{ _section }} .link_group {
+            flex-wrap: wrap;
+        }
+
+        {{ _section }} .payments {
+            margin-top: 15px;
+            justify-content: center;
+            padding: 0 10px;
+            display: none;
+        }
+
+        {{ _section }} .payments svg {
+            margin-bottom: 10px;
+        }
+
+        {{ _section }} .copyright {
+            font-size: 11px;
+            line-height: 18px;
+            margin-top: 5px;
+        }
+
+        {{ _section }} button.Subscribe {
+            font: normal normal bold 13px/21px Montserrat;
+            height: 39px;
+            width: 105px;
+            padding: 0;
+        }
+
+        {{ _section }} input#NewsletterForm--footer {
+            height: 45px;
+        }
+
+        {{ _section }} .links_part {
+            width: 100%;
+            padding: 40px 15px 32px;
+        }
+
+        {{ _section }} .country_selector {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 31px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        {{ _section }} .social_and_currency {
+            padding: 0 15px;
+        }
+
+        {{ _section }} .social_curr_border_holder {
+            flex-direction: column;
+            padding: 0;
+            border: none;
+        }
+
+        {{ _section }} .socials_holder {
+            width: 100%;
+            justify-content: space-between;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            padding: 12.5px 0;
+            margin-bottom: 30px;
+        }
+
+        {{ _section }} a.s_social {
+            width: 28px;
+            height: 28px;
+            margin-right: 0;
+        }
+
+        {{ _section }} a.s_social img {
+            height: 12px;
+        }
+
+        {{ _section }} .footer_bottom_content {
+            border: none;
+        }
+    }
+
+
+</style>
+
+
+<div id="sn_{{ section.id }}">
+    <div class="footer_section">
+        {% include 'footer_decoration_snippet' %}
+
+        <div class="footer_content">
+            <div class="footer_top">
+                <div class="contact_section">
+                    <div class="heading">
+                        {{ _ss.heading }}
+                    </div>
+                    <div class="signup_desc">
+                        {{ _ss.desc }}
+                    </div>
+                    <div class="newsletter_form">
+                        <div class="newsletter-form__field-wrapper">
+                          <div class="field">
+                            <input
+                              id="NewsletterForm--{{ section.id }}"
+                              type="email"
+                              name="contact[email]"
+                              class="field__input footer_email_input"
+                              placeholder="Email Address"
+                              aria-required="true"
+                              autocorrect="off"
+                              autocapitalize="off"
+                              autocomplete="email"
+                              required
+                            >
+                            <button type="button" class="newsletter-form__button field__button Subscribe" name="commit">
+                                {{ _ss.btn_txt }}
+                            </button>
+                          </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="links_part">
+                    <div class="link_group">
+                        {% for block in section.blocks %}
+                            {% if block.type == 'link' %}
+                                <div class="s_footer_links">
+                                    <div class="links_subheading">{{ block.settings.subheading }}</div>
+                                    <div class="s_footer_link_block">
+                                        {% for link in block.settings.link_list.links %}
+                                            <div>
+                                                <a href="{{ link.url }}" class="hover-underline-animation-thin hover-white">{{ link.title }}</a>
+                                            </div>
+                                        {% endfor %}
+                                        {% if block.settings.subheading == 'EXPLORE' %}
+                                            <div>
+                                                <a href="/blogs/news" class="hover-underline-animation-thin hover-white">Blog</a>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="social_and_currency">
+                <div class="social_curr_border_holder">
+                    <div class="socials_holder">
+                        {% include 'social_links' %}
+                    </div>
+
+                    {%- comment -%}
+                    {%- endcomment -%}
+                    <div class="region_currency_selector">
+                        {% include 'location_selector_form' %}
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer_bottom_content">
+                <div class="footer_bottom">
+                    <div class="copyright">© {{ 'now' | date: '%Y' }} Rolling Square, Inc. All Rights Reserved.</div>
+                    <div class="footer_bt_links" style="display:none;">
+                        <a href="#" class="s_ft_bt_link">Cookie Settings</a>
+                        <a href="#" class="s_ft_bt_link">Cookies Policy</a>
+                        <a href="#" class="s_ft_bt_link">Accessibility</a>
+                    </div>
+                    <div class="payments">
+                        {% for type in shop.enabled_payment_types %}
+                            {{ type | payment_type_svg_tag: class:'payment-icon' }}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('{{ _section }} button.Subscribe').click(function () {
+        var email = $('{{ _section }} .footer_email_input').val();
+        subscribe_to_klaviyo6('RpgkGY', '{{ _ss.klaviyo_list_id }}', email, $(this));
+    });
+</script>
+
+{%- endcapture -%}
+
+{% assign show_section_instantly = true %}
+{% if template == 'index' or template.name == 'product' or template.name == 'collection' %}
+    {% assign show_section_instantly = false %}
+{% endif %}
+    
+{%- assign page_url = content_for_header | split:'"pageurl":"' | last | split:'"' | first | split: request.host | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'  -%}
+{% if request.design_mode or page_url contains 'section_lazy_loading' or show_section_instantly == true %}
+    {{- section_content -}}
+{% else %}
+    <script>
+        {% if template.name == 'index' %}
+        if(sessionStorage.getItem('{{ section.id }}') && performance.navigation.type !== 1) {
+          $('#shopify-section-{{ section.id }}').removeClass('lazy_section_scroll');
+          $('#shopify-section-{{ section.id }}').empty().append($(sessionStorage.getItem('{{ section.id }}')));
+          
+          console.log('%ccacheloaded {{ section.id }}', 'border-radius: 2px; background-color:#ff7f7f; color: #8b0000; padding: 2px;');
+        } else {
+          console.log('%cLazy - footer', 'border-radius: 2px; background-color:#7fd7ff; color: #004d8b; padding: 2px;');
+        }
+      {% else %}
+          console.log('%cLazy - footer', 'border-radius: 2px; background-color:#7fd7ff; color: #004d8b; padding: 2px;');
+      {% endif %}
+    </script>
+{% endif %}
+
+
+{% schema %}
+    {
+        "name": "Footer",
+        "class": "lazy_section_scroll",
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading",
+                "default": "Sign up for 15% off your first order"
+            },
+            {
+                "type": "textarea",
+                "id": "desc",
+                "label": "Description",
+                "default": "Keep up-to-date with our latest product launches, and special offers."
+            },
+            {
+                "type": "text",
+                "id": "btn_txt",
+                "label": "Button text",
+                "default": "GET 5% OFF"
+            },
+            {
+                "type": "text",
+                "id": "klaviyo_list_id",
+                "label": "Klaviyo list id",
+                "default": "TGCuQi"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "link block",
+                "type": "link",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "subheading",
+                        "label": "Subheading",
+                        "default": "SHOP"
+                    },
+                    {
+                        "type": "link_list",
+                        "id": "link_list",
+                        "label": "Select navigation"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

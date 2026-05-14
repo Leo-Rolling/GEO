@@ -1,0 +1,535 @@
+{% assign _ss = section.settings %}
+{% assign _section = section.id | prepend: '#sn_' %}
+
+{%- capture section_content -%}
+<style>
+    #shopify-section-header-landing {
+        border-bottom: 1px solid #E5E5E5;
+        position: sticky;
+        top: 33px;
+        background-color: white;
+        z-index: 7;
+    }
+
+    {{ _section }} {
+        position: relative;
+    }
+
+    {{ _section }} .section_holder {
+        position: relative;
+        max-width: 1874px;
+        margin: auto;
+        height: 70px;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    {{ _section }} img.desktop_logo {
+        width: 221px;
+    }
+
+    {{ _section }} .parent_link {
+        cursor: pointer;
+      color:#333;
+    }
+
+    {{ _section }} .sublinks_holder {
+        position: absolute;
+    background-color: #F7F7F7;
+    margin-top: 25px;
+    margin-left: -20px;
+    padding: 10px 20px;
+    border: 1px solid #cecbcb;
+    border-top: 0px;
+        display: none;
+    }
+
+    {{ _section }} a.s_sublink {
+        margin: 6px 0;
+        padding: 6px 0;
+        display: block;
+        text-decoration: none;
+        color: black;
+        white-space: nowrap;
+        width:fit-content;
+    }
+  
+    .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        color: #17D260;
+    }
+
+    .hover-underline-animation::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: #17D260;
+        transform-origin: bottom left;
+        transition: transform 0.25s ease-out;
+    }
+
+    .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+  .hover-white{
+    text-decoration:none !important;
+    cursor:pointer !important;
+  }
+  .hover-white:hover{
+    text-decoration:none;
+    color:#fff !important;
+  }
+    
+
+    {{ _section }} a.s_sublink span {
+        font: normal normal 500 9px/1 Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        border-radius: 2px !important;
+        padding: 2px 6px !important;
+        position: relative;
+        top: -1px;
+    }
+
+    {{ _section }} .s_lnk {
+        font: normal normal bold 15px/19px Montserrat;
+        color: black;
+        text-decoration: none;
+        padding: 0 23px;
+        text-transform: uppercase;
+        position: relative;
+        /* border: 1px solid; */
+        display: flex;
+        align-items: center;
+        height: 70px;
+        user-select: none;
+        transition: transform .3s ease-in-out;
+    }
+
+    {{ _section }} .s_lnk.show_bigger,
+    {{ _section }} .s_lnk:hover {
+        transform: scale(1.05);
+    }
+    
+    {{ _section }} .s_lnk .has_megamenu {
+        cursor: pointer;
+    }
+    
+    {{ _section }} .s_lnk:last-of-type {
+        margin-right: 0;
+    }
+
+    {{ _section }} .s_lnk:first-of-type {
+        margin-left: 0;
+    }
+
+    {{ _section }} .s_lnk.outlet_link a.lnk_without_children {
+        color: #FF3A52;
+    }
+
+    {{ _section }} a.lnk_without_children {
+        text-decoration: none;
+        color: black;
+        transition: none;
+    }
+
+    {{ _section }} img.link_dropdown {
+        height: 5px;
+        position: relative;
+        top: -2px;
+        margin-left: 5px;
+        transition: transform .4s ease-in-out;
+        display: none;
+    }
+
+    {{ _section }} .clicked img.link_dropdown {
+        transform: rotate(180deg);
+    }
+
+    {{ _section }} .right_part img {
+        height: 24px;
+    }
+
+    {{ _section }} .right_part a.account_icon img {
+        min-width: 22px;
+    }
+
+    {{ _section }} .right_part .cart_trigger img {
+        min-width: 20px;
+    }
+
+    {{ _section }} .right_part {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 275px;
+    }
+
+    {{ _section }} .localization-form {
+        display: flex;
+        align-items: center;
+    }
+
+    {{ _section }} span.country_flag {
+        width: 21px;
+        height: 21px;
+    }
+
+    {{ _section }} .left_part {
+        width: 275px;
+    }
+
+    {{ _section }} .cart_trigger.empty_cart .filled_mark {
+        display: none;
+    }
+
+    {{ _section }} .filled_mark {
+        position: absolute;
+        right: 15px;
+        top: 21px;
+        width: 11.5px;
+        height: 11.5px;
+        background: #17E260;
+        border-radius: 100px;
+    }
+
+    {{ _section }} .right_part > * {
+        display: flex;
+        cursor: pointer;
+        position: relative;
+        border-left: 1px solid #F2F2F2;
+        width: 73px;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    {{ _section }} .cart_trigger {
+        border-right: 1px solid #F2F2F2;
+    }
+
+    @media screen and (min-width: 1250px) {
+        #shopify-section-header-landing {
+            top: 37px;
+        }
+    }
+
+    @media screen and (max-width: 1500px) {
+        {{ _section }} .left_part {
+            width: 170px;
+        }
+
+        {{ _section }} .s_lnk {
+            padding: 0 10px;
+        }
+    }
+
+    @media screen and (max-width: 1250px) {
+        {{ _section }} .section_holder {
+            padding: 0 0;
+            height: 50px;
+        }
+
+        {{ _section }} .left_part {
+            width: fit-content;
+        }
+
+        {{ _section }} .filled_mark {
+            right: 11px;
+            top: 15px;
+            width: 8px;
+            height: 8px;
+        }
+
+        {{ _section }} .for_desktop_only {
+            display: none !important;
+        }
+
+        {{ _section }} .left_part img {
+            height: 16px;
+            cursor: pointer;
+        }
+
+        {{ _section }} .mob_menu_trigger {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #F2F2F2;
+            /* cursor: pointer; */
+        }
+
+        {{ _section }} .search {
+            width: 50px;
+            height: 50px;
+            border-right: 1px solid #F2F2F2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        {{ _section }} img.mobile_logo {
+            height: auto;
+            max-height: 19px;
+        }
+
+        {{ _section }} .right_part {
+            width: unset;
+        }
+
+        {{ _section }} .right_part > * {
+            height: 50px;
+            width: 50px;
+        }
+
+        {{ _section }} .right_part img {
+            height: 16px;
+        }
+
+        {{ _section }} a.account_icon {
+            margin-left: 0 !important;
+        }
+
+    }
+
+    @media screen and (min-width: 1251px) {
+        {{ _section }} .for_mobile_only {
+            display: none !important;
+        }
+
+    }
+.s_meta_var img{
+  opacity:1 !important;
+}
+
+  
+    @media screen and (min-width: 1250px) {
+       .jdgm-rev{
+    border-top: 0px !important;
+    width: Calc(50% - 20px);
+    display: inline-block;
+    background: #F5F5F7;
+    border-radius: 20px;
+    margin: 10px !important;
+    padding: 1em !important;
+    }
+      .jdgm-rev-widg__reviews{
+        display: flex;
+    flex-wrap: wrap;
+      }
+    }
+  
+.jdgm-form__inline-label{
+  display:none !important;
+}
+      .jdgm-form__email-fieldset label, .jdgm-form__reviewer-name-format-container, .jdgm-cancel-rev{
+  display:none !important;
+      }
+      .jdgm-form__fieldset{
+        font-size:12px !important;
+      }
+  .jdgm-sort-dropdown{
+    font-family: 'Montserrat' !important;
+  }
+  
+@keyframes blockDrop {
+  from {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
+@keyframes blockDropOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.block-coming-down {
+  animation: blockDrop .3s ease forwards; /* Adjust time as needed */
+  /* Ensure the element is not displayed before the animation starts */
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.block-going-up {
+  animation: blockDropOut .3s ease forwards; /* Adjust time as needed */
+  /* Ensure the element is not displayed before the animation starts */
+  opacity: 1;
+  transform: translateY(0);
+}
+  .desktop_megamenu{
+    z-index:5;
+  }
+
+  .cookieMessage{
+    border-radius: 10px;
+    padding: 1.5em;
+    font-family: 'Montserrat';
+    font-weight: 500 !important;
+  }
+  
+  #accept-cookies{
+    display:none !important;
+  }
+  .kl-private-reset-css-Xuajs1{
+    display:none !important;
+  }
+</style>
+
+{%- assign main_menu_handle = section.settings.main_menu -%}
+{%- assign main_menu = linklists[main_menu_handle] -%}
+
+<div id="sn_{{ section.id }}">
+    <div class="section_holder">
+        <div class="left_part">
+            <div class="for_desktop_only">
+                <a href="/" style="display: flex;">
+                    <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/logo_solo.png?v=1614329173" alt="logo" class="desktop_logo" width="100%" height="100%">
+                </a>
+            </div>
+            <div class="for_mobile_only" style="display: flex;">
+                <div class="mob_menu_trigger">                  
+                <a href="/" style="display: flex;">
+                    <img src="https://media.licdn.com/dms/image/C4D0BAQHvNGpnBJ2ukg/company-logo_200_200/0/1630581122583/ferraris_group_sagl_logo?e=2147483647&v=beta&t=0aQ0J7_64zZOs9eZLZZBjtQGyjZLXtA9HXQg8_siWoQ" alt="logo" class="mobile_logo" width="19px" height="19px">
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="center_part">
+            <div class="for_desktop_only" style="display: flex;">
+              
+                        <div class="s_lnk">
+                            <a class="lnk_without_children" href="{{ block.settings.link_target }}">
+                                Details
+                            </a>
+                        </div>
+                        <div class="s_lnk">
+                            <a class="lnk_without_children" href="{{ block.settings.link_target }}">
+                                Offers
+                            </a>
+                        </div>
+                        <div class="s_lnk">
+                            <a class="lnk_without_children" href="{{ block.settings.link_target }}">
+                                Reviews
+                            </a>
+                        </div>
+              
+            </div>
+            <div class="for_mobile_only">
+              <a href="#details" class="hover-underline-animation" style="display: inline-block; color:#000; font-weight:800; margin:1.2em; font-size:1.2em;">
+                    Details
+                </a>
+              <a href="#offers" class="hover-underline-animation" style="display: inline-block; color:#000; font-weight:800; margin:1.2em; font-size:1.2em;">
+                    Offers
+                </a>
+              <a href="#reviews" class="hover-underline-animation" style="display: inline-block; color:#000; font-weight:800; margin:1.2em; font-size:1.2em;">
+                    Reviews
+                </a>
+            </div>
+
+        </div>
+        <div class="right_part">
+
+
+            <div class="cart_trigger {% if cart.item_count == 0 %}empty_cart{% endif %}" onclick="open_slider_cart(); update_cart_content(); remove_free_gift_items_on_load()">
+                <img src="{{ 'bag.svg' | asset_url }}" alt="bag" width="31px" height="24px">
+                <div class="filled_mark"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("{{ _section }} .s_lnk.has_megamenu").hover(
+        function() {
+            var linked_megamenu_id = $(this).find('.parent_link[megamenu_id]').attr('megamenu_id');
+            $('.desktop_megamenu').not(`[mega_id="${linked_megamenu_id}"]`).fadeOut(0);
+            $(`.desktop_megamenu[mega_id="${linked_megamenu_id}"]`).show().addClass("block-coming-down");
+        },
+        function() {
+            var linked_megamenu_id = $(this).find('.parent_link[megamenu_id]').attr('megamenu_id');
+            $(`.desktop_megamenu[mega_id="${linked_megamenu_id}"]`).fadeOut(0);
+        }
+    );
+
+    function hide_megamenu() {
+        $('.desktop_megamenu').fadeOut(0);
+    }
+
+    $(document).click(function (e) {
+        var temp = $(e.target).parents('.s_lnk, .desktop_megamenu').length;
+        if (temp == 0) {
+            $('.parent_link.clicked').removeClass('clicked');
+            hide_megamenu();
+        }
+    });
+
+</script>
+
+{%- endcapture -%}
+
+{{- section_content | remove: '  ' | strip_newlines -}}
+
+{% schema %}
+    {
+        "name": "header-landing",
+        "settings": [
+            {
+                "type": "link_list",
+                "id": "main_menu",
+                "label": "Main Menu"
+            }
+        ],
+        "blocks": [
+            {
+                "name": "Nav item",
+                "type": "block",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "lnk_txt",
+                        "label": "Link text",
+                        "default": "Navigation title"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link_target",
+                        "label": "Link target"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "has_megamenu",
+                        "label": "Show megamenu",
+                        "default": false
+                    },
+                    {
+                        "type": "text",
+                        "id": "megamenu_id",
+                        "label": "Megamenu ID to show",
+                        "info": "Put ID of megamenu to show"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

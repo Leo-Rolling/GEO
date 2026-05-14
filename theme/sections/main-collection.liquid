@@ -1,0 +1,893 @@
+{% assign _ss = section.settings %}
+{% assign _section = section.id | split: '__' | last | slice: -4, 4 | prepend: '#plp_' %}
+{% assign _usp = section.id | split: '__' | last | slice: -4, 4 | prepend: '#usp_' %}
+
+{%- capture section_content -%}
+  <style>
+    {{ _usp }} {
+      position: relative;
+      padding: 0 6px;
+    }
+
+    {{ _usp }} .usp_holder {
+      position: relative;
+      display: flex;
+      width: 100%;
+      padding: 16px 0;
+      border-bottom: 1px solid #E3E3E5;
+    }
+
+    {{ _usp }} .usp_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      border-right: 1px solid #DFDFE1;
+      width: 25%;
+    }
+
+    {{ _usp }} .usp_item:last-child {
+      border-right: none;
+    }
+
+    {{ _usp }} .usp_icon {
+      margin: 3.5px 0 8px;
+      display: flex;
+      width: 25px;
+      height: 25px;
+    }
+
+    {{ _usp }} .usp_icon img {
+      height: 24.6px;
+    }
+
+    {{ _usp }} .usp_title {
+      text-align: center;
+      font: normal normal bold 10px/12px Montserrat;
+      letter-spacing: 0px;
+      color: #000000;
+      text-transform: uppercase;
+      margin: auto;
+      max-width: 90px;
+    }
+
+    {{ _section }} {
+        position: relative;
+    }
+    {{ _section }} .filter_holder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    {{ _section }} .filter_open {
+        background: #F5F5F7 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 15px 11px;
+        align-items: center;
+        text-align: left;
+        font: normal normal 600 13px/19px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        display: none;
+    }
+
+    {{ _section }} .filter_holder img.desktop_icon {
+        display: none;
+    }
+
+    {{ _section }} .filter_open img.mobile_icon {
+        transform: rotate(45deg);
+    }
+
+    {{ _section }} .filter_sort {
+        padding: 15px 15px 0;
+    }
+
+    {{ _section }} .filter_holder .filter_results {
+        text-align: center;
+        font: normal normal normal 13px/19px Basier Square Mono;
+        letter-spacing: 0px;
+        color: #000000;
+        padding-top: 12px;
+        white-space: nowrap;
+        text-wrap: nowrap;
+    }
+
+    {{ _section }} .sort_holder {
+        display: none;
+    }
+
+    {{ _section }} .plp_holder {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 21px 15px 42px;
+        justify-content: flex-start;
+    }
+
+    {{ _section }} .plp_holder .plp_product,
+    {{ _section }} .plp_holder .plp_promo {
+        width: calc(50% - 4.5px);
+        height: auto;
+        margin-bottom: 9px;
+        margin-right: 9px;
+    }
+
+    {{ _section }} .plp_holder .plp_product:nth-child(2n), 
+    {{ _section }} .plp_holder .plp_promo:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    {{ _section }} .promo_card {
+        height: 100%;
+        border-radius: 6px;
+        padding: 11px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    {{ _section }} .promo_title {
+        text-align: left;
+        font: normal normal 600 14px/19px Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+
+    {{ _section }} .promo_detail {
+        text-align: left;
+        font: normal normal normal 12px/15px Basier Square Mono;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        margin-top: 16px;
+    }
+
+    {{ _section }} .filter_drawer {
+        position: fixed;
+        top: 83px;
+        z-index: 7;
+        height: calc(100% - 83px);
+        max-width: 430px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease-in-out;
+        background-color: #F5F5F7;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: right bottom;
+    }
+
+    {{ _section }} .filter_drawer.drawer_open {
+        transform: translateX(0);
+    }
+
+    {{ _section }} .filter_header {
+        display: flex;
+        align-items: center;
+        padding: 18px 15px;
+        justify-content: space-between;
+        text-align: left;
+        font: normal normal bold 14px/18px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        border-bottom: 1px solid #DFDFE1;
+    }
+
+    {{ _section }} .top_filter {
+        padding: 14px 15px 10px;
+        border-bottom: 1px solid #DFDFE1;
+    }
+
+    {{ _section }} .other_filter {
+        padding: 10px 15px;
+    }
+
+    {{ _section }} .filters a.filter_facet {
+        text-align: left;
+        font: normal normal 500 14px/17px Montserrat;
+        letter-spacing: 0px;
+        color: #8B8B8B;
+        padding: 10px 0;
+        display: flex;
+        width: fit-content;
+    }
+
+    {{ _section }} .filters a.filter_facet.current_filter {
+        text-align: left;
+        font: normal normal bold 14px/19px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+    }
+
+    {{ _section }} a.filter_cta {
+        background: #000000 0% 0% no-repeat padding-box;
+        border-radius: 5px;
+        text-align: center;
+        display: block;
+        font: normal normal bold 17px/21px Montserrat;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        padding: 15px 0;
+        margin: auto 15px 24px;
+        
+    }
+
+    {{ _section }} .filter_close {
+      cursor: pointer;
+    }
+
+    @media screen and (min-width: 550px) {
+      {{ _section}} .plp_holder .plp_product,
+      {{ _section }} .plp_holder .plp_promo {
+          width: calc(33.3% - 6px);
+      }
+      
+      {{ _section }} .plp_holder .plp_product:nth-child(2n), 
+      {{ _section }} .plp_holder .plp_promo:nth-child(2n) {
+          margin-right: 9px;
+      }
+      {{ _section }} .plp_holder .plp_product:nth-child(3n), 
+      {{ _section }} .plp_holder .plp_promo:nth-child(3n) {
+          margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      {{ _usp }} .usp_holder {
+        padding: 30px 50px;
+      }
+
+
+  
+      {{ _usp }} .usp_title {
+        font: normal normal bold 16px/18px Montserrat;
+        max-width: 150px;
+      }
+
+      {{ _section }} .filter_holder {
+          flex-direction: row;
+          flex: 1;
+          justify-content: space-between;
+      }
+
+      {{ _section }} .filter_sort {
+          padding: 0;
+          margin: 15px 15px 0;
+          background: #F5F5F7 0% 0% no-repeat padding-box;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+      }
+
+      {{ _section }} .sort_holder {
+          display: flex;
+          align-items: center;
+          padding-left: 38px;
+          text-align: left;
+          font: normal normal bold 16px/17px Montserrat;
+          letter-spacing: 0px;
+          color: #000000;
+          text-transform: uppercase;
+          width: fit-content;
+          line-height: 19px;
+      }
+
+      {{ _section }} .filter_open img.mobile_icon {
+          display: none;
+      }
+
+      {{ _section }} .filter_holder img.desktop_icon {
+          display: inline;
+          margin-right: 8px;
+      }
+
+      {{ _section }} .filter_open {
+          justify-content: flex-start;
+          padding: 18px 38px;
+          width: fit-content;
+          border-right: 1px solid #DFDFE1;
+          font: normal normal bold 16px/19px Montserrat;
+      }
+
+      {{ _section }} .filter_holder .filter_results {
+          padding: 13px 38px;
+          border-right: 1px solid #DFDFE1;
+          font: normal normal normal 16px/28px Basier Square Mono;
+      }
+
+      {{ _section }} .sort_holder select {
+          cursor: pointer;
+          border: none;
+          padding: 0;
+          padding-right: 22px;
+          text-align: right;
+          text-align-last: end;
+          font: normal normal bold 16px/17px Montserrat;
+          letter-spacing: 0px;
+          color: #000000;
+          text-transform: uppercase;
+          width: fit-content;
+          line-height: 19px;
+          min-height: unset;
+          margin: 18px 38px 18px 4px;
+          appearance: none;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+          -ms-progress-appearance: none;
+          background-color: transparent;
+          background-image:url({{ 'dropdown_black.svg' | asset_url }});
+          background-repeat: no-repeat;
+          background-position:right;
+          background-size: 14px;
+      }
+
+    }
+
+    @media screen and (min-width: 901px) {
+      {{ _usp }} {
+        padding: 0;
+      }
+
+      {{ _usp }} .usp_holder {
+        padding: 30px 108px;
+      }
+
+      {{ _usp }} .usp_item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      {{ _usp }} .usp_title {
+        margin: 0 0 0 8px;
+        text-align: left;
+      }
+
+      {{ _usp }} .usp_icon {
+        margin: 0;
+        width: 32px;
+        height: 32px;
+      }
+
+      {{ _section }} .plp_holder {
+          max-width: 1816px;
+          padding: 54px 88px 80px;
+          margin: auto;
+      }
+      {{ _section }} .filter_sort {
+        margin: 15px 88px 0;
+      }
+    }
+
+    @media screen and (min-width: 1024px ) {
+      {{ _section }} .plp_holder .plp_product,
+      {{ _section }} .plp_holder .plp_promo {
+          width: calc(25% - 15px);
+          margin-bottom: 20px;
+          margin-right: 20px!important;
+      }
+      
+      {{ _section }} .plp_holder .plp_product:nth-child(4n), 
+      {{ _section }} .plp_holder .plp_promo:nth-child(4n) {
+          margin-right: 0!important;
+      }        
+    }
+
+    @media screen and (min-width: 1251px) {
+      {{ _section }} .filter_drawer {
+          top: 0;
+          height: 100%;
+      }
+
+      {{ _section }} .filters a.filter_facet.current_filter {
+          font: normal normal bold 16px/19px Montserrat;
+      }
+
+      {{ _section }} .filter_header {
+          font: normal normal bold 17px/19px Montserrat;
+      }
+
+      {{ _section }} .filters a.filter_facet {
+          font: normal normal 500 16px/19px Montserrat;
+      }
+    }
+
+    @media screen and (min-width: 1368px) {
+        {{ _section }} .promo_title {
+            font: normal normal bold 24px/28px Montserrat;
+        }
+
+        {{ _section }} .promo_detail {
+            font: normal normal normal 18px/24px Basier Square Mono;
+        }
+
+        {{ _section }} .promo_card {
+            padding: 24px;
+        }
+      
+    }
+
+    @media screen and (min-width: 1501px) {
+      {{ _section }} .plp_holder {
+        padding: 32px 108px 80px;
+      }
+      {{ _section }} .filter_sort {
+        margin: 32px 108px 0;
+      }
+    }
+
+    @media screen and (min-width: 1816px) {
+      {{ _section }} .filter_sort {
+        max-width: 1600px;
+        margin: 32px auto 0;
+      }
+    }
+    @media screen and (min-width: 1920px) {
+      {{ _usp }} .usp_holder {
+        max-width: 1920px;
+        margin: auto;
+      }
+  
+      {{ _usp }} .usp_holder {
+        padding: 30px 100px;
+      }
+    }
+
+
+.promo_card {
+  position: relative;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: #fff;
+  font-family: inherit;
+}
+
+
+.promo_content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* required for bottom alignment */
+  gap: 14px;
+  z-index: 2;
+}
+
+/* five stars */
+.promo_stars {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #FFD34A; /* gold */
+  font-weight: 600;
+}
+
+/* VERIFIED BUYER badge */
+.promo_badge {
+  font-size: 12px;
+  background: rgba(255,255,255,0.12);
+  padding: 4px 8px;
+  border-radius: 5px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* stars + badge horizontal */
+.promo_header {
+  display: flex;
+  align-items: center;
+  font: normal normal normal 18px/24px Basier Square Mono;
+}
+
+/* quote text */
+.promo_quote {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+  font: normal normal normal 18px/24px Basier Square Mono;
+}
+
+/* bottom name + country */
+.promo_reviewer {
+  margin-top: auto;
+  opacity: 0.9;
+  font: 600 17px/19px Montserrat;
+}
+
+.reviewer_name {
+  font-size: 18px;
+  color:#fff;
+}
+.reviewer_country {
+  font-size: 14px;
+    color: rgba(255, 255, 255, 0.6); /* more readable on dark bg */
+}
+
+@media (max-width: 480px) {
+  .promo_card {
+    min-height: 300px;
+    padding: 14px 12px;
+  }
+
+  .promo_content {
+    gap: 10px;
+  }
+
+  .promo_header {
+    font: normal normal normal 14px/18px Basier Square Mono;
+  }
+
+  .promo_stars {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .promo_badge {
+    font-size: 10px;
+    padding: 3px 6px;
+    border-radius: 4px;
+  }
+
+  .promo_quote {
+    font: normal normal normal 14px/18px Basier Square Mono;
+    /* optional: limits line length a bit */
+    max-width: 100%;
+  }
+
+  .promo_reviewer {
+    margin-top: auto;
+    font: 600 15px/18px Montserrat;
+  }
+
+  .reviewer_name {
+    font-size: 16px;
+  }
+
+  .reviewer_country {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6); /* more readable on dark bg */
+  }
+}
+
+
+  </style>
+
+  <div id="plp_{{ section.id | split: '__' | last | slice: -4, 4 }}">
+    
+    <!-- section decoration html -->
+    {% include 'section_decoration_component' %}
+    
+    <div id="usp_{{ section.id | split: '__' | last | slice: -4, 4 }}">
+      <div class="usp_holder">
+        {%- assign uspBlocks = section.blocks | where: 'type', 'usp' -%}
+        {% for block in uspBlocks %}
+          <div class="usp_item">
+            <div class="usp_icon">
+              <img src="{{ block.settings.icon | img_url: '200x200' }}" alt="usp" width="100%" height="100%">
+            </div>
+            <div class="usp_title">
+              {{ block.settings.title }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="filter_sort">
+        <div class="filter_holder">
+          <div class="filter_open" onclick="open_filter_drawer()">
+            <img class="desktop_icon" src="{{ 'filter.svg' | asset_url }}" alt="filter">
+            <span>FILTER</span>
+            <img class="mobile_icon" src="{{ 'close.svg' | asset_url }}" alt="plus">
+          </div>
+          <div class="filter_results">
+            {{ collection.products_count }} {{ collection.products_count | pluralize: 'product', 'products' }}
+          </div>
+        </div>
+        <div class="sort_holder">
+          <span>SORT BY:</span>
+          <select name="sort" id="sort">
+            {% for sort in collection.sort_options %}
+              {% unless sort.value == 'best-selling' or sort.value == 'title-ascending' or sort.value == 'title-descending' %}
+                <option value="{{ sort.value }}">{{ sort.name }}</option>
+              {% endunless %}
+            {% endfor %}
+          </select>
+        </div>
+    </div>
+    <div class="plp_holder">
+      {%- assign promoBlocks = section.blocks | where: 'type', 'promo' -%}
+      {%- for product  in collection.products -%}
+        {%- assign productPos = forloop.index0 -%}
+        {%- for promo in promoBlocks -%}
+          {%- assign curPos = productPos | plus: forloop.index -%}
+          {% if promo.settings.promoPos == curPos %}
+
+          {% if collection.id != 482755477823 %}
+
+          {% if collection.id == 262395428926 and forloop.index == 1 %}
+              
+            <div class="plp_promo" data-position="{{ promo.settings.promoPos | default: 5 }}" data-product="{{ productPos }}" data-for="{{ forloop.index }}">
+              
+              {% assign promo_key = 'promo_card_' | append: forloop.index %}
+              {% if collection.metafields.custom[promo_key] != blank %}
+<div class="promo_card" style="background-image: url({{ collection.metafields.custom[promo_key] | image_url: width: 450 }});">
+          {% else %}
+              <div class="promo_card" style="background-image: url({{ promo.settings.promoImg | image_url: width: 450 }})">
+          {% endif %}
+                
+              </div>
+            </div>
+
+            
+          {% else %}
+            <div class="plp_promo" data-position="{{ promo.settings.promoPos | default: 5 }}" data-product="{{ productPos }}" data-for="{{ forloop.index }}">
+              
+              {% assign promo_key = 'promo_card_' | append: forloop.index %}
+              {% assign promo_tit = 'promo_title_' | append: forloop.index %}
+              {% assign promo_des = 'promo_descr_' | append: forloop.index %}
+              {% if collection.metafields.custom[promo_key] != blank %}
+
+<div class="promo_card" style="background-image: 
+    linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), 
+    linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), 
+    url({{ collection.metafields.custom[promo_key] | image_url: width: 450 }});">
+          {% else %}
+              <div class="promo_card" style="background-image: 
+    linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%), 
+    linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%),  url({{ promo.settings.promoImg | image_url: width: 450 }})">
+          {% endif %}
+                
+
+              {% if collection.metafields.custom[promo_tit] != blank %}
+<div class="promo_content">
+
+  <!-- STARS + VERIFIED -->
+  <div class="promo_header">
+    <div class="promo_stars">★★★★★</div>
+    <div class="promo_badge">Verified</div>
+  </div>
+
+  <!-- REVIEW QUOTE -->
+  <div class="promo_quote">
+    “
+    {% if collection.metafields.custom[promo_tit] != blank %}
+      {{ collection.metafields.custom[promo_tit] }}
+    {% else %}
+      {{ promo.settings.heading }}
+    {% endif %}
+    ”
+  </div>
+
+  <!-- NAME + COUNTRY -->
+  {% if collection.metafields.custom[promo_des] != blank %}
+    {% assign raw = collection.metafields.custom[promo_des] %}
+  {% else %}
+    {% assign raw = promo.settings.detail %}
+  {% endif %}
+
+  {% assign parts = raw | split: ',' %}
+  {% assign reviewer_name = parts[0] | strip %}
+  {% assign reviewer_country = parts[1] | default: '' | strip %}
+
+  <div class="promo_reviewer">
+    <a class="reviewer_name">{{ reviewer_name }}</a>
+    {% if reviewer_country != blank %}
+    <br><a class="reviewer_country">{{ reviewer_country }}</a>
+    {% endif %}
+  </div>
+
+</div>
+{% else %}
+          <div class="promo_title">
+            {{ promo.settings.heading }}
+                </div>
+                <div class="promo_detail">
+            {{ promo.settings.detail }}
+                </div>
+
+          {% endif %}
+
+
+
+              </div>
+              </div>
+              
+          {% endif %}
+          {% endif %}
+          {% endif %}
+        {%- endfor -%}
+        <div class="plp_product">
+          {% render 'product-card' product: product %}
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="filter_drawer" style="background-image: url({{ 'filter_bg.webp' | asset_url }});">
+      <div class="filter_header">
+        <span>FILTER</span>
+        <img class="filter_close" src="{{ 'close.svg' | asset_url }}" alt="Filter close" onclick="close_filter_drawer()">
+      </div>
+      <div class="filters">
+        <div class="top_filter">
+          {% for filter in section.settings.topFilters %}
+            {%- assign filterTitle = filter.title | downcase -%}
+            {% if filter == collection %}
+              <a href="{{ filter.url }}" class="filter_facet current_filter" {% if filterTitle contains 'sale' %}style="color:#FF0000"{% endif %}>{{ collection.title }} ({{ collection.products_count }})</a>
+            {% else %}
+              <a href="{{ filter.url }}" class="filter_facet" {% if filterTitle contains 'sale' %}style="color:#FF0000"{% endif %}>{{ filter.title }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="other_filter">
+          {% for facet in section.settings.otherFilters %}
+            {%- if facet.handle == collection.handle -%}
+              <a href="#" class="filter_facet current_filter">{{ facet.title }} ({{ collection.products_count }})</a>
+            {% else %}
+              <a href="{{ facet.url }}" class="filter_facet">{{ facet.title }}</a>
+            {%- endif -%}
+          {% endfor %}
+        </div>
+      </div>
+      <a href="{{ section.settings.filterLink }}" class="filter_cta">SHOP ALL PRODUCTS</a>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const sortEl = getElement('#sort');
+      sortEl.addEventListener('change', () => {
+        const $sectionEl = $(sortEl).closest('.shopify-section');
+        const url = new URL(window.location.href);
+        const searchParams = new URLSearchParams(url.search);
+        searchParams.set("sort_by", sortEl.value);
+        searchParams.set("section_id", $sectionEl.attr('id').split('-section-')[1]);
+        url.search = searchParams.toString();
+        fetch(url.href)
+        .then(res => res.text())
+        .then(res => {
+          
+          const html = new DOMParser().parseFromString(res, 'text/html');
+          const products = getElement('.plp_holder', {context: html});
+          const plpHolder = getElement('.plp_holder');
+          plpHolder.replaceWith(products);
+          setTimeout(() => {
+            product_card_initialize();
+          }, 100);
+        })
+      })
+    })();
+    function filter_drawer_open () {
+      show_overlay();
+      $('.filter_drawer').addClass('drawer_open');
+    }
+    function filter_drawer_close() {
+      $('.filter_drawer').removeClass('drawer_open');
+      hide_overlay();
+    }
+  </script>
+{%- endcapture -%}
+
+{{- section_content | remove: '  ' | strip_newlines -}}
+
+{% schema %}
+  {
+    "name": "Main Collection",
+    "settings": [
+        {
+          "type": "header",
+          "content": "Filter settings"
+        },
+        {
+            "type": "collection_list",
+            "id": "topFilters",
+            "label": "Collections on top half"
+        },
+        {
+            "type": "collection_list",
+            "id": "otherFilters",
+            "label": "Collections on bottom half"
+        },
+        {
+            "type": "url",
+            "id": "filterLink",
+            "label": "Shop All Products Button link"
+        },
+        {
+            "type": "header",
+            "content": "Section separation settings"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_decoration_desktop",
+            "label": "Show separation on desktop",
+            "default": true
+        },
+        {
+            "type": "image_picker",
+            "id": "desktop_decor_icon",
+            "label": "Select scrolling icon for desktop"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_decoration_mobile",
+            "label": "Show separation on mobile",
+            "default": true
+        },
+        {
+            "type": "image_picker",
+            "id": "mobile_decor_icon",
+            "label": "Select scrolling icon for mobile"
+        }
+    ],
+    "blocks": [
+      {
+        "name": "USP block",
+        "type": "usp",
+        "limit": 4,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "USP icon"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "USP text",
+            "default": "30-DAY RISK-FREE TRIAL"
+          }
+        ]
+      },
+      {
+        "name": "Collection tile",
+        "type": "promo",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Subheading",
+            "default": "MINIMALIST DESIGN, TOP-NOTCH PERFORMANCE."
+          },
+          {
+            "type": "text",
+            "id": "detail",
+            "label": "Description",
+            "default": "Made to last a lifetime, with high end components that ensure performance"
+          },
+          {
+            "type": "image_picker",
+            "id": "promoImg",
+            "label": "Background image"
+          },
+          {
+            "type": "range",
+            "id": "promoPos",
+            "label": "Position",
+            "default": 5,
+            "min": 1,
+            "max": 50
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

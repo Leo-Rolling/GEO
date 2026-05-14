@@ -1,0 +1,581 @@
+{% assign _section = section.id | split: '__' | last | slice: -4, 4 | prepend: '#pro_' %}
+
+<style>
+  {{ _section }} .product_img_slider_desktop {
+      display: flex;
+      max-width: 740px;
+      width: 56%;
+      justify-content: center;
+      align-items: flex-start;
+      top: 104px;
+      position: sticky;
+      margin-right: auto;
+  }
+
+  {{ _section }} .product_img_slider_mobile {
+      display: none;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+  }
+  /* Start Slider Style */
+
+  {{ _section }} .thumb-container {
+      display: flex;
+      flex-direction: column;
+      width: 85px;
+      height: 648px;
+      margin-right: 7px;
+      justify-content: space-around;
+      align-items: center;
+  }
+
+  {{ _section }} .swiper { width: 100%; height: 300px; margin-left: auto; margin-right: auto; }
+  {{ _section }} .swiper-slide { background-size: cover; background-position: center; }
+
+  {{ _section }} .desktop_thumb_swiper { height: 100%; width: auto; box-sizing: border-box; }
+  {{ _section }} .desktop_thumb_swiper .swiper-slide { width: 100%; height: 100%; opacity: 0.4; }
+  {{ _section }} .desktop_thumb_swiper .swiper-slide-thumb-active { opacity: 1; }
+  {{ _section }} .desktop_thumb_swiper .swiper-slide-thumb-active img { border: 2px solid #000000; }
+
+  {{ _section }} .swiper-slide { border-radius: 8px; }
+  {{ _section }} .swiper-slide img {
+      display: block; width: 100%; height: 100%; object-fit: cover;
+      border-radius: 6px; box-sizing: border-box; background-color: #F5F5F7;
+  }
+
+  {{ _section }} .button-slide-next,
+  {{ _section }} .button-slide-prev {
+      width: 42px; height: 42px; background-color: white; background-position: center;
+      background-size: 20px; background-repeat: no-repeat; border-radius: 100%;
+      border: 2px solid #000000; cursor: pointer; user-select: none; display: none;
+  }
+  {{ _section }} .button-slide-next { margin-top: 8px; transform: rotate(90deg); background-image: url({{ 'angle-left-solid.svg' | asset_url }}); }
+  {{ _section }} .button-slide-prev { margin-bottom: 8px; transform: rotate(-90deg); background-image: url({{ 'angle-left-solid.svg' | asset_url }}); }
+
+  {{ _section }} .main-slider { width: calc(100% - 92px); position: relative; }
+  {{ _section }} .desktop_main_swiper { width: 100%; height: 100%; }
+
+  {{ _section }} .button-detail-view {
+      position: absolute; right: 14px; top: 15px; width: 45px; height: 45px;
+      background: white; background-size: 26px; background-repeat: no-repeat; background-position: center;
+      z-index: 2; cursor: pointer; user-select: none; border: 1px solid #DFDFE1; border-radius: 4px;
+      background-image: url({{ 'zoom.svg' | asset_url }}); display: none;
+  }
+
+  {{ _section }} .full_screen_img_holder { display: grid; width: 100%; }
+  {{ _section }} .detail-screen-product {
+      display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: calc(100% - 28px); max-width: 650px; background-color: gray; z-index: 7; overflow: auto;
+  }
+  {{ _section }} .detail-screen-product::-webkit-scrollbar { width: 5px; background-color: #aaa; border-radius: 12px; }
+  {{ _section }} .detail-screen-product::-webkit-scrollbar-thumb { background-color: #333; }
+  {{ _section }} .button-close-detail-screen {
+      position: absolute; right: 13px; top: 13px; width: 13px; height: 13px; border-radius: 100px;
+      background-size: 13px; background-repeat: no-repeat; background-position: center; cursor: pointer;
+      user-select: none; background-image: url({{ 'close.svg' | asset_url }});
+  }
+  {{ _section }} .product_img_full_overlay {
+      position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; background: #00000094; z-index: 5; display: none;
+  }
+  {{ _section }} img.full_screen_img { width: 100%; background-color: white; }
+
+  /* End Slider Style */
+  {{ _section }} .mobile-thumb-container { display: flex; width: 100%; height: 20%; margin-top: 6px; }
+
+  {{ _section }} .swiper-button-next, 
+  {{ _section }} .swiper-button-prev {
+      width: 55px; height: 65px; background-color: white; border-radius: 4px; color: transparent;
+      border: 1px solid #F5F5F7; background-repeat: no-repeat; background-position: center; background-size: 21px;
+  }
+  {{ _section }} .swiper-button-next { right: 16px; background-image: url({{ 'arrow-right.svg' | asset_url }}); }
+  {{ _section }} .swiper-button-prev { left: 16px; background-image: url({{ 'arrow-left.svg' | asset_url }}); }
+
+  {{ _section }} .p_3d_img_trigger {
+      width: 150px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 4px;
+      font: normal normal 500 14px/25px Montserrat; letter-spacing: 0px; color: #000000; background: white;
+      position: absolute; bottom: 16px; z-index: 1; left: 50%; transform: translateX(-50%); cursor: pointer;
+  }
+  {{ _section }} .p_3d_img_trigger img { width: 23px; margin-right: 5px; }
+
+  @media screen and (max-width: 900px) {
+      {{ _section }} .product_img_slider_desktop { display: none; }
+      {{ _section }} .product_img_slider_mobile { display: block; margin-bottom: 18px; }
+
+      /* Start Swiper CSS */
+      {{ _section }} .swiper-slide {
+          text-align: center; font-size: 18px; background: #fff;
+          display: flex; justify-content: center; align-items: center;
+      }
+      {{ _section }} .swiper-slide img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 0px; }
+      {{ _section }} .swiper { width: 100%; height: 300px; margin-left: auto; margin-right: auto; }
+      {{ _section }} .swiper-slide { background-size: cover; background-position: center; }
+      {{ _section }} .mobile-main-swiper { height: 80%; width: 100%; background-color: #F5F5F7; }
+      {{ _section }} .mobile-thumb-swiper { width: 100%; height: 100%; margin: 0 6px; box-sizing: border-box; padding: 0px 0; }
+      {{ _section }} .mobile-thumb-swiper .swiper-slide-thumb-active img { border-bottom: 2px solid #1761FF; padding-bottom: 4px; }
+      {{ _section }} .mobile-thumb-swiper .swiper-slide { width: 25%; height: 100%; opacity: 0.4; }
+      {{ _section }} .mobile-thumb-swiper .swiper-slide-thumb-active { opacity: 1; }
+      /* End Swiper CSS */
+
+      {{ _section }} .button-detail-view {
+          width: 36px; height: 36px; background-size: 20px; border-radius: 0; top: 9px; right: 8px; display: none;
+      }
+      {{ _section }} .swiper-button-next, 
+      {{ _section }} .swiper-button-prev { width: 40px; height: 55px; background-size: 18px; }
+      {{ _section }} .swiper-button-next { right: 6px; }
+      {{ _section }} .swiper-button-prev { left: 6px; }
+
+      {{ _section }} .p_3d_img_trigger {
+          width: 112px; height: 34px; font: normal normal 500 11px/25px Montserrat; bottom: 6px;
+      }
+      {{ _section }} .p_3d_img_trigger img { width: 17px; margin-right: 6px; }
+  }
+
+  /* ================= Video Bubble + Modal (shared) ================= */
+  /* Positioning contexts */
+  {{ _section }} .main-slider { position: relative; }
+  {{ _section }} .product_img_slider_mobile { position: relative; }
+
+  /* Bubble */
+  .rs-video-bubble{
+    position: absolute;
+    right: 16px;
+    top: 24px;
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    background: #000; cursor: pointer; z-index: 60;
+    {% if product.metafields.custom.bubble_poster %}
+    background-image: url('{{ product.metafields.custom.bubble_poster | file_url }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  {% endif %}
+  }
+  .rs-bubble-preview{ width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  @media (max-width: 768px){
+    .rs-video-bubble{ width: 90px; height: 90px; right: 14px; top: 14px; z-index: 5;}
+  }
+
+  /* Modal (one instance, ported to <body>) */
+  .rs-video-modal{
+    position: fixed; inset: 0;
+    display: grid; place-items: center;
+    background: rgba(0,0,0,.6);
+    z-index: 10000;
+  }
+  .rs-video-modal[hidden]{ display: none; }
+
+  .rs-video-modal__inner{
+    position: relative;
+    height: min(92vh, 860px);
+    aspect-ratio: 9 / 16;       /* portrait */
+    width: auto; max-width: 92vw;
+    background:#000; border-radius: 14px; overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0,0,0,.45);
+  }
+  .rs-video-close{
+    display:none;
+    position: absolute; right: 8px; top: 8px;
+    width: 40px; height: 40px; border: 0; border-radius: 50%;
+    background: rgba(0,0,0,.65); color: #fff;
+    font-size: 26px; cursor: pointer; z-index: 2;
+  }
+
+  @media (max-width: 768px){
+    .rs-video-modal__inner{ width: 92vw; height: auto; aspect-ratio: 9 / 16; }
+
+  .rs-video-close{
+    display:block;
+  }
+
+  }
+  .rs-video-modal__inner video{ width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }
+
+
+  /* ============ Hint Bubble ============ */
+
+
+.rs-hint-bubble {
+    position: absolute;
+    right: 100px;
+    top: 16px;
+    max-width: 170px;
+    background: #000;
+    color: #fff;
+    font-family: Montserrat, -apple-system, BlinkMacSystemFont, "Inter", "Roboto", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    border-radius: 14px;
+    padding: 10px 12px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, .25);
+    /* border: 1px solid rgba(255, 255, 255, .15); */
+    display: flex
+;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(-6px) scale(.96);
+    pointer-events: none;
+    z-index: 60;
+}
+
+.rs-hint-bubble__tail {
+  position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 20px;
+    height: 16px;
+    background: #000;
+    border: 1px solid black;
+    border-top-left-radius: 105px;
+    /* border-bottom-left-radius: 121px; */
+    /* transform: rotate(90deg); */
+    box-shadow: 4px 12px 24px rgba(0, 0, 0, .25);
+}
+
+/* text itself */
+.rs-hint-bubble__text {
+  display: block;
+  white-space: nowrap;
+}
+
+/* after it becomes visible */
+.rs-hint-bubble.rs-hint-bubble--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity .5s ease, transform .5s cubic-bezier(.16,1,.3,1);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Mobile tweaks: bubble sits BELOW the video bubble and points up */
+@media (max-width:768px){
+  .rs-hint-bubble {
+    right: 89px;
+    top: 8px;
+    z-index: 5;
+  }
+  .rs-hint-bubble__tail {
+    
+  }
+}
+
+
+</style>
+
+<div class="product_img_slider_desktop">
+  <div class="thumb-container">
+    <div class="button-slide-next"></div>
+    <div thumbsSlider class="swiper desktop_thumb_swiper">
+      <div class="swiper-wrapper">
+        {% for image in product.images %}
+          <div class="swiper-slide">
+            <img lazy_src="{{ image | img_url: '100x100', crop: 'top' }}" />
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="button-slide-prev"></div>
+  </div>
+
+  <div class="main-slider">
+    {% if product.metafields.custom.bubble_preview %}
+      <!-- Desktop bubble -->
+      <div class="rs-video-bubble" data-rs-video-bubble="desktop" aria-label="Play product video" role="button" tabindex="0">
+        <video class="rs-bubble-preview" autoplay muted playsinline loop preload="metadata">
+          <source src="{{ product.metafields.custom.bubble_preview | file_url }}" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="rs-hint-bubble" id="rsHintBubbleDesktop" role="button" tabindex="0">
+  <span class="rs-hint-bubble__text">
+    ▶ Explained in 60s
+  </span>
+  <span class="rs-hint-bubble__tail"></span>
+</div>
+
+    {% endif %}
+
+    <div class="swiper desktop_main_swiper">
+      <div class="swiper-wrapper">
+        {% for image in product.images %}
+          <div class="swiper-slide" index="{{ forloop.index0 }}">
+            <img
+              img_id="{{ image.id }}"
+              src="{{ image | img_url: '700x700', crop: 'top' }}"
+              alt="{{ image.alt | escape | default: product.title }}"
+              title="{{ product.title }} - {{ image.alt | escape }}"
+              width="700"
+              height="700"
+              loading="lazy"
+            />
+            <div class="button-detail-view" url="{{ image | img_url: 'master' }}"></div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    {% if product.metafields.custom.three_d_view_gif_image %}
+      <div class="p_3d_img_trigger" onclick="show_zoomed_img(`{{ product.metafields.custom.three_d_view_gif_image | img_url: 'master' }}`);">
+        <img src="{{ 'isometric.png' | asset_url }}" alt="isometric">
+        <span>3D VIEW</span>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="product_img_slider_mobile">
+  {% if product.metafields.custom.bubble_preview %}
+    <!-- Mobile bubble -->
+    <div class="rs-video-bubble" data-rs-video-bubble="mobile" aria-label="Play product video" role="button" tabindex="0">
+      <video class="rs-bubble-preview" autoplay muted playsinline loop preload="metadata">
+        <source src="{{ product.metafields.custom.bubble_preview | file_url }}" type="video/mp4">
+      </video>
+    </div>
+    <div class="rs-hint-bubble" id="rsHintBubbleMobile" role="button" tabindex="0">
+  <span class="rs-hint-bubble__text">
+    ▶ Explained in 60s
+  </span>
+  <span class="rs-hint-bubble__tail"></span>
+</div>
+  {% endif %}
+
+  <div class="swiper mobile-main-swiper">
+    <div class="swiper-wrapper">
+      {% for image in product.images %}
+        <div class="swiper-slide" index="{{ forloop.index0 }}">
+          <img
+            img_id="{{ image.id }}"
+            src="{{ image | img_url: '700x', crop: 'top' }}"
+            alt="{{ image.alt | escape | default: product.title }}"
+            title="{{ product.title }} - {{ image.alt | escape }}"
+            width="700"
+            height="auto"
+            loading="lazy"
+          />
+          <div class="button-detail-view" url="{{ image | img_url: 'master' }}"></div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    {% if product.metafields.custom.three_d_view_gif_image %}
+      <div class="p_3d_img_trigger" onclick="show_zoomed_img(`{{ product.metafields.custom.three_d_view_gif_image | img_url: 'master' }}`);">
+        <img src="{{ 'isometric.png' | asset_url }}" alt="isometric">
+        <span>3D VIEW</span>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="mobile-thumb-container">
+    <div thumbsSlider class="swiper mobile-thumb-swiper">
+      <div class="swiper-wrapper">
+        {% for image in product.images %}
+          <div class="swiper-slide">
+            <img src="{{ image | img_url: '100x100', crop: 'top' }}" />
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if product.metafields.custom.bubble_preview %}
+  {%- comment -%} Shared modal (only once) {%- endcomment -%}
+  <div class="rs-video-modal" id="rsVideoModal" hidden>
+    <div class="rs-video-modal__inner" role="dialog" aria-label="Short product video demo" aria-modal="true">
+      <button class="rs-video-close" aria-label="Close video" type="button">×</button>
+      <video id="rsMainVideo" controls preload="metadata" playsinline>
+        <source src="{{ product.metafields.custom.bubble_video | file_url }}" type="video/mp4">
+      </video>
+    </div>
+  </div>
+{% endif %}
+
+<script>
+  var swiper = new Swiper(".desktop_thumb_swiper", {
+      cssMode: false,            // ← was UA test
+      direction: 'vertical',
+      spaceBetween: 6,
+      slidesPerView: 7,
+      freeMode: true,
+      watchSlidesProgress: true,
+  });
+
+  var swiper2 = new Swiper(".desktop_main_swiper", {
+      cssMode: false,            // ← was UA test
+      spaceBetween: 10,
+      navigation: {
+          nextEl: ".desktop_main_swiper .swiper-button-next",
+          prevEl: ".desktop_main_swiper .swiper-button-prev",
+      },
+      thumbs: {
+          swiper: swiper,
+      },
+  });
+
+  var mobile_thumb_swiper = new Swiper(".mobile-thumb-swiper", {
+      cssMode: false,            // ← was UA test
+      spaceBetween: 3,
+      slidesPerView: 8,
+      freeMode: true,
+      watchSlidesProgress: true,
+  });
+
+  var mobile_m_swiper = new Swiper(".mobile-main-swiper", {
+      cssMode: false,            // ← was UA test
+      spaceBetween: 0,
+      slidesPerView: 1,
+      navigation: {
+          nextEl: ".mobile-main-swiper .swiper-button-next",
+          prevEl: ".mobile-main-swiper .swiper-button-prev",
+      },
+      thumbs: {
+          swiper: mobile_thumb_swiper,
+      },
+      breakpoints: {
+          // 520: {
+          //     slidesPerView: 1.3,
+          //     spaceBetween: 20,
+          // },
+          // 750: {
+          //     slidesPerView: 1.9,
+          // },
+      },
+  });
+
+  $('.button-detail-view').click(function () {
+      var url = $(this).attr('url');
+      show_zoomed_img(url);
+  });
+
+  function show_zoomed_img(url) {
+      $('.detail-screen-product').css('display', 'flex');
+      $('img.full_screen_img').attr('src', url);
+      $('.product_img_full_overlay').show();
+
+      disable_scrolling();
+  }
+
+  $('.button-close-detail-screen, .product_img_full_overlay').click(function () {
+      $('.detail-screen-product').css('display', 'none');
+      $('.product_img_full_overlay').hide();
+
+      enable_scrolling();
+  });
+</script>
+
+
+<!-- lazy script -->
+<script>
+    window.addEventListener('resize', function() {
+        add_swiper_images_src();
+    });
+
+    function add_swiper_images_src() {
+        if (window.innerWidth > 900) {
+            $('.product_img_slider_desktop [lazy_src]').each(function () {
+                $(this).attr('src', $(this).attr('lazy_src'));
+            });
+        } else {
+            $('.product_img_slider_mobile [lazy_src]').each(function () {
+                $(this).attr('src', $(this).attr('lazy_src'));
+            });
+        }
+    }
+
+    add_swiper_images_src();
+</script>
+
+
+
+
+{% if product.metafields.custom.bubble_preview %}
+<!-- ===== Video bubble script (binds both bubbles, ports modal once) ===== -->
+<script>
+(() => {
+  const bubbles = document.querySelectorAll('.rs-video-bubble'); // desktop + mobile
+  const modal   = document.getElementById('rsVideoModal');
+  const inner   = modal?.querySelector('.rs-video-modal__inner');
+  const mainVid = document.getElementById('rsMainVideo');
+  const closeBtn= modal?.querySelector('.rs-video-close');
+  if (!modal || !inner || !mainVid || !closeBtn) return;
+
+  // Portal modal to <body> so it sits above slider stacking contexts
+  if (modal.parentElement !== document.body) document.body.appendChild(modal);
+
+  const open = () => {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    mainVid.currentTime = 0;
+    mainVid.play().catch(()=>{});
+  };
+  const close = () => {
+    mainVid.pause();
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  };
+
+    // ----- Hint bubble logic -----
+  const hints = document.querySelectorAll('#rsHintBubbleDesktop, #rsHintBubbleMobile');
+
+hints.forEach(hint => {
+  // show after 1s
+  setTimeout(() => {
+    if (modal.hidden === true) {
+      hint.classList.add('rs-hint-bubble--visible');
+    }
+  }, 1000);
+
+  const dismissHint = () => {
+    hint.classList.remove('rs-hint-bubble--visible');
+    setTimeout(() => {
+      hint.remove();
+    }, 250);
+  };
+
+  hint.addEventListener('click', () => {
+    open();
+    dismissHint();
+  });
+
+  hint.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      open();
+      dismissHint();
+    }
+  });
+});
+
+  // ----- end hint bubble logic -----
+
+
+  bubbles.forEach(b => {
+    b.addEventListener('click', open, { passive: true });
+    // keyboard accessibility
+    b.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  inner.addEventListener('click', e => e.stopPropagation());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) close(); });
+
+  // Reduced motion: pause preview loops
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.rs-bubble-preview').forEach(v => v.pause?.());
+  }
+})();
+</script>
+{% endif %}

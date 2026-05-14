@@ -1,0 +1,31 @@
+<div class="s_pdp_upsell_item selected" price="{{ product.first_available_variant.price }}">
+    <div class="p_upsell_checkbox"></div>
+    <div class="p_upsell_img">
+        <img src="{{ product.images[0] | img_url: '200x200', crop: 'center' }}" alt="{{ product.title }}">
+    </div>
+    <div class="p_upsell_title_variants">
+        <div class="p_upsell_title_price">
+            <div class="p_upsell_title">{{ product.title }}</div>
+        </div>
+
+        <div class="p_upsell_variants">
+            {% for variant in product.variants %}
+                {% if variant.available %}
+                    <a class="s_p_upsell_var{% if variant == product.first_available_variant %} selected{% endif %}" v_id="{{ variant.id }}" title="{{ variant.title }}" {% if variant.title == 'Default Title' %}style="display: none;"{% endif %} {% if variant.image %}v_img_url="{{ variant.image | img_url: '200x200', crop: 'center' }}"{% endif %} data-price="{{ variant.price | money }}" price="{{ variant.price }}"> 
+                        {% capture color_code %}
+                            {% render 'color_code_from_color_name', color: variant.option1 %}
+                        {% endcapture %}
+                        {% if color_code contains '#' %}
+                            <div style="background-color: {{ color_code | remove: ' ' | strip }};"></div>
+                        {% elsif variant.image %}
+                            <div style="background-image: url({{ variant.image | img_url: '300x300', crop: 'center' }});"></div>
+                            
+                        {% endif %}
+                    </a>
+                {% endif %}
+            {% endfor %}
+          
+            <div class="s_upsell_price">{{ product.first_available_variant.price | money }}</div>
+        </div>
+    </div>
+</div>

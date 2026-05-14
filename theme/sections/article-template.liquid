@@ -1,0 +1,1602 @@
+{% comment %}
+  Handle comments, dates, authors — v2.1
+{% endcomment %}
+
+{% assign number_of_comments = article.comments_count %}
+{% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+
+<!-- RS Article Styles — Scoped -->
+<style>
+  /* ── RS Article — Scoped Styles ── */
+
+  .rs-article {
+    background: #fff;
+  }
+
+  .rs-article .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Hero Image */
+  .rs-article__hero {
+    max-width: 900px;
+    margin: 48px auto 0;
+    padding: 0 24px;
+  }
+
+  .rs-article__hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  /* Article Header (title + byline) */
+  .rs-article__header {
+    max-width: 720px;
+    margin: 40px auto 0;
+    padding: 0 24px;
+  }
+
+  .rs-article__title {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin: 0 0 20px;
+  }
+
+  .rs-article__byline {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .rs-article__byline time {
+    color: #888;
+  }
+
+  .rs-article__byline .rs-sep {
+    color: #ccc;
+  }
+
+  .rs-article__byline a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .rs-article__byline a:hover {
+    color: #000000;
+  }
+
+  /* Article Body */
+  .rs-article__body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .rs-article__body .rte {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+    color: #3c3c3c;
+  }
+
+  .rs-article__body .rte p {
+    margin-bottom: 1.5em;
+  }
+
+  .rs-article__body .rte h2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 2em 0 0.8em;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .rs-article__body .rte h3 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 1.8em 0 0.6em;
+    line-height: 1.3;
+  }
+
+  .rs-article__body .rte h4 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 1.6em 0 0.5em;
+  }
+
+  /* In-body images — full-width within column, NO float */
+  .rs-article__body .rte img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    margin: 2em 0;
+    float: none !important;
+  }
+
+  /* Lists */
+  .rs-article__body .rte ul,
+  .rs-article__body .rte ol {
+    padding-left: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  .rs-article__body .rte li {
+    margin-bottom: 0.5em;
+  }
+
+  /* Blockquotes */
+  .rs-article__body .rte blockquote {
+    border-left: 3px solid #17e260;
+    padding-left: 1.2em;
+    margin: 2em 0;
+    font-style: italic;
+    color: #444;
+  }
+
+  /* Hide duplicate H1 inside body_html (template already renders title) */
+  .rs-article__body .rte .article-header h1 {
+    display: none;
+  }
+
+  /* Article header block inside body_html */
+  .rs-article__body .rte .article-header {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .rs-article__body .rte .article-meta-top {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .rs-article__body .rte .article-meta-top .badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    color: #3c3c3c;
+    background: #f6f8f9;
+  }
+  .rs-article__body .rte .article-meta-top .badge.fresh {
+    background: #f0fdf4;
+    border-color: #17e260;
+    color: #000000;
+  }
+
+  .rs-article__body .rte .article-intro {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+
+  .rs-article__body .rte .article-byline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  .rs-article__body .rte .byline-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #000000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .rs-article__body .rte .byline-info .name {
+    font-weight: 600;
+    color: #000000;
+    font-size: 0.9rem;
+  }
+
+  .rs-article__body .rte .byline-info .date {
+    color: #888;
+    font-size: 0.8rem;
+  }
+
+  .rs-article__body .rte .byline-read {
+    margin-left: auto;
+    color: #888;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* Tables */
+  .rs-article__body .rte table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+    font-size: 0.95rem;
+  }
+
+  .rs-article__body .rte table th,
+  .rs-article__body .rte table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+
+  .rs-article__body .rte table th {
+    font-weight: 700;
+    color: #000000;
+    border-bottom: 2px solid #ddd;
+  }
+
+  /* Tags & Share */
+  .rs-article__footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .rs-article__footer .tags-share {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+    border-top: 1px solid #eee;
+    margin-top: 48px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .rs-article__footer .user-tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .rs-article__footer .user-tags a {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: none;
+    padding: 4px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .rs-article__footer .user-tags a:hover {
+    border-color: #000000;
+    color: #000000;
+  }
+
+  /* Next/Prev Navigation */
+  .rs-article__nav {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .rs-article__nav .action-btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0 48px;
+    border-top: 1px solid #eee;
+  }
+
+  .rs-article__nav .action-btn .btn-left,
+  .rs-article__nav .action-btn .btn-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rs-article__nav .action-btn a {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .rs-article__nav .action-btn a:hover {
+    color: #17e260;
+  }
+
+  .rs-article__nav .action-btn i {
+    font-size: 1.1rem;
+    color: #666;
+  }
+
+  /* Comments Section */
+  .rs-article__comments {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  .rs-article__comments .title-comment {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 40px 0 24px;
+  }
+
+  .rs-article__comments .list-comments {
+    list-style: none;
+    padding: 0;
+  }
+
+  .rs-article__comments .list-comments li {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .rs-article__comments .comment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .rs-article__comments .form-group {
+    margin-bottom: 16px;
+  }
+
+  .rs-article__comments label {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .rs-article__comments input[type="text"],
+  .rs-article__comments input[type="email"],
+  .rs-article__comments textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .rs-article__comments input[type="text"]:focus,
+  .rs-article__comments input[type="email"]:focus,
+  .rs-article__comments textarea:focus {
+    border-color: #000000;
+    outline: none;
+  }
+
+  .rs-article__comments input[type="submit"] {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background: #000000;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .rs-article__comments input[type="submit"]:hover {
+    background: #333;
+  }
+
+  .rs-article__comments .note {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 16px;
+  }
+
+  /* Lookbook Gallery */
+  .rs-article__gallery {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── Multilang Toggle ── */
+  .lang2 { display: none; }
+  body.show-lang2 .lang1 { display: none; }
+  body.show-lang2 .lang2 { display: block; }
+  body.show-lang2 span.lang2 { display: inline; }
+
+  /* Language Switcher */
+  .rs-lang-switcher {
+    display: inline-flex;
+    gap: 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .rs-lang-switcher button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border: none;
+    background: #fff;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1;
+  }
+  .rs-lang-switcher button.active {
+    background: #000000;
+    color: #fff;
+  }
+  .rs-lang-switcher button:not(:last-child) {
+    border-right: 1px solid #ddd;
+  }
+
+  /* ── Enhanced Visual Components ── */
+
+  /* Callout boxes */
+  .callout {
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 1.5em 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout strong { font-weight: 700; }
+  .callout.brand {
+    background: #f0fdf4;
+    border-left: 4px solid #17e260;
+  }
+  .callout.info {
+    background: #eef2ff;
+    border-left: 4px solid #1761ff;
+  }
+  .callout.success {
+    background: #F0FDF4;
+    border-left: 4px solid #22C55E;
+  }
+  .callout.danger {
+    background: #FFF1F2;
+    border-left: 4px solid #EF4444;
+  }
+  .callout.premium {
+    background: #000000;
+    color: #f6f8f9;
+    border-left: 4px solid #17e260;
+  }
+  .callout.premium strong { color: #fff; }
+
+  /* Hack badge (numbered badge in headings) */
+  .hack-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #000000;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-right: 10px;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+
+  /* Comparison / data tables */
+  .table-wrap {
+    overflow-x: auto;
+    margin: 1.5em 0;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+  }
+  .table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  .rs-article__body .rte .table-wrap thead th,
+  .table-wrap thead th {
+    background: #000000;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: none;
+  }
+  .rs-article__body .rte .table-wrap tbody td,
+  .table-wrap tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+  }
+  .table-wrap tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .table-wrap tbody tr:hover {
+    background: #FAFAF9;
+  }
+
+  /* Product CTA card */
+  .product-cta {
+    background: #f6f8f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 28px;
+    margin: 2em 0;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  .product-cta img {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: contain;
+    border-radius: 12px;
+    flex-shrink: 0;
+    margin: 0 !important;
+    float: none !important;
+  }
+  .product-cta__body {
+    flex: 1;
+  }
+  .product-cta__body h4 {
+    margin: 0 0 6px !important;
+    font-size: 1.1rem;
+  }
+  .product-cta__body .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+  .product-cta__body p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 14px !important;
+    line-height: 1.5;
+  }
+  .product-cta .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 6px;
+    margin-bottom: 8px;
+  }
+  .product-cta .badge--dark {
+    background: #000000;
+    color: #fff;
+  }
+  .product-cta .badge--green {
+    background: #17e260;
+    color: #fff;
+  }
+  .product-cta .badge--outline {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    background: #17e260;
+    color: #fff !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none !important;
+    transition: background 0.2s ease;
+  }
+  .btn-primary:hover { background: #12c955; }
+  .btn-secondary {
+    display: inline-block;
+    background: #fff;
+    color: #000000 !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    margin-left: 8px;
+  }
+  .btn-secondary:hover { background: #000000; color: #fff !important; }
+
+  /* FAQ accordion */
+  .faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #000000;
+    background: #fff;
+    transition: background 0.2s ease;
+    user-select: none;
+  }
+  .faq-q:hover { background: #FAFAF9; }
+  .faq-q::after {
+    content: '+';
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #888;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+  }
+  .faq-item.open .faq-q::after {
+    content: '\2212';
+  }
+  .faq-a {
+    display: none;
+    padding: 0 20px 16px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #444;
+  }
+  .faq-item.open .faq-a {
+    display: block;
+  }
+
+  /* Key takeaways dark box */
+  .key-points {
+    background: #000000;
+    color: #f6f8f9;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 2em 0;
+  }
+  .key-points h3 {
+    color: #fff !important;
+    margin-top: 0 !important;
+    margin-bottom: 16px !important;
+    font-size: 1.2rem;
+  }
+  .key-points ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .key-points li {
+    padding: 6px 0;
+    padding-left: 28px;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .key-points li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: #17e260;
+    font-weight: 700;
+  }
+
+  /* Sources box */
+  .sources {
+    background: #f6f8f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 2em 0;
+    font-size: 0.85rem;
+  }
+  .sources h4 {
+    margin: 0 0 10px !important;
+    font-size: 0.95rem;
+  }
+  .sources ol {
+    padding-left: 1.2em;
+    margin: 0;
+  }
+  .sources li {
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+  .sources a {
+    color: #1761ff;
+    text-decoration: none;
+  }
+  .sources a:hover {
+    text-decoration: underline;
+  }
+
+  /* Badge meta tags */
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .badge--dark {
+    background: #000000;
+    color: #fff;
+  }
+  .badge--green {
+    background: #17e260;
+    color: #fff;
+  }
+  .badge--outline {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .rs-article__hero {
+      margin-top: 24px;
+      padding: 0 16px;
+    }
+
+    .rs-article__hero img {
+      border-radius: 8px;
+    }
+
+    .rs-article__header {
+      padding: 0 16px;
+      margin-top: 28px;
+    }
+
+    .rs-article__title {
+      font-size: 1.8rem;
+    }
+
+    .rs-article__body {
+      padding: 0 16px;
+    }
+
+    .rs-article__body .rte {
+      font-size: 1rem;
+    }
+
+    .rs-article__footer,
+    .rs-article__nav,
+    .rs-article__comments {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .rs-article__comments .comment-form {
+      grid-template-columns: 1fr;
+    }
+
+    .product-cta {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    .product-cta img {
+      width: 120px !important;
+      height: 120px !important;
+    }
+    .key-points {
+      padding: 20px;
+    }
+    .callout {
+      padding: 16px 18px;
+    }
+  }
+</style>
+
+<div class="blog-detail">
+  {% if article.image %}
+    <div class="rs-article__hero">
+      <img
+        src="{{ article.image | img_url: '1200x675', crop: 'center' }}"
+        alt="{{ article.title | escape }}"
+        width="1200"
+        height="675"
+      >
+    </div>
+  {% endif %}
+
+  <div class="rs-article__header">
+    <h1 class="rs-article__title">
+      {% render 'multilang' with article.title %}
+    </h1>
+
+    {% if settings.enable_multilang and article.content contains '[lang2]' %}
+      <div class="rs-lang-switcher" role="tablist" aria-label="Language">
+        <button class="active" data-lang="lang1" role="tab" aria-selected="true">EN</button>
+        <button data-lang="lang2" role="tab" aria-selected="false">ES</button>
+      </div>
+    {% endif %}
+
+    <div class="rs-article__byline">
+      {% if section.settings.blog_show_date %}
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+          {{ article.published_at | date: '%B %d, %Y' }}
+        </time>
+      {% endif %}
+
+      {% if section.settings.blog_show_author and section.settings.blog_show_date %}
+        <span class="rs-sep">|</span>
+      {% endif %}
+
+      {% if section.settings.blog_show_author %}
+        <span>Words by {{ article.author }}</span>
+      {% endif %}
+
+      {% if blog.comments_enabled? %}
+        <span class="rs-sep">|</span>
+        <a href="#comments">
+          {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="rs-article__body">
+    {% if settings.enable_multilang and article.content contains '[lang2]' %}
+      <div class="rte lang1">
+        {{ article.content | split: '[lang2]' | first }}
+      </div>
+      <div class="rte lang2">
+        {{ article.content | split: '[lang2]' | last }}
+      </div>
+    {% else %}
+      <div class="rte">
+        {{ article.content | split: '[lang2]' | first }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="rs-article__gallery">
+    {% render 'blog-detail-gallery_lookbook' %}
+  </div>
+
+  <div class="rs-article__footer">
+    <div class="tags-share">
+      <ul class="user-tags">
+        {% render 'tags-article' %}
+      </ul>
+      {% render 'share' %}
+    </div>
+  </div>
+
+  {% if blog.next_article or blog.previous_article %}
+    <div class="rs-article__nav">
+      <div class="action-btn">
+        {% if blog.previous_article %}
+          <div class="btn-left">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            {{ 'blogs.article.older_post' | t | link_to: blog.previous_article }}
+          </div>
+        {% endif %}
+
+        {% if blog.next_article %}
+          <div class="btn-right">
+            {{ 'blogs.article.newer_post' | t | link_to: blog.next_article }}
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if blog.comments_enabled? %}
+    <div class="rs-article__comments">
+      {% if number_of_comments > 0 %}
+        <h2 class="title-comment">
+          {{ 'blogs.comments.comments_with_count' | t: count: number_of_comments }}
+        </h2>
+      {% endif %}
+
+      {% paginate article.comments by 5 %}
+        <div id="comments">
+          {% if comment and comment.created_at %}
+            <div class="note form-success">
+              {% if blog.moderated? %}
+                <span>{{ 'blogs.comments.success_moderated' | t }}</span>
+              {% else %}
+                <span>{{ 'blogs.comments.success' | t }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if number_of_comments > 0 %}
+            <ul class="list-comments">
+              {% if comment and comment.created_at %}
+                <li id="{{ comment.id }}" class="comment first{% if article.comments_count == 0 %} last{% endif %}">
+                  {% render 'comment', comment: comment, article: article %}
+                </li>
+              {% endif %}
+
+              {% for comment in article.comments %}
+                <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
+                  {% render 'comment', comment: comment, article: article %}
+                </li>
+              {% endfor %}
+            </ul>
+
+            {% if paginate.pages > 1 %}
+              {% render 'pagination', paginate: paginate %}
+            {% endif %}
+          {% endif %}
+
+          {% form article %}
+            <h3 class="title-comment" id="add-comment-title">
+              {{ 'blogs.comments.title' | t }}
+            </h3>
+
+            {% render 'form-errors-custom' %}
+
+            <div class="comment-form">
+              <div class="form-group">
+                <label for="comment-author">{{ 'blogs.comments.name' | t }}</label>
+                <input type="text" name="comment[author]" id="comment-author" value="{{ form.author }}">
+              </div>
+
+              <div class="form-group">
+                <label for="comment-email">{{ 'blogs.comments.email' | t }}</label>
+                <input type="email" name="comment[email]" id="comment-email" value="{{ form.email }}">
+              </div>
+            </div>
+
+            <div class="message form-group">
+              <label for="comment-body">{{ 'blogs.comments.message' | t }}</label>
+              <textarea rows="7" name="comment[body]" id="comment-body">{{ form.body }}</textarea>
+            </div>
+
+            <div class="note">
+              {{ 'blogs.comments.note' | t }}
+            </div>
+
+            <input type="submit" class="btn" value="{{ 'blogs.comments.post' | t }}">
+
+            {% if form.errors %}
+              <script>window.location.hash = '#add-comment-title';</script>
+            {% endif %}
+            {% if form.posted_successfully? %}
+              <script>window.location.hash = '#comments';</script>
+            {% endif %}
+          {% endform %}
+        </div>
+      {% endpaginate %}
+    </div>
+  {% endif %}
+</div>
+
+{% if settings.enable_multilang and article.content contains '[lang2]' %}
+<script>
+(function(){
+  /* ── Language toggle ── */
+  var KEY = 'rs_lang';
+  var params = new URLSearchParams(window.location.search);
+  var stored = localStorage.getItem(KEY);
+  var lang = params.get('lang') === 'es' ? 'lang2' : (stored === 'lang2' ? 'lang2' : 'lang1');
+
+  function applyLang(l) {
+    document.body.classList.toggle('show-lang2', l === 'lang2');
+    localStorage.setItem(KEY, l);
+    document.querySelectorAll('.rs-lang-switcher button').forEach(function(b){
+      var active = b.getAttribute('data-lang') === l;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-selected', active);
+    });
+  }
+
+  applyLang(lang);
+
+  document.querySelectorAll('.rs-lang-switcher button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      applyLang(this.getAttribute('data-lang'));
+    });
+  });
+
+  /* ── FAQ accordion ── */
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click', function(){
+      this.parentElement.classList.toggle('open');
+    });
+  });
+})();
+</script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Article Page",
+    "class": "col-12",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": "Show date",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Lookbook Description in Blog Detail"
+      },
+      {
+        "type": "checkbox",
+        "id": "dpl_lookbook_description",
+        "label": "Display Lookbook Description?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "quote_title",
+        "label": "Quote Title 1"
+      },
+      {
+        "type": "textarea",
+        "id": "quote_des",
+        "label": "Quote Description 1"
+      },
+      {
+        "type": "text",
+        "id": "quote_title_2",
+        "label": "Quote Title 2"
+      },
+      {
+        "type": "textarea",
+        "id": "quote_des_2",
+        "label": "Quote Description 2"
+      },
+      {
+        "type": "header",
+        "content": "LookBook Gallery in Blog Detail"
+      },
+      {
+        "type": "checkbox",
+        "id": "dpl_gallery_lookbook",
+        "label": "Display LookBook Gallery?",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "gallery_lb_title",
+        "label": "Title",
+        "default": "LookBook Gallery"
+      },
+      {
+        "type": "header",
+        "content": "Featured Product"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_cart_best_sellers_product",
+        "label": "Enable",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Best Sellers"
+      },
+      {
+        "type": "collection",
+        "id": "show_slider_featured_collection",
+        "label": "Collection to use"
+      },
+      {
+        "type": "range",
+        "id": "slider_featured_limit_all",
+        "label": "Number of new products to show",
+        "min": 3,
+        "max": 20,
+        "step": 1,
+        "default": 8
+      },
+      {
+        "type": "select",
+        "id": "collection_results_per_row1",
+        "label": "Products per row",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          }
+        ],
+        "default": "4"
+      }
+    ],
+
+    "blocks" : [
+      {
+        "type": "image",
+        "name": "LookBook Gallery",
+        "settings":[
+          {
+            "type" : "header",
+            "content" : "Image 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_1",
+            "label" : "Select Image",
+            "info": "Recommended Image: Width x Height (290 x 387)px"
+          },
+          {
+            "type" : "header",
+            "content" : "Product 1"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_1_1",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_1_1",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_1_1",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_1_1",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_1_1",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_1_1",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          },
+          {
+            "type" : "header",
+            "content" : "Product 2"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_1_2",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_1_2",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_1_2",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_1_2",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_1_2",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_1_2",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          },
+          {
+            "type" : "header",
+            "content" : "Product 3"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_1_3",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_1_3",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_1_3",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_1_3",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_1_3",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_1_3",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          },
+          {
+            "type" : "header",
+            "content" : "Image 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_2",
+            "label" : "Select Image",
+            "info": "Recommended Image: Width x Height (290 x 387)px"
+          },
+          {
+            "type" : "header",
+            "content" : "Product 1"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_2_1",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_2_1",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_2_1",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_2_1",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_2_1",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_2_1",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          },
+          {
+            "type" : "header",
+            "content" : "Product 2"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_2_2",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_2_2",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_2_2",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_2_2",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_2_2",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_2_2",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          },
+          {
+            "type" : "header",
+            "content" : "Product 3"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_2_3",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_2_3",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_2_3",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_2_3",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_2_3",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_2_3",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          },
+          {
+            "type" : "header",
+            "content" : "Image 3"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_3",
+            "label" : "Select Image",
+            "info": "Recommended Image: Width x Height (290 x 387)px"
+          },
+          {
+            "type" : "header",
+            "content" : "Product 1"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_3_1",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_3_1",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_3_1",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_3_1",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_3_1",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_3_1",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          },
+          {
+            "type" : "header",
+            "content" : "Product 2"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_3_2",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_3_2",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_3_2",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_3_2",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_3_2",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_3_2",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          },
+          {
+            "type" : "header",
+            "content" : "Product 3"
+          },
+          {
+            "type" : "product",
+            "id" : "lb_product_3_3",
+            "label" : "Select Product"
+          },
+          {
+            "type" : "text",
+            "id" : "top_position_3_3",
+            "label" : "Top Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "text",
+            "id" : "left_position_3_3",
+            "label" : "Left Position",
+            "default" : "10",
+            "info" : "Unit %"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_color_3_3",
+            "label" : "Select Icon Color",
+            "default" : "#fff"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_bg_color_3_3",
+            "label" : "Select Icon Background color",
+            "default" : "#323232"
+          },
+          {
+            "type" : "color",
+            "id" : "dots_shadow_color_3_3",
+            "label" : "Select Icon Shadow Color with opacity 0.3",
+            "default" : "#fff",
+            "info" : "======================="
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

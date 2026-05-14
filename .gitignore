@@ -1,0 +1,35 @@
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# Reports (daily generated)
+reports/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/
+*.swp
+
+# Backups
+*.bak
+
+# Claude Code — local-only state
+.claude/worktrees/
+.claude/settings.local.json
+.claude/projects/
+
+# Generated cover images (cached locally before push to Shopify theme assets)
+*.png.bak
+
+# OS junk
+.DS_Store
+Thumbs.db

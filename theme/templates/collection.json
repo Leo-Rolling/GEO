@@ -1,0 +1,482 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "9771566c-cd90-4350-89ab-8af80d84f012": {
+      "type": "collection-banner",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "usp-1": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "30-DAY RISK-FREE TRIAL"
+          }
+        },
+        "usp-2": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/beenhere_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "2 YEARS WARRANTY"
+          }
+        },
+        "usp-3": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "650.000+ LIFEHACKERS"
+          }
+        },
+        "usp-4": {
+          "type": "usp",
+          "settings": {
+            "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+            "title": "DESIGNED IN SWITZERLAND"
+          }
+        },
+        "promo_Vp9Ycn": {
+          "type": "promo",
+          "settings": {
+            "heading": "DISRUPTIVE DESIGN, CUTTING EDGE PERFORMANCE",
+            "detail": "Carefully engineered to surpass the standards of consumer electronics.",
+            "promoImg": "shopify://shop_images/Shopify_-_Collections_Promo_Cards_1.jpg",
+            "promoPos": 1
+          }
+        },
+        "promo_NzncXq": {
+          "type": "promo",
+          "settings": {
+            "heading": "UNIQUE CONCEPTS, DESIGNED TO HACK OUR LIVES",
+            "detail": "Explore our tools to simplify and enhance your routine.",
+            "promoImg": "shopify://shop_images/TAU_2_hover.jpg",
+            "promoPos": 8
+          }
+        },
+        "promo_krYeqY": {
+          "type": "promo",
+          "settings": {
+            "heading": "UNLOCK NEW LEVELS OF PRODUCTIVITY",
+            "detail": "Made to last a lifetime, with high end components that ensure performance.",
+            "promoImg": "shopify://shop_images/EDGE_Pro_5.jpg",
+            "promoPos": 13
+          }
+        },
+        "promo_QfDQ9b": {
+          "type": "promo",
+          "settings": {
+            "heading": "WHERE SWISS PRECISION MEETS REAL-WORLD UTILITY",
+            "detail": "Every detail refined for people who demand more from what they carry.",
+            "promoImg": "shopify://shop_images/AirCard_6fe74b52-3131-43a8-882b-7cdd40f47853.jpg",
+            "promoPos": 20
+          }
+        }
+      },
+      "block_order": [
+        "usp-1",
+        "usp-2",
+        "usp-3",
+        "usp-4",
+        "promo_Vp9Ycn",
+        "promo_NzncXq",
+        "promo_krYeqY",
+        "promo_QfDQ9b"
+      ],
+      "settings": {
+        "topFilters": [
+          "all"
+        ],
+        "otherFilters": [
+          "tracking",
+          "cables",
+          "productivity",
+          "charging",
+          "travel-accessories",
+          "gan-chargers",
+          "magsafe-collection"
+        ],
+        "filterLink": "shopify://collections/all",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/Rs-1.svg",
+        "show_decoration_mobile": false
+      }
+    },
+    "trustpilot_Bc7GxN": {
+      "type": "trustpilot",
+      "blocks": {
+        "usp_XPKM7w": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_59.png",
+            "uspRichText": "<p><strong>3x Red Dot Design Awards</strong></p>"
+          }
+        },
+        "usp_9qGBNm": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/IFForumDesignLogo_svg.webp",
+            "uspRichText": "<p><strong>1x IF Design <br/>Award</strong></p>"
+          }
+        },
+        "usp_bnrdj3": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_57.png",
+            "uspRichText": "<p><strong>4x CES Innovation Awards</strong></p>"
+          }
+        },
+        "usp_fJzRY6": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_58.png",
+            "uspRichText": "<p><strong>1x Good Design Award</strong></p>"
+          }
+        },
+        "review_AXW9fi": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Monica T.",
+            "reviewTitle": "Great quality product, amazing value",
+            "reviewDetail": "Nice quality and isn't bulkier than it needs to be. Being able to carry it around with my keys ensure I never forget it in my EDC is so handy, and the protective cap keeps it safe from dust and weather. Great product, would definitely recommend and am even considering getting the longer version for trips!",
+            "reviewDate": "inCharge X"
+          }
+        },
+        "review_eJE3Q7": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Russell Hubbard",
+            "reviewTitle": "I actually KNOW where my wallet is.",
+            "reviewDetail": "It's always nice to find a product which actually performs as advertised. This AirCard, Is That Product! Very happy with the design, build quality and capability of this card. Well done, Rollingsquare! Looking for more great things in the future.",
+            "reviewDate": "AirCard"
+          }
+        },
+        "review_Eww3B7": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Georgios Kouvaras",
+            "reviewTitle": "TOTALLY SATISFIED CUSTOMER",
+            "reviewDetail": "Guys, your rolling square cables ROCK!!! I have all the sizes (keyring, 20cm, 2m and 3m) and they all work perfectly. Even the 3m with a Lumix camera connected to macBook for photo shooting. Flawless, great quality and versatility! (looking forward for TAU 2, the small charger from Kickstarter!)",
+            "reviewDate": "inCharge XL"
+          }
+        },
+        "review_YBJwQT": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Bence Dudás",
+            "reviewTitle": "Quality product, quality team",
+            "reviewDetail": "Even though international shipping lost my parcel, the team did their best to get me my order, and it arrived completely in the end. The products are high quality and they work flawlessly. I can only say they have my full support! 5 stars!",
+            "reviewDate": "Service"
+          }
+        },
+        "review_TzixDa": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Guenther Bauer",
+            "reviewTitle": "Incredible job guys",
+            "reviewDetail": "Incredible job guys! Not only is AirCard a top product, beautiful and yet functional, your customer service is top notch! The original shipment was lost by the logistic company. After writing the problem to the folks at Rolling Square a replacement shipment was on its way in no time. Thanks a lot for such a great service! I'd wish other companies would act like you do!",
+            "reviewDate": "AirCard"
+          }
+        },
+        "review_WTAKRG": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Madeleine Carlozzi",
+            "reviewTitle": "Game changer...",
+            "reviewDetail": "Love my long charger that charges all my different gadgets...it's a game changer. And my magnet I've attached to my iPad Air I use for my iPhone... love having the option to jump from using one screen to the other... another game changer. Such simple, reasonably priced items that are so well designed and thought out ...definitely recommend!!",
+            "reviewDate": "inCharge XL"
+          }
+        },
+        "review_bdkwnB": {
+          "type": "review",
+          "settings": {
+            "reviewer": "Hugh P.",
+            "reviewTitle": "Great product!",
+            "reviewDetail": "Great product. Great service. Saved my wife's life as she never understands all the different cables!",
+            "reviewDate": "inCharge X"
+          }
+        }
+      },
+      "block_order": [
+        "usp_XPKM7w",
+        "usp_9qGBNm",
+        "usp_bnrdj3",
+        "usp_fJzRY6",
+        "review_AXW9fi",
+        "review_eJE3Q7",
+        "review_Eww3B7",
+        "review_YBJwQT",
+        "review_TzixDa",
+        "review_WTAKRG",
+        "review_bdkwnB"
+      ],
+      "settings": {
+        "scoreImg": "shopify://shop_images/5stars.png",
+        "totalReviews": "",
+        "heading": "2.2+ MLN PRODUCTS SOLD",
+        "richDesc": "<p>For over a decade, we've delivered millions of products worldwide and won the best awards in technology and design, all made possible by the support of over 650,000 lifehackers like us, fueling our success with crucial feedback and support.</p>",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/RS-4.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/RS-4.svg"
+      }
+    },
+    "02d8cb45-8904-456e-a8df-9d0db5f8597c": {
+      "type": "something-else",
+      "blocks": {
+        "5e5d4cd0-1227-4428-a707-e9e45f9554b3": {
+          "type": "else",
+          "settings": {
+            "media": "shopify://shop_images/Group_1093.jpg",
+            "media2": "shopify://shop_images/Group_1092.jpg",
+            "heading": "inCharge XS",
+            "subtitle": "The 240W Swiss army knife of cables",
+            "cta": "shopify://products/incharge®-xs-240w-4in1-keyring-cable"
+          }
+        },
+        "c4856bd3-388b-4514-b6f0-4bc52f76e42c": {
+          "type": "else",
+          "settings": {
+            "media": "shopify://shop_images/Group_1096_91a04116-8659-47aa-bc22-e9c74b3da3bd.jpg",
+            "media2": "shopify://shop_images/Group_1095.jpg",
+            "heading": "AirCard",
+            "subtitle": "Bluetooth wallet tracker for Apple Find My",
+            "cta": "shopify://products/aircard"
+          }
+        },
+        "f9d0b25b-f4af-463f-bcf3-3a2dc35ac422": {
+          "type": "else",
+          "settings": {
+            "media": "shopify://shop_images/XLS.jpg",
+            "media2": "shopify://shop_images/XLS1_dc229fd1-5ac0-4a57-9797-a4ebdfb22289.jpg",
+            "heading": "inCharge XL 30cm / 1ft",
+            "subtitle": "Making all other cables obsolete",
+            "cta": "shopify://products/xls"
+          }
+        },
+        "33060275-9783-43fa-93b0-e925ecf53f37": {
+          "type": "else",
+          "settings": {
+            "media": "shopify://shop_images/EPK1_1d9c7c9a-66f0-4581-81ae-2e2ac47655b7.jpg",
+            "media2": "shopify://shop_images/EPK2_383b9822-7596-432d-84bf-4041ec154600.jpg",
+            "heading": "EDGE Pro Full Kit",
+            "subtitle": "Bring true modularity to your workstation",
+            "cta": "shopify://collections/productivity"
+          }
+        }
+      },
+      "block_order": [
+        "5e5d4cd0-1227-4428-a707-e9e45f9554b3",
+        "c4856bd3-388b-4514-b6f0-4bc52f76e42c",
+        "f9d0b25b-f4af-463f-bcf3-3a2dc35ac422",
+        "33060275-9783-43fa-93b0-e925ecf53f37"
+      ],
+      "settings": {
+        "heading": "WHO SEEKS, [FINDS]",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_5.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/section_icon_5.svg"
+      }
+    },
+    "faq_i6wgKm": {
+      "type": "faq",
+      "blocks": {
+        "block_cH8cjC": {
+          "type": "block",
+          "settings": {
+            "q": "If I have a question about an item, whom should I contact?",
+            "a": "<p>For any questions regarding Rolling Square's products, you can contact us at <a href=\"mailto:support@rollingsqua.re\" target=\"_blank\" title=\"mailto:support@rollingsqua.re\">support@rollingsqua.re</a>, or join our <a href=\"https://t.me/RollingSquareFamily\" target=\"_blank\" title=\"https://t.me/RollingSquareFamily\">community chat!</a></p>"
+          }
+        },
+        "block_WaYriK": {
+          "type": "block",
+          "settings": {
+            "q": "Are your products covered by warranty?",
+            "a": "<p>We offer a 2 year warranty for all Rolling Square products. Our warranty covers any manufacturing or workmanship defects but does not cover damages that may have resulted from normal wear and tear, misuse/abuse or modification of the product.</p>"
+          }
+        },
+        "block_BhhRJD": {
+          "type": "block",
+          "settings": {
+            "q": "Is shipping tracked?",
+            "a": "<p>Yes, all shipping methods are tracked!</p>"
+          }
+        },
+        "block_wDTD8E": {
+          "type": "block",
+          "settings": {
+            "q": "Can I return a product?",
+            "a": "<p>If you are not completely satisfied with your purchase, you may return the item in its original condition within 30 days of receipt for a refund, excluding the original shipping fee. Only items purchased directly from Rolling Square’s online store or through Indiegogo/Kickstarter campaigns will be accepted. If you purchased your items from authorized retailers, whether online or offline, please contact them directly for returns.</p><p>Returned items must be in their original packaging and include all accessories and manuals, where applicable. Items should be returned to our addresses in Switzerland, Italy, or the US, based on the customer's location. Please note that shipping costs for returns are non-refundable.</p><p>Non-returnable items include those purchased through retailers, incorrect products purchased, and products damaged through customer mishandling. Please be aware that original shipping charges are non-refundable except in cases where we have made a shipping error. All VAT/import taxes are the responsibility of the recipient and are non-refundable.</p>"
+          }
+        },
+        "block_YrGKJr": {
+          "type": "block",
+          "settings": {
+            "q": "Will I have to pay VAT when I receive the goods?",
+            "a": "<p>If the order is shipped domestically you won't be requested to pay any VAT or duties, if the goods get through any customs you may be asked to pay VAT for your order. When checking out you will see all the available shipping options given your delivery address and the items in your cart, if any of them has prepaid VAT, it will be mentioned in the shipping option. For all the other channels you may be subject to VAT payment if requested by your local customs.</p>"
+          }
+        },
+        "block_yewhAa": {
+          "type": "block",
+          "settings": {
+            "q": "How long does it take for my order to be dispatched?",
+            "a": "<p>Typically, orders placed on our store are shipped within 2 hours. However, it may take up to 48 hours to receive a shipping confirmation email that includes the tracking number. <br/><br/>If more than 48 hours have passed and you haven't received the confirmation email, there might be an issue with your order, such as missing information or an incomplete address. <br/><br/>In such cases, our customer support team will reach out to you to obtain the necessary details to process your order. If you do not hear from our customer support, please feel free to contact us <a href=\"mailto:support@rollingsqua.re\" target=\"_blank\" title=\"mailto:support@rollingsqua.re\">here.</a></p>"
+          }
+        },
+        "block_yDXGPg": {
+          "type": "block",
+          "settings": {
+            "q": "How long does shipping take?",
+            "a": "<p>Estimated shipping times are provided during checkout and are determined by the shipment's origin and final destination.<br/><br/>For more detailed tracking information on international shipments, you can use your tracking number to search on <a href=\"https://track.aftership.com/\" target=\"_blank\" title=\"https://track.aftership.com/\">https://track.aftership.com/</a> or on the destination country's national post website.<br/><br/>Please note that shipping times may vary in cases involving customs processing. Depending on the destination country, orders may undergo customs clearance and may be held until duties and taxes are paid.<br/><br/>As the importer/consignee, it is your responsibility to cover any duties and taxes. We are unable to refund customs fees or additional charges required for package delivery.<br/>If you haven't received your order or if the package has been returned to us for any reason, please contact <a href=\"mailto:support@rollingsqua.re\" title=\"mailto:support@rollingsqua.re\">support@rollingsqua.re.</a></p>"
+          }
+        },
+        "block_BH7Fkf": {
+          "type": "block",
+          "settings": {
+            "q": "My address is wrong but the order has already been shipped.",
+            "a": "<p>Once your package has been shipped, we are unable to modify the delivery address at this time. In the event that the address provided is incorrect, you can attempt to contact the last mile carrier and request a rerouting of the package to the correct address. <br/><br/>Alternatively, you may provide them with specific instructions that can aid in a successful delivery. However, if these attempts are unsuccessful, the delivery will not be completed, and the package will be returned to us. <br/><br/>Once we receive the package back, we will make arrangements to ship it to you again. To provide the correct address for reshipment, please get in touch with us at <a href=\"mailto:support@rollingsqua.re\" target=\"_blank\" title=\"mailto:support@rollingsqua.re\">support@rollingsqua.re.</a></p>"
+          }
+        },
+        "block_hfcVfj": {
+          "type": "block",
+          "settings": {
+            "q": "By looking at the tracking number, the order seems stuck.",
+            "a": "<p>The updating of tracking numbers may vary depending on the destination country. In many cases, the order is en route and will likely be delivered on time or with only a minor delay. </p><p>If the shipping time has surpassed our estimated timelines by more than 8 business days, the most effective course of action is for you to directly contact the courier.<br/>Once the package is shipped, we receive the same tracking information as you do. </p><p>Regrettably, we do not have access to any additional details. In the event that the courier is unable to locate your shipment, please reach out to us at <a href=\"mailto:support@rollingsqua.re\" target=\"_blank\" title=\"mailto:support@rollingsqua.re\">support@rollingsqua.re</a>, and we will initiate a claim with the carrier to locate your package.</p>"
+          }
+        },
+        "block_XWEfeM": {
+          "type": "block",
+          "settings": {
+            "q": "Where can I find my tracking number?",
+            "a": "<p>Your tracking number should have been sent to you via email from noreply@rollingsquare.com, typically within 48 hours from the time you placed the order.</p><p>In case you cannot find the email containing the tracking number, you have the option to enter your email address here to access and check your tracking code.</p><p>If you still can't find it, please get in touch with our customer support <a href=\"mailto:support@rollingsqua.re\" target=\"_blank\" title=\"mailto:support@rollingsqua.re\">here.</a></p>"
+          }
+        },
+        "block_fTNKkY": {
+          "type": "block",
+          "settings": {
+            "q": "Are you looking for agents and distributors?",
+            "a": "<p>If you are interested in getting involved as an investor, agent, or distributor, fill out this form (<a href=\"https://rollingsquare.support/apply\" target=\"_blank\" title=\"https://rollingsquare.support/apply\">https://rollingsquare.support/apply</a>) and let’s start talking!</p>"
+          }
+        },
+        "block_Dbzmtd": {
+          "type": "block",
+          "settings": {
+            "q": "Can I invest in Rolling Square?",
+            "a": "<p>We are always excited to speak with anyone who believes in us. If you're interested, please apply at <a href=\"https://rollingsquare.support/apply\" target=\"_blank\" title=\"https://rollingsquare.support/apply\">https://rollingsquare.support/apply</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_cH8cjC",
+        "block_WaYriK",
+        "block_BhhRJD",
+        "block_wDTD8E",
+        "block_YrGKJr",
+        "block_yewhAa",
+        "block_yDXGPg",
+        "block_BH7Fkf",
+        "block_hfcVfj",
+        "block_XWEfeM",
+        "block_fTNKkY",
+        "block_Dbzmtd"
+      ],
+      "settings": {
+        "heading": "FAQs",
+        "desc": "",
+        "bottom_paragraph": "<p>If you can't find your question, please <a href=\"https://rollingsquare.com/pages/contact\" title=\"Contact us\">reach out to us</a>, and we'll get back to you as soon as possible!</p>",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_8.svg",
+        "show_decoration_mobile": false
+      }
+    },
+    "explore_KyJHNz": {
+      "type": "explore",
+      "blocks": {
+        "page_AbmeGP": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/ABOUT_US_d27de4f9-6687-4eb4-8fa9-3d17916b753d.jpg",
+            "heading": "ABOUT US",
+            "link": "https://more.rollingsquare.com/index.html"
+          }
+        },
+        "page_EVD9t8": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/LIFEHACKERS_MANIFESTO.jpg",
+            "heading": "LIFEHACKERS MANIFESTO",
+            "link": "https://more.rollingsquare.com/manifesto.html"
+          }
+        },
+        "page_kYzkCg": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/COMMUNITY.jpg",
+            "heading": "COMMUNITY",
+            "link": "https://more.rollingsquare.com/commmunity-new.html"
+          }
+        },
+        "page_G4xxxB": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/CAREERS_8b65dff6-d340-4742-aac2-d1bec61fc917.jpg",
+            "heading": "CAREERS",
+            "link": "https://more.rollingsquare.com/careers.html"
+          }
+        },
+        "page_anCQnz": {
+          "type": "page",
+          "settings": {
+            "image": "shopify://shop_images/Asset_240_ac6224e4-2a65-481b-8a92-cd6c1d8676ac.jpg",
+            "heading": "SELL OUR PRODUCTS",
+            "link": "https://more.rollingsquare.com/wholesale.html"
+          }
+        }
+      },
+      "block_order": [
+        "page_AbmeGP",
+        "page_EVD9t8",
+        "page_kYzkCg",
+        "page_G4xxxB",
+        "page_anCQnz"
+      ],
+      "settings": {
+        "heading": "[HACK YOUR LIFE] WITH ROLLING SQUARE",
+        "newsletter": "Join our vibrant community and be the first to know about life hacks, product launches, special deals, and much more!",
+        "klaviyo_list_id": "TGCuQi",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_7.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/section_icon_7.svg"
+      }
+    },
+    "featured_blog_geo_col": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "PRACTICAL [GUIDES]",
+        "subtitle": "Tested by our team — pick the right gear, then read why it works.",
+        "blog_handle": "news",
+        "limit": 3,
+        "layout": "compact"
+      }
+    }
+  },
+  "order": [
+    "9771566c-cd90-4350-89ab-8af80d84f012",
+    "main",
+    "trustpilot_Bc7GxN",
+    "02d8cb45-8904-456e-a8df-9d0db5f8597c",
+    "faq_i6wgKm",
+    "featured_blog_geo_col",
+    "explore_KyJHNz"
+  ]
+}

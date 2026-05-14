@@ -1,0 +1,2263 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "empty_cart_subheading": "NOTHING IN YOUR CART, FOR NOW.",
+    "empty_cart_desc": "Are you looking for inspiration? Let's find the right item for you.",
+    "em_cart_link_img_01": "shopify://shop_images/Frame_62.jpg",
+    "em_cart_link_title_01": "TRACKING",
+    "em_cart_url_01": "shopify://collections/tracking",
+    "em_cart_link_img_02": "shopify://shop_images/Frame_46.jpg",
+    "em_cart_link_title_02": "CABLES",
+    "em_cart_url_02": "shopify://collections/cables",
+    "em_cart_link_img_03": "shopify://shop_images/Productivity_1_1d0df82d-a3f1-4a12-9c98-4d779dbc9f4a.jpg",
+    "em_cart_link_title_03": "PRODUCTIVITY",
+    "em_cart_url_03": "shopify://collections/productivity",
+    "em_trustpilot_image": "shopify://shop_images/TP-39.png",
+    "em_cart_shop_all_link": "shopify://collections/all",
+    "em_cart_usp_img_01": "shopify://shop_images/repeat_FILL0_wght400_GRAD0_opsz24.svg",
+    "em_cart_usp_img_02": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+    "em_cart_usp_txt_02": "2 YEARS WARRANTY",
+    "em_cart_usp_img_03": "shopify://shop_images/support_agent_FILL0_wght400_GRAD0_opsz24.svg",
+    "em_cart_usp_txt_03": "24/7 CUSTOMER SUPPORT",
+    "em_cart_usp_img_04": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+    "em_cart_usp_txt_04": "DESIGNED IN SWITZERLAND",
+    "cart_free_gift_img_1": "shopify://shop_images/locked.png",
+    "cart_free_gift_title_1": "Free Shipping",
+    "cart_free_gift_product_1": "free-shipping",
+    "cart_free_gift_img_2": "shopify://shop_images/locked.png",
+    "cart_free_gift_title_2": "Mystery Gift",
+    "cart_free_gift_product_2": "mistery-gift",
+    "cart_free_gift_img_3": "shopify://shop_images/locked.png",
+    "cart_free_gift_title_3": "inCharge XL 30cm / 1ft",
+    "cart_free_gift_product_3": "incharge-xl-30-cm-1ft",
+    "cart_free_gift_img_4": "shopify://shop_images/locked.png",
+    "cart_free_gift_title_4": "EDGE Pro Core",
+    "cart_free_gift_product_4": "edge-pro-core",
+    "favicon": "shopify://shop_images/LOGO.png",
+    "body_font_size": "12",
+    "enable_opengraph": true,
+    "image_share": "shopify://shop_images/Webclip.png",
+    "enable_backtotop": false,
+    "display_breadcrumb": false,
+    "breadcrumb_text_transform": "capitalize",
+    "page_title_font_size": "20",
+    "page_title_text_align": "left",
+    "layout_style": "layout_style_1",
+    "style_product_grid": "style_product_grid_2",
+    "enable_sidebar_multiple_choice": true,
+    "product_name_text_transform": "none",
+    "product_name_text_align": "center",
+    "product_title_line_text": "1",
+    "type_label_sale": "discount_sale",
+    "enable_label_bundle": false,
+    "enable_hover_image": true,
+    "enable_hover_product_image": true,
+    "use_color_swatch": true,
+    "swatch_style_color": "circle",
+    "swatch_size_color": "large",
+    "option_color_swatch": "Color",
+    "color_swatch_style": "variant_grouped",
+    "enable_checkbox": true,
+    "checkbox_text": "I agree with",
+    "terms_conditions_text_link": "Terms & conditions",
+    "terms_conditions_content": "",
+    "embed_code_share": "",
+    "register_text_desc": "Sign up to become a lifehacker, with Rolling Square.",
+    "login_text_desc": "Register with us for a faster checkout, <br> to track the status of your order and more.",
+    "font_2": "shopify_fonts",
+    "fonts_name_2": "Montserrat Bold",
+    "header_font_new": "montserrat_n7",
+    "font": "shopify_fonts",
+    "fonts_name": "Montserrat Regular",
+    "base_font_new": "montserrat_n5",
+    "enable_search": true,
+    "search_1": "Your search for | Ihre Suche nach",
+    "search_2": "did not yield any results. | hat keine Ergebnisse hervorgebracht.",
+    "search_3": "Your search for | Ihre Suche nach",
+    "search_4": "revealed the following: | hat folgende Ergebnisse hervorgebracht:",
+    "enable_search_trending": true,
+    "trending_search_title": "trending",
+    "trending_search_item_1": "inCharge XL",
+    "trending_search_item_2": "EDGE Pro",
+    "trending_search_item_3": "TAU 2",
+    "trending_search_item_4": "AirCard",
+    "trending_search_item_5": "",
+    "trending_search_item_6": "",
+    "enable_search_popular_products": true,
+    "popular_products_search_title": "Suggested for you",
+    "popular_products_collection": "",
+    "popular_products_limit": 3,
+    "social_facebook_link": "https://www.facebook.com/RollingSquare.design",
+    "social_twitter_link": "https://t.me/RollingSquareFamily",
+    "social_vimeo_link": "",
+    "social_instagram_link": "https://www.instagram.com/rollingsquare/",
+    "social_google_plus_link": "",
+    "social_pinterest_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "https://www.youtube.com/@RollingSquare",
+    "body_bg": "#ffffff",
+    "body_color": "#3c3c3c",
+    "link_color": "#1761ff",
+    "link_color_hover": "#000000",
+    "bg_color_lazyload": "#f6f8f9",
+    "breadcrumb_color": "#999999",
+    "page_title_color": "#000000",
+    "btn_1_bg_color": "#1f7f3b",
+    "btn_1_border_color": "rgba(0,0,0,0)",
+    "btn_1_text_color": "#ffffff",
+    "btn_2_bg_color": "#fff",
+    "btn_2_border_color": "#000000",
+    "btn_2_text_color": "#000000",
+    "btn_3_bg_color": "#000000",
+    "btn_3_border_color": "rgba(0,0,0,0)",
+    "btn_3_text_color": "#ffffff",
+    "nvd-max-total": "200",
+    "layout_body": "default",
+    "bg_body_boxed": "#f8f8f8",
+    "header_layout": "parallax",
+    "list_collections_layout": "collections_01_grid",
+    "category_layout": "no_sidebar",
+    "product_layout": "grouped",
+    "blog_layout": "default",
+    "footer_layout": "default",
+    "password_layout": "default",
+    "header_style_mobile": "header_mobile_1",
+    "image_swap": true,
+    "product_image_border": false,
+    "product_image_border_color": "#e6e6e6",
+    "product_image_resize": true,
+    "product_image_crop": false,
+    "product_image_height": "130",
+    "show_vendor": false,
+    "display_product_reviews": false,
+    "display_item_size": true,
+    "display_item_swatch": false,
+    "show_product_color_img": true,
+    "display_button": true,
+    "collection_infinite_scrolling": true,
+    "infinity_scroll_feature": true,
+    "display_size_chart": false,
+    "display_size_chart_at": "Size",
+    "size_guide_text": "Size Guide",
+    "custom_size_chart_header": "Size Chart",
+    "size_chart": "none",
+    "custom_size_chart": "",
+    "enable_wishlist": false,
+    "enable_quick_view": true,
+    "qv_display_product_reviews": false,
+    "enable_hot_stock": false,
+    "number_stock": "",
+    "qv_show_sold_in": false,
+    "qv_item_prd": "",
+    "qv_item_prds": "",
+    "qv_hours_prs": "",
+    "qv_item_hours": "",
+    "display_quickview_vendor": false,
+    "quickview_text_vendor": "Brand:",
+    "display_quickview_product_sku": false,
+    "text_quickview_product_sku": "Product Code:",
+    "display_quickview_availability": false,
+    "quickview_text_availability": "Availability",
+    "display_quickview_product_type": false,
+    "quickview_text_product_type": "Product Type",
+    "quickview_text_countdown": "Limited-Time Offers, End in:",
+    "display_quickview_short_desc": true,
+    "display_quickview_subtotal": true,
+    "display_quickview_qty": true,
+    "dpl_customers_view_qv": false,
+    "title_view_qv": "customers are viewing this product",
+    "number_view_qv": "283, 100, 59, 11, 14, 185, 193, 165, 50, 38, 99, 112, 46, 10, 125, 200, 250, 18",
+    "display_product_detail_share": false,
+    "share_text": "Share",
+    "display_sticky": true,
+    "display_sticky_mb": true,
+    "display_countdown": false,
+    "enable_quick_shop": true,
+    "enable_notify_form": false,
+    "ajax_popup_cart": "normal",
+    "cart_popup_related_title": "YOU MAY ALSO LIKE",
+    "show_shipping_calculator": true,
+    "shipping_calculator_heading": "Get shipping estimate",
+    "shipping_calculator_default_country": "United States",
+    "redirect_button": "none",
+    "link_to_redirect": "",
+    "display_sidebar_product_cart": false,
+    "title_sidebar_cart": "",
+    "cart_sidebar_products": "cables",
+    "cart_addons": [
+      "edge-kit",
+      "incharge-x",
+      "xlm",
+      "xls"
+    ],
+    "enable_multilang_shopify": false,
+    "lange_1": "ENG",
+    "lange_2": "ES",
+    "lange_3": "FR",
+    "lange_4": "",
+    "lange_5": "",
+    "lange_6": "",
+    "enable_shopify_payments_currencies": false,
+    "enable_multiple_currencies": false,
+    "enable_auto_currency": false,
+    "currency_1_unit": "USD",
+    "currency_2_unit": "EUR",
+    "currency_3_unit": "GBP",
+    "currency_4_unit": "CHF",
+    "currency_5_unit": "",
+    "currency_6_unit": "",
+    "currency_7_unit": "",
+    "currency_8_unit": "",
+    "currency_9_unit": "",
+    "currency_10_unit": "",
+    "display_popup_newsletter": false,
+    "hidden_default": false,
+    "when_to_show": "all_the_time",
+    "popup_newsletter_expire": "1",
+    "popup_newsletter_delay": "30",
+    "newsletter": "shopify://shop_images/COLORI.jpg",
+    "popup_newsletter_title": "Join Our Mailing List",
+    "popup_newsletter_des": "Keep up to date first of all on our new epic products launches and the the limited special offers 🔥",
+    "popup_newsletter_text_note": "No, thanks",
+    "newssletter_success_text": "You have successfully subscribed!",
+    "newssletter_error_text": "This email has been registered",
+    "display_newsletter_toolbar": true,
+    "position_toolbar": "left",
+    "text_toolbar": "Newsletter",
+    "color_icon_toolbar": "#9c9c9c",
+    "color_hover_icon_toolbar": "#202020",
+    "color_text_toolbar": "#9c9c9c",
+    "color_hover_text_toolbar": "#202020",
+    "display_popup_social": true,
+    "enable_ask_an_expert": false,
+    "ask_an_expert": "<i class=\"fa fa-question-circle\"></i><span class=\"text\">Have Questions?</span><a href=\"javascript:void(0)\" title=\"Ask An Expert\">Ask An Expert</a>",
+    "ask_an_expert_header": "Have Questions?",
+    "ask_an_expert_title": "Ask the Fashion Expert anything on Ella Boutique",
+    "ask_an_expert_des": "We will follow up with you via email within 24-36 hours",
+    "ask_an_expert_questions": "Please answer the following questionnaire",
+    "enable_ask_do_you_need": true,
+    "ask_do_you_need": "Do You Need:",
+    "ask_do_you_need_1": "Pricing",
+    "ask_do_you_need_2": "Answers",
+    "ask_do_you_need_3": "Both",
+    "ask_form_mess": "What can i help you with today ?",
+    "enable_how_would_you_like_me_to_contact_you": true,
+    "how_would_you_like_me_to_contact_you": "How would you like me to contact you?",
+    "contact_with_you_1": "Phone",
+    "contact_with_you_2": "Email",
+    "contact_with_you_3": "Both",
+    "enable_recently_viewed_products": false,
+    "enable_recently_viewed_products_mb": false,
+    "layout_recently": "default",
+    "icon_logo_empty": "",
+    "logo_empty_svg": "",
+    "empty_text": "Sorry, there are no products.",
+    "recently_viewed_products_title": "",
+    "recently_viewed_products_cart": true,
+    "number_of_recently_viewed_products": 0,
+    "recently_viewed_products_expires_date": 0,
+    "enable_promotion": true,
+    "background_pro": "#edebf7",
+    "color_pro": "#3c3c3c",
+    "promotion_text_1": "",
+    "promotion_text_2": "",
+    "promotion_text_3": "",
+    "btt_text": "Top",
+    "enable_before_you_leave": false,
+    "enable_before_you_leave_mb": true,
+    "before_you_leave_expire": 15,
+    "before_you_leave_logo_text": "",
+    "before_you_leave_logo": "shopify://shop_images/logo_white.png",
+    "before_you_leave_bg": "shopify://shop_images/950x810_inchargeallmodels.png",
+    "before_you_leave_des": "<p><em>Are you sure you want to leave this page?</em></p>",
+    "before_you_leave_products": "main-products",
+    "enable_free_shipping_message": true,
+    "color_text_shipping": "#000000",
+    "free_shipping_price": "80",
+    "free_shipping_color1": "#f44336",
+    "free_shipping_color2": "#ff9800",
+    "free_shipping_color3": "#69c69c",
+    "enable_compare_product": false,
+    "enable_compare_rating": false,
+    "enable_compare_description": false,
+    "enable_compare_collection": false,
+    "enable_compare_availability": false,
+    "enable_compare_product_type": false,
+    "enable_compare_sku": false,
+    "show_compare_size": false,
+    "show_compare_color": false,
+    "show_compare_option": false,
+    "enable_compare_color": false,
+    "compare_color_title": "Compare Color",
+    "bg_menu_mb": "#000000",
+    "color_menu_mb": "#f8f8f8",
+    "border_color_menu_mb": "rgba(0,0,0,0)",
+    "color_menu_mb_lv1": "#e6e6e6",
+    "color_menu_mb_lv1_hover": "#ffffff",
+    "bg_color_menu_mb_lv1_hover": "#0f0f0f",
+    "color_menu_mb_lv2": "#a7a7a7",
+    "color_menu_mb_lv2_hover": "#ffffff",
+    "color_menu_mb_lv3": "#a7a7a7",
+    "color_menu_mb_lv3_hover": "#ffffff",
+    "color_title_product": "#232323",
+    "color_title_product_hover": "#232323",
+    "color_vendor": "#232323",
+    "color_price": "#232323",
+    "color_price_sale": "#e41d0e",
+    "color_compare_price": "#969696",
+    "color_quick_view": "#ffffff",
+    "bg_quick_view": "#000000",
+    "color_wishlist": "#232323",
+    "bg_wishlist": "#ffe5e5",
+    "color_review_icon": "#232323",
+    "color_review_icon_empty": "#232323",
+    "color_compare_product": "#fff",
+    "sale_text": "#fff",
+    "bg_sale": "#e41d0e",
+    "custom_label_text": "#fff",
+    "custom_label_bg": "#323232",
+    "bundle_label_text": "#fff",
+    "bundle_label_bg": "#232323",
+    "new_label_text": "#323232",
+    "new_label_bg": "#fff",
+    "new_label_border": "#f6f6f6",
+    "sold_out_text": "#fff",
+    "bg_sold_out": "#c1c1c1",
+    "bg_sticky": "#ffffff",
+    "color_sticky": "#3c3c3c",
+    "color_variants": "#646464",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify://shop_images/logo_solo.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "transparent",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#474747",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#ff6d6d",
+    "license": "",
+    "tid": "9691007",
+    "enable_multilang": true,
+    "mailing_list_form_action": "//myshopify.us9.list-manage.com/subscribe/post?u=f03cabb421b3912425cda25cc&amp;id=2b084b0139",
+    "secure_text": "Secure Shopping Guarantee.",
+    "checkout_use_header_image": true,
+    "checkout_logo": "checkout_logo.png",
+    "checkout_use_body_background_image": false,
+    "checkout_use_sidebar_background_image": false,
+    "checkout_banner_background_color": "#ffffff",
+    "checkout_headline": "",
+    "checkout_call_to_action_color": "#000000",
+    "customer_layout": "theme",
+    "search_placeholder": "Suche | search",
+    "sections": {
+      "header": {
+        "type": "header",
+        "blocks": {
+          "block_PBJM3p": {
+            "type": "block",
+            "settings": {
+              "lnk_txt": "CABLES",
+              "link_target": "shopify://collections/cables",
+              "has_megamenu": true,
+              "megamenu_id": "MEGA-1"
+            }
+          },
+          "block_iwy4aV": {
+            "type": "block",
+            "settings": {
+              "lnk_txt": "CHARGING",
+              "link_target": "shopify://collections/charging",
+              "has_megamenu": true,
+              "megamenu_id": "MEGA-2"
+            }
+          },
+          "block_giWRzn": {
+            "type": "block",
+            "settings": {
+              "lnk_txt": "TRACKING",
+              "link_target": "shopify://collections/tracking",
+              "has_megamenu": true,
+              "megamenu_id": "MEGA-3"
+            }
+          },
+          "block_9gWDHQ": {
+            "type": "block",
+            "settings": {
+              "lnk_txt": "PRODUCTIVITY",
+              "link_target": "shopify://collections/productivity",
+              "has_megamenu": true,
+              "megamenu_id": "MEGA-4"
+            }
+          },
+          "block_zVfKn3": {
+            "type": "block",
+            "settings": {
+              "lnk_txt": "TRAVEL",
+              "link_target": "shopify://collections/travel-accessories",
+              "has_megamenu": true,
+              "megamenu_id": "MEGA-5"
+            }
+          },
+          "block_dEXim9": {
+            "type": "block",
+            "settings": {
+              "lnk_txt": "STORE",
+              "link_target": "shopify://collections/all",
+              "has_megamenu": true,
+              "megamenu_id": "MEGA-6"
+            }
+          },
+          "block_blog_geo01": {
+            "type": "block",
+            "settings": {
+              "lnk_txt": "BLOG",
+              "link_target": "/blogs/news",
+              "has_megamenu": false
+            }
+          }
+        },
+        "block_order": [
+          "block_PBJM3p",
+          "block_iwy4aV",
+          "block_giWRzn",
+          "block_9gWDHQ",
+          "block_zVfKn3",
+          "block_blog_geo01",
+          "block_dEXim9"
+        ],
+        "settings": {
+          "main_menu": "megamenu"
+        }
+      },
+      "footer_usps": {
+        "type": "footer_usps",
+        "blocks": {
+          "5d327818-680a-4fbd-a956-038eefefcac7": {
+            "type": "usp",
+            "settings": {
+              "icon": "shopify://shop_images/local_shipping_FILL0_wght400_GRAD0_opsz24.svg",
+              "usp_subheading": "FAST, FREE SHIPPING",
+              "usp_txt": "On all orders over $80"
+            }
+          },
+          "788a558d-bc35-4614-8e21-f8fc27c20c10": {
+            "type": "usp",
+            "settings": {
+              "icon": "shopify://shop_images/swap_vert_FILL0_wght400_GRAD0_opsz24.svg",
+              "usp_subheading": "30-DAYS RISK-FREE TRIAL",
+              "usp_txt": "No questions asked"
+            }
+          },
+          "8b2070ac-edb2-4023-9537-087f8bb01157": {
+            "type": "usp",
+            "settings": {
+              "icon": "shopify://shop_images/support_agent_FILL0_wght400_GRAD0_opsz24.svg",
+              "usp_subheading": "24/7 SUPPORT",
+              "usp_txt": "24-hour email & phone support"
+            }
+          },
+          "439eb4d2-b352-4de0-91b6-dfdac7d14abd": {
+            "type": "usp",
+            "settings": {
+              "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+              "usp_subheading": "2 YEARS WARRANTY",
+              "usp_txt": "Covers manufacturing defects"
+            }
+          }
+        },
+        "block_order": [
+          "5d327818-680a-4fbd-a956-038eefefcac7",
+          "788a558d-bc35-4614-8e21-f8fc27c20c10",
+          "8b2070ac-edb2-4023-9537-087f8bb01157",
+          "439eb4d2-b352-4de0-91b6-dfdac7d14abd"
+        ],
+        "settings": {
+          "show_decoration_desktop": false,
+          "show_decoration_mobile": true,
+          "mobile_decor_icon": "shopify://shop_images/section_icon_5.svg"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "9de3cfa4-f707-4837-a2ba-232badb846f8": {
+            "type": "link",
+            "settings": {
+              "subheading": "EXPLORE",
+              "link_list": "sales"
+            }
+          },
+          "4a3bc7ea-6829-4f67-aa8a-6fca5cc868b6": {
+            "type": "link",
+            "settings": {
+              "subheading": "ABOUT US",
+              "link_list": "about-us"
+            }
+          },
+          "fa87c441-b88f-44b9-91bf-820f2a8317a5": {
+            "type": "link",
+            "settings": {
+              "subheading": "HELP",
+              "link_list": "footer"
+            }
+          },
+          "b7cae2fa-abc8-4f36-950e-a24927f0839f": {
+            "type": "link",
+            "settings": {
+              "subheading": "TERMS",
+              "link_list": "terms"
+            }
+          },
+          "link_7pEipY": {
+            "type": "link",
+            "disabled": true,
+            "settings": {
+              "subheading": "PRIVACY REQUEST",
+              "link_list": "footer-1"
+            }
+          }
+        },
+        "block_order": [
+          "9de3cfa4-f707-4837-a2ba-232badb846f8",
+          "4a3bc7ea-6829-4f67-aa8a-6fca5cc868b6",
+          "fa87c441-b88f-44b9-91bf-820f2a8317a5",
+          "b7cae2fa-abc8-4f36-950e-a24927f0839f",
+          "link_7pEipY"
+        ],
+        "settings": {
+          "heading": "STAY IN THE LOOP",
+          "desc": "Be the first to unlock new life hacks, learn about our upcoming product launches, and discover our special deals!",
+          "btn_txt": "JOIN NOW",
+          "klaviyo_list_id": "TGCuQi"
+        }
+      },
+      "mobile_menu": {
+        "type": "mobile_menu",
+        "blocks": {
+          "2e59f578-f08b-4bb0-81d6-bb991f2e08be": {
+            "type": "footer_link",
+            "settings": {
+              "mob_footer_lnk": "",
+              "icon": "shopify://shop_images/editor_choice_FILL0_wght400_GRAD0_opsz24.svg",
+              "link_txt": "2.2+ MLN ITEMS SOLD"
+            }
+          },
+          "9f0e3b7f-307f-4054-85c2-28b84acbbe0b": {
+            "type": "footer_link",
+            "settings": {
+              "mob_footer_lnk": "",
+              "icon": "shopify://shop_images/repeat_FILL0_wght400_GRAD0_opsz24.svg",
+              "link_txt": "30 DAYS FREE TRIAL"
+            }
+          },
+          "5b1917d5-cee6-4858-9efc-1964c441b6c5": {
+            "type": "footer_link",
+            "settings": {
+              "mob_footer_lnk": "",
+              "icon": "shopify://shop_images/verified_FILL0_wght400_GRAD0_opsz24.svg",
+              "link_txt": "2 YEARS WARRANTY"
+            }
+          },
+          "17339e4a-09cf-49a1-84f2-1a1ddce70be7": {
+            "type": "footer_link",
+            "settings": {
+              "mob_footer_lnk": "",
+              "icon": "shopify://shop_images/add_location_FILL0_wght400_GRAD0_opsz24.svg",
+              "link_txt": "SWISS DESIGN"
+            }
+          },
+          "highlight_block_hanYPz": {
+            "type": "highlight_block",
+            "settings": {
+              "link_img": "shopify://shop_images/Frame_433.webp",
+              "link_txt": "AirCard Pro Dual",
+              "block_link": "shopify://products/aircardpro-dual",
+              "badge_text": "NEW",
+              "badge_color": "#1761ff"
+            }
+          },
+          "highlight_block_kdcdYr": {
+            "type": "highlight_block",
+            "settings": {
+              "link_img": "shopify://shop_images/Frame_432.webp",
+              "link_txt": "AirNotch Pro Dual",
+              "block_link": "shopify://products/airnotchpro-dual",
+              "badge_text": "NEW",
+              "badge_color": "#1761ff"
+            }
+          },
+          "highlight_block_yNNKnr": {
+            "type": "highlight_block",
+            "settings": {
+              "link_img": "shopify://shop_images/Frame_367.webp",
+              "link_txt": "Supertiny",
+              "block_link": "shopify://products/supertiny-the-smallest-65w-gan-charger-ever",
+              "badge_text": "NEW",
+              "badge_color": "#1761ff"
+            }
+          },
+          "highlight_block_4LTLgk": {
+            "type": "highlight_block",
+            "settings": {
+              "link_img": "shopify://shop_images/Group_1093.jpg",
+              "link_txt": "inCharge XS",
+              "block_link": "shopify://products/incharge®-xs-240w-4in1-keyring-cable",
+              "badge_text": "NEW",
+              "badge_color": "#1761ff"
+            }
+          },
+          "highlight_block_RL4nM9": {
+            "type": "highlight_block",
+            "settings": {
+              "link_img": "shopify://shop_images/Frame_77.png",
+              "link_txt": "EDGE Pro",
+              "block_link": "shopify://collections/edge®-pro",
+              "badge_text": "BESTSELLER",
+              "badge_color": "#17e260"
+            }
+          },
+          "highlight_block_jtDcxX": {
+            "type": "highlight_block",
+            "settings": {
+              "link_img": "shopify://shop_images/Frame_239.jpg",
+              "link_txt": "inCharge XL",
+              "block_link": "shopify://products/xlm",
+              "badge_text": "BESTSELLER",
+              "badge_color": "#17e260"
+            }
+          }
+        },
+        "block_order": [
+          "2e59f578-f08b-4bb0-81d6-bb991f2e08be",
+          "9f0e3b7f-307f-4054-85c2-28b84acbbe0b",
+          "5b1917d5-cee6-4858-9efc-1964c441b6c5",
+          "17339e4a-09cf-49a1-84f2-1a1ddce70be7",
+          "highlight_block_hanYPz",
+          "highlight_block_kdcdYr",
+          "highlight_block_yNNKnr",
+          "highlight_block_4LTLgk",
+          "highlight_block_RL4nM9",
+          "highlight_block_jtDcxX"
+        ],
+        "settings": {
+          "mob_link_list": "megamenu",
+          "trending_now_products": [
+            "aircard-pro-android-apple-bluetooth-tracker",
+            "airnotch-pro-android-apple-bluetooth-tracker",
+            "supertiny-the-smallest-65w-gan-charger-ever",
+            "incharge®-xs-240w-4in1-keyring-cable",
+            "xlm"
+          ],
+          "trustpilot": "shopify://shop_images/TP-39.png"
+        }
+      },
+      "search": {
+        "type": "search",
+        "blocks": {
+          "29d73443-b99a-4c1e-b6ae-ad7aa3160f74": {
+            "type": "search_query",
+            "settings": {
+              "query": "AirNotch Pro"
+            }
+          },
+          "b0ec4e01-edf9-4e13-a21c-6d0a55fc1886": {
+            "type": "search_query",
+            "settings": {
+              "query": "AirCard Pro"
+            }
+          },
+          "05f7a09b-bcff-4e5e-8758-84686d6f4e91": {
+            "type": "search_query",
+            "settings": {
+              "query": "inCharge XS"
+            }
+          },
+          "c55810b7-32ab-42cb-bf14-6a0a500f2cf9": {
+            "type": "search_query",
+            "settings": {
+              "query": "EDGE Pro Core"
+            }
+          },
+          "4bda6c0a-53c0-4620-b4ab-8af9e90d5b64": {
+            "type": "search_query",
+            "settings": {
+              "query": "Supertiny 65W GaN"
+            }
+          },
+          "c37dd00b-0671-45dc-ac9f-ea021af97054": {
+            "type": "search_query",
+            "settings": {
+              "query": "inCharge XL"
+            }
+          },
+          "search_recom_product_MjeFiD": {
+            "type": "search_recom_product",
+            "settings": {
+              "search_p": "airnotch-pro-android-apple-bluetooth-tracker"
+            }
+          },
+          "search_recom_product_atBQEJ": {
+            "type": "search_recom_product",
+            "settings": {
+              "search_p": "aircard-pro-android-apple-bluetooth-tracker"
+            }
+          },
+          "b3aef797-171a-4123-b440-b4f0a310dc74": {
+            "type": "search_recom_product",
+            "settings": {
+              "search_p": "incharge®-xs-240w-4in1-keyring-cable"
+            }
+          },
+          "b6637ca7-f16e-433c-9031-0a19698cbaae": {
+            "type": "search_recom_product",
+            "settings": {
+              "search_p": "edgepro-core"
+            }
+          }
+        },
+        "block_order": [
+          "29d73443-b99a-4c1e-b6ae-ad7aa3160f74",
+          "b0ec4e01-edf9-4e13-a21c-6d0a55fc1886",
+          "05f7a09b-bcff-4e5e-8758-84686d6f4e91",
+          "c55810b7-32ab-42cb-bf14-6a0a500f2cf9",
+          "4bda6c0a-53c0-4620-b4ab-8af9e90d5b64",
+          "c37dd00b-0671-45dc-ac9f-ea021af97054",
+          "search_recom_product_MjeFiD",
+          "search_recom_product_atBQEJ",
+          "b3aef797-171a-4123-b440-b4f0a310dc74",
+          "b6637ca7-f16e-433c-9031-0a19698cbaae"
+        ],
+        "settings": {
+          "search_input_placeholder": "Search...",
+          "link_title": "HELP & SUPPORT",
+          "search_link_list": "footer",
+          "tp_txt": "TRUSTED BY 650,000+ HAPPY LIFEHACKERS",
+          "tp_img": "shopify://shop_images/TP-39.png"
+        }
+      },
+      "recently-viewed-products": {
+        "type": "recently-viewed-products",
+        "settings": {
+          "display_recently_viewed_products": true,
+          "recently_viewed_products_title": "Recently Viewed Products",
+          "number_of_recently_viewed_products": "10"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "blog_post": "3",
+          "blog_text_align": "left",
+          "blog_show_author": false,
+          "blog_show_date": true
+        }
+      },
+      "contact-template": {
+        "type": "contact-template",
+        "settings": {
+          "display_google_map": true,
+          "google_map_code": "<iframe src=\"https://maps.google.com/maps?f=q&source=s_q&hl=vi&geocode=&q=4+Nguy%E1%BB%85n+%C4%90%C3%ACnh+chi%E1%BB%83u,+%C4%90a+Kao,+Qu%E1%BA%ADn+1&aq=&sll=37.0625,-95.677068&sspn=41.903538,86.572266&ie=UTF8&hq=&hnear=4+Nguy%E1%BB%85n+%C4%90%C3%ACnh+Chi%E1%BB%83u,+%C4%90a+Kao,+Qu%E1%BA%ADn+1,+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam&t=m&ll=10.797518,106.700377&spn=0.014754,0.071197&z=15&iwloc=A&output=embed\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\" width=\"100%\" height=\"350\"></iframe>",
+          "contact_title": "DROP US A LINE | Schreiben Sie uns",
+          "contact_text_desc": "Have a question or comment? Use the form below to send us a message or contact us by mail at:",
+          "contact_your_name": "",
+          "contact_phone_number": "",
+          "contact_your_email": "",
+          "display_location": true,
+          "location_code": "<h4>Store Information</h4>\n<p>We'd love to hear from you - please use the form to send us your message or ideas. Or simply pop in for a cup of fresh tea and a cookie:</p>\n<p class=\"addr\">8808 Ave Dermentum, Onsectetur Adipiscing<br>Tortor Sagittis, CA 880986,<br>United States\n</p>\n\n<p class=\"addr\">Email: <a href=\"mailto:support@halothemes.com\">support@halothemes.com</a><br>Toll-free: <strong>1-888-699-8900</strong></p><div class=\"open-hours\">\n<strong>Opening Hours:</strong>\n<br>Monday to Saturday: 9am - 10pm\n<br>Sundays: 10am - 6pm\n<p></p>\n</div>"
+        }
+      },
+      "lookbook": {
+        "type": "lookbook",
+        "blocks": {
+          "1489975455753": {
+            "type": "image",
+            "settings": {
+              "dpl_slide_img": true,
+              "image_slide": "",
+              "alignment": "left",
+              "heading": "",
+              "font_size_heading": "40px",
+              "color_heading": "#232323",
+              "slide-des": "",
+              "font_size_des": "12px",
+              "color_des": "#232323",
+              "button_slide": "",
+              "link": "",
+              "bg_button": "#232323",
+              "border_button": "#232323",
+              "color_button": "#fff",
+              "lb_product_1": "loremous-saliduar-a-cosmopolito-1",
+              "top_position_1": "41",
+              "left_position_1": "55",
+              "dots_color_1": "#fff",
+              "dots_bg_color_1": "#323232",
+              "dots_shadow_color_1": "#323232",
+              "lb_product_2": "",
+              "top_position_2": "10",
+              "left_position_2": "10",
+              "dots_color_2": "#fff",
+              "dots_bg_color_2": "#323232",
+              "dots_shadow_color_2": "#fff",
+              "lb_product_3": "",
+              "top_position_3": "10",
+              "left_position_3": "10",
+              "dots_color_3": "#fff",
+              "dots_bg_color_3": "#323232",
+              "dots_shadow_color_3": "#fff"
+            }
+          },
+          "1489975477125": {
+            "type": "image",
+            "settings": {
+              "dpl_slide_img": true,
+              "image_slide": "",
+              "alignment": "left",
+              "heading": "",
+              "font_size_heading": "40px",
+              "color_heading": "#232323",
+              "slide-des": "",
+              "font_size_des": "12px",
+              "color_des": "#232323",
+              "button_slide": "",
+              "link": "",
+              "bg_button": "#232323",
+              "border_button": "#232323",
+              "color_button": "#fff",
+              "lb_product_1": "dempus-lortis-cosmo-sapiendo-1",
+              "top_position_1": "34",
+              "left_position_1": "19",
+              "dots_color_1": "#fff",
+              "dots_bg_color_1": "#323232",
+              "dots_shadow_color_1": "#323232",
+              "lb_product_2": "dempus-lortis-cosmo-sapiendo-2",
+              "top_position_2": "81",
+              "left_position_2": "48",
+              "dots_color_2": "#fff",
+              "dots_bg_color_2": "#323232",
+              "dots_shadow_color_2": "#323232",
+              "lb_product_3": "",
+              "top_position_3": "10",
+              "left_position_3": "10",
+              "dots_color_3": "#fff",
+              "dots_bg_color_3": "#323232",
+              "dots_shadow_color_3": "#fff"
+            }
+          },
+          "1532404848065": {
+            "type": "image",
+            "settings": {
+              "dpl_slide_img": true,
+              "image_slide": "",
+              "alignment": "left",
+              "heading": "",
+              "font_size_heading": "40px",
+              "color_heading": "#232323",
+              "slide-des": "",
+              "font_size_des": "12px",
+              "color_des": "#232323",
+              "button_slide": "",
+              "link": "",
+              "bg_button": "#232323",
+              "border_button": "#232323",
+              "color_button": "#fff",
+              "lb_product_1": "dempus-an-lortis-tempus-sapiendos",
+              "top_position_1": "28",
+              "left_position_1": "33.5",
+              "dots_color_1": "#fff",
+              "dots_bg_color_1": "#323232",
+              "dots_shadow_color_1": "#323232",
+              "lb_product_2": "dempus-lortis-cosmo-sapiendo-4",
+              "top_position_2": "84",
+              "left_position_2": "40",
+              "dots_color_2": "#fff",
+              "dots_bg_color_2": "#323232",
+              "dots_shadow_color_2": "#323232",
+              "lb_product_3": "",
+              "top_position_3": "10",
+              "left_position_3": "10",
+              "dots_color_3": "#fff",
+              "dots_bg_color_3": "#323232",
+              "dots_shadow_color_3": "#fff"
+            }
+          }
+        },
+        "block_order": [
+          "1489975455753",
+          "1489975477125",
+          "1532404848065"
+        ],
+        "settings": {
+          "display_product_detail_share": true,
+          "share_text": "Share",
+          "button": "Shop LookBook",
+          "link": "shopify://collections/all",
+          "autoplay": false,
+          "speed": "5000",
+          "transition": "true",
+          "arrow_color": "#727272",
+          "arrow_border_color": "#d3d3d3",
+          "arrow_bg_color": "#ffffff",
+          "position_slick_arrow": "-35px"
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_notes": false,
+          "secure_text": "Secure Shopping Guarantee.",
+          "cart_countdown_enable": false,
+          "time_countdown": 30
+        }
+      },
+      "faq-page": {
+        "type": "faq-page",
+        "blocks": {
+          "1507878888245": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "I have a question about an item, who can I contact?",
+              "answer_faqs": "<br>For any questions regarding Rolling Square's products, you can contact us at <a href=\"mailto:support@rollingsqua.re\"><b>support@rollingsqua.re</b></a>, use our <a href=\"mailto:support@rollingsqua.re\"><b>live chat</b></a> or join our <a href=\"https://t.me/RollingSquareFamily\"><b>community chat</b></a>!"
+            }
+          },
+          "1507879452149": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "What is the warranty policy?",
+              "answer_faqs": "We offer a <b>2 year limited warranty</b> for all Rolling Square products.\n\nOur warranty covers any manufacturing or workmanship defects but does not cover damages that may have resulted from normal wear and tear, misuse/abuse or modification of the product.\n<br>\nOur <b>lifetime warranty</b>, when offered, covers exactly the same defects as our standard 2 years warranty, but it extends the coverage period."
+            }
+          },
+          "1507879511326": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "What is the return policy?",
+              "answer_faqs": "If you are not completely satisfied with your purchase, you may return the item in its original condition <b>within 30 days</b> of receipt for a refund (not including the original shipping fee).\n<br>\n<br>\nOnly items purchased directly from Rolling Square’s online store or Indiegogo/Kickstarter will be accepted. If you purchased your items from authorized retailers (online or offline), please get in touch with them directly for returns.\n<br>\n<br>\nReturned items must be in their original packaging, including accessories and manuals where applicable.\n<br>\n<br>\nThe items should be returned to our address in Switzerland, Italy or US, based on the customer location, and the shipping costs are non-refundable.\n<br>\n<br>\nNon-returnable items include items purchased through retailers, incorrect products purchased, and damaged products through customer mishandling.\n<br>\n<br>\nPlease note that original shipping charges are non-refundable except in cases where we have made a shipping error. All VAT/Import taxes are the responsibility of the receiver and are non-refundable."
+            }
+          },
+          "1507879518615": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "How can I return an item?",
+              "answer_faqs": "If you would like to return an item that you suspect is defective, please contact <b>support@rollingsqua.re</b>. We will issue a replacement or store credit for approved warranty requests. The defective item may need to be returned to us in some cases."
+            }
+          },
+          "1507879528740": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "How long does it take for my order to be dispatched?",
+              "answer_faqs": "Typically, orders are shipped within <b>2 hours</b> of placement on our store. However, it may take up to 48 hours to receive a shipping confirmation email containing the tracking number. <br>If more than 48 hours have passed and you haven't received the confirmation email, there might be an issue with your order, such as missing information or an incomplete address. <br>In such cases, our customer support team will reach out to you to obtain the necessary details to process your order. <br>If you don't hear from our customer support, please feel free to <a href=\"https://rollingsquare.com/pages/contact\">contact us here</a>."
+            }
+          },
+          "1507879543697": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "How long does shipping take?",
+              "answer_faqs": "Estimated shipping times are provided during checkout and are determined by the shipment's origin and final destination.\n<br>\nFor more detailed tracking information on international shipments, you can use your tracking number to search on <b>https://track.aftership.com/</b> or on the destination country's national post website.\n<br>\nPlease note that shipping times may vary in cases involving customs processing. Depending on the destination country, orders may undergo customs clearance and may be held until duties and taxes are paid.\n<br>\nAs the importer/consignee, it is your responsibility to cover any duties and taxes. We are unable to refund customs fees or additional charges required for package delivery.\n<br>\nIf you haven't received your order or if the package has been returned to us for any reason, please contact <b>support@rollingsqua.re</b>."
+            }
+          },
+          "1507879557094": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "My address is wrong but the order has already shipped.",
+              "answer_faqs": "Once your package has been shipped, we are unable to modify the delivery address at this time. In the event that the address provided is incorrect, you can attempt to contact the last mile carrier and request a rerouting of the package to the correct address. Alternatively, you may provide them with specific instructions that can aid in a successful delivery.\n<br>\nHowever, if these attempts are unsuccessful, the delivery will not be completed, and the package will be returned to us. Once we receive the package back, we will make arrangements to ship it to you again. To provide the correct address for reshipment, please get in touch with us at <b>support@rollingsqua.re</b>."
+            }
+          },
+          "1507879567640": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "By looking at the tracking number, the order seems stuck.",
+              "answer_faqs": "The updating of tracking numbers may vary depending on the destination country. In many cases, the order is en route and will likely be delivered on time or with only a minor delay.\n<br>\nIf the shipping time has surpassed our estimated timelines by more than 8 business days, the most effective course of action is for you to directly contact the courier.\n<br>\nOnce the package is shipped, we receive the same tracking information as you do. Regrettably, we do not have access to any additional details. In the event that the courier is unable to locate your shipment, please reach out to us at <b>support@rollingsqua.re</b>, and we will initiate a claim with the carrier to locate your package."
+            }
+          },
+          "1507879577808": {
+            "type": "text",
+            "settings": {
+              "question_faqs": "Where can I find my tracking number?",
+              "answer_faqs": "<br>\nYour tracking number should have been sent to you via email from <b>noreply@rollingsquare.com</b>, typically within 48 hours from the time you placed the order.\n<br>\nIn case you cannot find the email containing the tracking number, you have the option to enter your email address <a href=\"https://backer.tools/status.php?campaign=shopify\">here</a> to access and check your tracking code.\n<br>\nIf you still can't find it, please get in touch with our customer support <a href=\"https://rollingsquare.com/pages/contact\">here</a>."
+            }
+          }
+        },
+        "block_order": [
+          "1507878888245",
+          "1507879452149",
+          "1507879511326",
+          "1507879518615",
+          "1507879528740",
+          "1507879543697",
+          "1507879557094",
+          "1507879567640",
+          "1507879577808"
+        ],
+        "settings": {
+          "des_faqs": "",
+          "contact_text": "Unable to find satisfactory answers ?",
+          "contact_link_text": "Contact Support",
+          "contact_link": "shopify://pages/contact",
+          "icon_faqs": "",
+          "bg_icon_qs": "rgba(0,0,0,0)",
+          "color_icon_qs": "#ffffff",
+          "bg_question": "#fafafa",
+          "color_question": "#323232",
+          "font_size_qs": "16",
+          "bg_question_acitve": "#232323",
+          "color_question_acitve": "#ffffff",
+          "icon_answer": "",
+          "bg_icon_answer": "rgba(0,0,0,0)",
+          "color_icon_answer": "#6b3535",
+          "color_question_answer": "#3c3c3c",
+          "font_size_answer": "14",
+          "color_question_link": "#0688e2",
+          "icon_show": "Show",
+          "icon_hide": "Hide"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "blocks": {
+          "0b24a8ec-9622-41e5-8431-28e7137b63b1": {
+            "type": "collection",
+            "settings": {
+              "collection": "all"
+            }
+          },
+          "1543214733702": {
+            "type": "collection",
+            "settings": {
+              "collection": "cables"
+            }
+          },
+          "1543214716857": {
+            "type": "collection",
+            "settings": {
+              "collection": "charging"
+            }
+          },
+          "7dba3100-4676-4bfa-9a58-eb76dc668cba": {
+            "type": "collection",
+            "settings": {
+              "collection": "productivity"
+            }
+          },
+          "1fdc98e6-9264-4d6e-9c68-e624499a8d4f": {
+            "type": "collection",
+            "settings": {
+              "collection": "tracking"
+            }
+          },
+          "9f21eed0-b240-4b87-803f-ffc0cf7f5ae5": {
+            "type": "collection",
+            "settings": {
+              "collection": "travel-accessories"
+            }
+          }
+        },
+        "block_order": [
+          "0b24a8ec-9622-41e5-8431-28e7137b63b1",
+          "1543214733702",
+          "1543214716857",
+          "7dba3100-4676-4bfa-9a58-eb76dc668cba",
+          "1fdc98e6-9264-4d6e-9c68-e624499a8d4f",
+          "9f21eed0-b240-4b87-803f-ffc0cf7f5ae5"
+        ],
+        "settings": {
+          "list_collection_results_per_row": "3",
+          "list_collection_title_size": "20",
+          "style_categories": "style_little"
+        }
+      },
+      "sidebar-section": {
+        "type": "sidebar-section",
+        "blocks": {
+          "1543314984589": {
+            "type": "menu",
+            "settings": {
+              "enable": true,
+              "title": "Categories",
+              "style_categories": "style_little",
+              "link_list": ""
+            }
+          },
+          "1543315002517": {
+            "type": "product",
+            "settings": {
+              "enable": true,
+              "title": "Featured Products",
+              "collection": "",
+              "limit": "3"
+            }
+          },
+          "1543315033286": {
+            "type": "image",
+            "settings": {
+              "enable": true,
+              "link": "shopify://collections/cosmopolis"
+            }
+          },
+          "1543315049567": {
+            "type": "image",
+            "settings": {
+              "enable": true,
+              "link": "shopify://collections/blaz-ro"
+            }
+          },
+          "1543315088462": {
+            "type": "quote",
+            "settings": {
+              "enable": true,
+              "title": "Custom Block",
+              "quote": "<p>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images, media... whatever you like.</p>\n<p>There are many similar sample content placeholders across the store. All editable from admin panel.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "1543314984589",
+          "1543315002517",
+          "1543315033286",
+          "1543315049567",
+          "1543315088462"
+        ],
+        "settings": {
+          "display_sidebar": true,
+          "show_sidebar": "left"
+        }
+      },
+      "sidebar-filter": {
+        "type": "sidebar-filter",
+        "blocks": {
+          "1543545849973": {
+            "type": "filter_color",
+            "settings": {
+              "enable": true,
+              "title": "Color",
+              "list_tags": ""
+            }
+          },
+          "1543546574439": {
+            "type": "filter_text",
+            "settings": {
+              "enable": true,
+              "title": "Size | Größe",
+              "list_tags": "XS,\nS,\nM,\nL,\nXL,\n2X,\n3X"
+            }
+          },
+          "1543546610760": {
+            "type": "filter_text",
+            "settings": {
+              "enable": true,
+              "title": "Price",
+              "list_tags": "Less than $100,\n $100 - $200,\n $200 - $400,\n Above $400,"
+            }
+          },
+          "1543546642200": {
+            "type": "filter_text",
+            "settings": {
+              "enable": true,
+              "title": "Brand",
+              "list_tags": "Sodling,\nTomorrow,\nPaul Smith,\nMango,\nDonatello,\nFrench Connection,\nGANTT,\nJimmy Choo,\nBenjamin Button,\nAnna,"
+            }
+          },
+          "1543546687010": {
+            "type": "filter_text",
+            "settings": {
+              "enable": true,
+              "title": "Product Type",
+              "list_tags": "Dincidunteros,\nCosmopolis,\nSolutmades,\nLoremous Comodous,"
+            }
+          }
+        },
+        "block_order": [
+          "1543545849973",
+          "1543546574439",
+          "1543546610760",
+          "1543546642200",
+          "1543546687010"
+        ],
+        "settings": {
+          "display_sidebar": true,
+          "sidebar_style": "style_1",
+          "show_sidebar": "left",
+          "enable_categories": true,
+          "title_categories": "Categories | Categories",
+          "style_categories": "style_little",
+          "link_list": "",
+          "enable_product": true,
+          "title_product": "Featured Products | Featured Products",
+          "collection": "",
+          "limit": "5",
+          "enable_img_1": true,
+          "link_img_1": "shopify://collections/blaz-ro",
+          "enable_img_2": true,
+          "link_img_2": "shopify://collections/congu",
+          "enable_custom_block": true,
+          "title_custom_block": "Custom Block | Custom Block",
+          "quote_custom_block": "<p>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images, media... whatever you like.</p><p>There are many similar sample content placeholders across the store. All editable from admin panel.</p>"
+        }
+      },
+      "product-template-default": {
+        "type": "product-template-default",
+        "blocks": {
+          "1545637133729": {
+            "type": "image",
+            "settings": {
+              "main_pr_look": "dempus-lortis-cosmo-sapiendo",
+              "lb_product_1_1": "",
+              "top_position_1_1": "10",
+              "left_position_1_1": "10",
+              "dots_color_1_1": "#ffffff",
+              "dots_bg_color_1_1": "#323232",
+              "dots_shadow_color_1_1": "#ffffff",
+              "lb_product_1_2": "",
+              "top_position_1_2": "10",
+              "left_position_1_2": "10",
+              "dots_color_1_2": "#ffffff",
+              "dots_bg_color_1_2": "#323232",
+              "dots_shadow_color_1_2": "#ffffff",
+              "lb_product_1_3": "",
+              "top_position_1_3": "10",
+              "left_position_1_3": "10",
+              "dots_color_1_3": "#ffffff",
+              "dots_bg_color_1_3": "#323232",
+              "dots_shadow_color_1_3": "#ffffff",
+              "lb_product_2_1": "",
+              "top_position_2_1": "10",
+              "left_position_2_1": "10",
+              "dots_color_2_1": "#ffffff",
+              "dots_bg_color_2_1": "#323232",
+              "dots_shadow_color_2_1": "#ffffff",
+              "lb_product_2_2": "",
+              "top_position_2_2": "10",
+              "left_position_2_2": "10",
+              "dots_color_2_2": "#ffffff",
+              "dots_bg_color_2_2": "#323232",
+              "dots_shadow_color_2_2": "#ffffff",
+              "lb_product_2_3": "",
+              "top_position_2_3": "10",
+              "left_position_2_3": "10",
+              "dots_color_2_3": "#ffffff",
+              "dots_bg_color_2_3": "#323232",
+              "dots_shadow_color_2_3": "#ffffff",
+              "lb_product_3_1": "",
+              "top_position_3_1": "10",
+              "left_position_3_1": "10",
+              "dots_color_3_1": "#ffffff",
+              "dots_bg_color_3_1": "#323232",
+              "dots_shadow_color_3_1": "#ffffff",
+              "lb_product_3_2": "",
+              "top_position_3_2": "10",
+              "left_position_3_2": "10",
+              "dots_color_3_2": "#ffffff",
+              "dots_bg_color_3_2": "#323232",
+              "dots_shadow_color_3_2": "#ffffff",
+              "lb_product_3_3": "",
+              "top_position_3_3": "10",
+              "left_position_3_3": "10",
+              "dots_color_3_3": "#ffffff",
+              "dots_bg_color_3_3": "#323232",
+              "dots_shadow_color_3_3": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1545637133729"
+        ],
+        "settings": {
+          "style_moreview": "horizontal",
+          "enable_zoom_image": true,
+          "enable_payment_button": true,
+          "enable_hot_stock": true,
+          "number_stock": "3",
+          "show_sold_in": true,
+          "item_prd": "3,5,6,7,8,10,12,15",
+          "item_prds": "sold in last",
+          "hours_prs": "10,15,16,17,18,20,25,35",
+          "item_hours": "hours",
+          "display_vendor": true,
+          "text_vendor": "Brand:",
+          "display_product_sku": true,
+          "text_product_sku": "Product Code:",
+          "display_availability": true,
+          "text_availability": "Availability:",
+          "display_product_type": false,
+          "text_product_type": "Product Type:",
+          "enable_countdown": true,
+          "countdown": "countdown_1",
+          "text_countdown": "Limited-Time Offers, End in:",
+          "option_countdown": "all_product",
+          "count_down_timer": "2020-12-25 22:11:00",
+          "custombox_text": "",
+          "progressbar_1": "Please hurry, only",
+          "progressbar_2": "left in stock",
+          "total_items": "100",
+          "min_items_left": "15",
+          "max_items_left": "50",
+          "progressbar_color": "#f5f5f5",
+          "progressbar_active_color": "#69c69c",
+          "dpl_customers_view": true,
+          "title_view": "customers are viewing this product",
+          "number_view": "283, 100, 59, 11, 14, 185, 193, 165, 50, 38, 99, 112, 46, 10, 125, 200, 250, 18",
+          "show_desc": "short",
+          "display_subtotal": true,
+          "display_qty": true,
+          "display_product_detail_tag": false,
+          "display_product_detail_share": true,
+          "share_text": "Share",
+          "display_trust_img": true,
+          "show_tab": "horizontal",
+          "display_product_detail_description": true,
+          "product_description_title": "Description",
+          "display_product_reviews": true,
+          "product_review_title": "Customer Reviews",
+          "display_custom_tab_1": true,
+          "custom_tab_title_1": "Custom Tab 1",
+          "custom_tab_content_1": "Custom Tab Content 1",
+          "display_custom_tab_2": false,
+          "custom_tab_title_2": "Custom Tab 2",
+          "custom_tab_content_2": "Custom Tab Content 2",
+          "display_custom_tab_3": false,
+          "custom_tab_title_3": "Custom Tab 3",
+          "custom_tab_content_3": "Custom Tab Content 3",
+          "display_custom_tab_4": false,
+          "custom_tab_title_4": "Custom Tab 4",
+          "custom_tab_content_4": "Custom Tab Content 4",
+          "display_custom_tab_5": false,
+          "custom_tab_title_5": "Custom Tab 5",
+          "custom_tab_content_5": "Custom Tab Content 5",
+          "dpl_lookbook_description": true,
+          "style_lookbook_description": "all_product",
+          "quote_title": "Sample Block Quote",
+          "quote_des": "Praesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo loremous convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos.",
+          "quote_title_2": "Sample Paragraph Text",
+          "quote_des_2": "<p>\nPraesent vestibulum congue tellus at fringilla. Curabitur vitae semper sem, eu convallis est. Cras felis nunc commodo eu convallis vitae interdum non nisl. Maecenas ac est sit amet augue pharetra convallis nec danos dui.\n</p>\n<p>\nCras suscipit quam et turpis eleifend vitae malesuada magna congue. Damus id ullamcorper neque. Sed vitae mi a mi pretium aliquet ac sed elitos. Pellentesque nulla eros accumsan quis justo at tincidunt lobortis denimes loremous. Suspendisse vestibulum lectus in lectus volutpat, ut dapibus purus pulvinar. Vestibulum sit amet auctor ipsum.\n</p>",
+          "dpl_gallery_lookbook": true,
+          "style_lookbook_gallery": "all_product",
+          "dpl_grouped_product": true,
+          "grouped_title": "Frequently Bought Together",
+          "grouped_choose_options_text": "Please choose options for all selected products",
+          "choose_options": "Choose Options",
+          "enable_bundle_discount": true,
+          "bundle_discount_text": "Get a [discount]% discount buying these products together | Erhalten Sie einen Rabatt von [discount]%, wenn Sie diese Produkte zusammen kaufen"
+        }
+      },
+      "cart-best-sellers": {
+        "type": "cart-best-sellers",
+        "settings": {
+          "show_cart_best_sellers_product": true,
+          "title": "EXPLORE OUR BEST SELLERS",
+          "show_slider_featured_collection": "all",
+          "slider_featured_limit_all": 10,
+          "collection_results_per_row1": "5"
+        }
+      },
+      "sidebar-blog": {
+        "type": "sidebar-blog",
+        "blocks": {
+          "1546400179484": {
+            "type": "product",
+            "disabled": true,
+            "settings": {
+              "enable": true,
+              "title": "Featured Products",
+              "collection": "",
+              "limit": "8"
+            }
+          },
+          "1546400210430": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "enable": true,
+              "link": "shopify://collections/all"
+            }
+          },
+          "1546400245437": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "enable": true,
+              "link": ""
+            }
+          },
+          "1546400262551": {
+            "type": "quote",
+            "disabled": true,
+            "settings": {
+              "enable": true,
+              "title": "Custom Block",
+              "quote": "<p>Custom CMS block displayed at the left sidebar on the Catalog Page. Put your own content here: text, html, images, media... whatever you like.</p>\n<p>There are many similar sample content placeholders across the store. All editable from admin panel.</p>"
+            }
+          }
+        },
+        "block_order": [
+          "1546400179484",
+          "1546400210430",
+          "1546400245437",
+          "1546400262551"
+        ],
+        "settings": {
+          "display_sidebar_blog_page": true,
+          "show_sidebar": "left",
+          "display_sidebar_link": false,
+          "sidebar_link_title": "",
+          "style_categories": "style_little",
+          "link_list": "",
+          "sidebar_recent_art": true,
+          "sidebar_blog_tags": false
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "blocks": {
+          "1546501567008": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "lb_product_1_1": "dinterdum-pretium-condimento",
+              "top_position_1_1": "27",
+              "left_position_1_1": "64",
+              "dots_color_1_1": "#ffffff",
+              "dots_bg_color_1_1": "#323232",
+              "dots_shadow_color_1_1": "#323232",
+              "lb_product_1_2": "",
+              "top_position_1_2": "10",
+              "left_position_1_2": "10",
+              "dots_color_1_2": "#ffffff",
+              "dots_bg_color_1_2": "#323232",
+              "dots_shadow_color_1_2": "#ffffff",
+              "lb_product_1_3": "",
+              "top_position_1_3": "10",
+              "left_position_1_3": "10",
+              "dots_color_1_3": "#ffffff",
+              "dots_bg_color_1_3": "#323232",
+              "dots_shadow_color_1_3": "#ffffff",
+              "lb_product_2_1": "dempus-lortis-cosmo-sapiendo-2",
+              "top_position_2_1": "28",
+              "left_position_2_1": "28",
+              "dots_color_2_1": "#ffffff",
+              "dots_bg_color_2_1": "#323232",
+              "dots_shadow_color_2_1": "#323232",
+              "lb_product_2_2": "dempus-an-lortis-tempus-sapiendos",
+              "top_position_2_2": "83",
+              "left_position_2_2": "66",
+              "dots_color_2_2": "#ffffff",
+              "dots_bg_color_2_2": "#323232",
+              "dots_shadow_color_2_2": "#323232",
+              "lb_product_2_3": "",
+              "top_position_2_3": "10",
+              "left_position_2_3": "10",
+              "dots_color_2_3": "#ffffff",
+              "dots_bg_color_2_3": "#323232",
+              "dots_shadow_color_2_3": "#ffffff",
+              "lb_product_3_1": "loremous-saliduar-a-cosmopolito-2",
+              "top_position_3_1": "26",
+              "left_position_3_1": "68",
+              "dots_color_3_1": "#ffffff",
+              "dots_bg_color_3_1": "#323232",
+              "dots_shadow_color_3_1": "#323232",
+              "lb_product_3_2": "",
+              "top_position_3_2": "10",
+              "left_position_3_2": "10",
+              "dots_color_3_2": "#ffffff",
+              "dots_bg_color_3_2": "#323232",
+              "dots_shadow_color_3_2": "#ffffff",
+              "lb_product_3_3": "",
+              "top_position_3_3": "10",
+              "left_position_3_3": "10",
+              "dots_color_3_3": "#ffffff",
+              "dots_bg_color_3_3": "#323232",
+              "dots_shadow_color_3_3": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "1546501567008"
+        ],
+        "settings": {
+          "blog_show_author": false,
+          "blog_show_date": true,
+          "dpl_lookbook_description": true,
+          "quote_title": "",
+          "quote_des": "",
+          "quote_title_2": "",
+          "quote_des_2": "",
+          "dpl_gallery_lookbook": false,
+          "gallery_lb_title": "",
+          "show_cart_best_sellers_product": true,
+          "title": "Editor’s Picks",
+          "show_slider_featured_collection": "all",
+          "slider_featured_limit_all": 10,
+          "collection_results_per_row1": "5"
+        }
+      },
+      "brands-page": {
+        "type": "brands-page",
+        "blocks": {
+          "1546921086313": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "title": "Loremous",
+              "link": ""
+            }
+          },
+          "1546921152681": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "title": "Isablella",
+              "link": ""
+            }
+          },
+          "1546921217742": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "title": "Benjamin Button",
+              "link": ""
+            }
+          },
+          "1546921256644": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "title": "Fermends",
+              "link": ""
+            }
+          },
+          "1546921290795": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "title": "conseqaur",
+              "link": ""
+            }
+          },
+          "1546921315910": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "title": "Benjamin Button",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1546921086313",
+          "1546921152681",
+          "1546921217742",
+          "1546921256644",
+          "1546921290795",
+          "1546921315910"
+        ],
+        "settings": {
+          "display_brand": true,
+          "link_brand": "vendor"
+        }
+      },
+      "shop-instagram": {
+        "type": "shop-instagram",
+        "settings": {
+          "title": "Shop Instagram",
+          "des": "Nullam aliquet vestibulum augue non varius cras de congue elitos. Duis tristique delos ante an daliquam. Praesent urna tellus laoreet an tellus ullamcorper fermentum facilisis.",
+          "embed_code": "<script src=\"https://snapppt.com/widgets/widget_loader/33732d63-5077-4f49-a869-7d4ddc227b6f/grid.js\" defer class=\"snapppt-widget\"></script>"
+        }
+      },
+      "someone-purchased": {
+        "type": "someone-purchased",
+        "blocks": {
+          "1548643650260": {
+            "type": "image",
+            "settings": {
+              "product": "dempus-lortis-cosmo-sapiendo",
+              "from_ago": "from Blackburn, UK",
+              "time_ago": "20 minutes ago,"
+            }
+          },
+          "1548643708120": {
+            "type": "image",
+            "settings": {
+              "product": "dempus-lortis-cosmo-sapiendo-1",
+              "from_ago": "from Washington, US",
+              "time_ago": "30 minutes ago,"
+            }
+          },
+          "1548643726643": {
+            "type": "image",
+            "settings": {
+              "product": "dempus-lortis-cosmo-sapiendo-2",
+              "from_ago": "in Blumenau, Brazil",
+              "time_ago": "10 minutes ago,"
+            }
+          },
+          "1548643747526": {
+            "type": "image",
+            "settings": {
+              "product": "dempus-an-lortis-tempus-sapiendos",
+              "from_ago": "from Bauru, Brazil",
+              "time_ago": "35 minutes ago,"
+            }
+          }
+        },
+        "block_order": [
+          "1548643650260",
+          "1548643708120",
+          "1548643726643",
+          "1548643747526"
+        ],
+        "settings": {
+          "display_someone-purchased": false,
+          "display_someone-purchased_mb": false,
+          "show_someone-purchased": "right",
+          "someone_speed": "7000",
+          "text": "Someone recently bought a",
+          "time_location_text": "[time] minutes ago, from [location]"
+        }
+      },
+      "GDPR-modal": {
+        "type": "GDPR-modal",
+        "settings": {
+          "display_gdpr": true,
+          "show_gdp": "right",
+          "bg_color": "#141414",
+          "text_color": "#ffffff",
+          "privacy_policy_color": "#818181",
+          "content": "🍪 This site uses cookies to work properly",
+          "privacy_policy_text": "privacy policy",
+          "privacy_policy_link": "https://rollingsqua.re/pages/privacy",
+          "accept_cookies_text": "Ok"
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "display_related_products": true,
+          "related_products_title": "Related Products",
+          "number_of_related_products": "5"
+        }
+      },
+      "filter-no-sidebar": {
+        "type": "filter-no-sidebar",
+        "settings": {
+          "display_sidebar": false,
+          "enable_categories": false,
+          "title_categories": "",
+          "style_categories": "style_show_all",
+          "link_list": "main-menu"
+        }
+      },
+      "recently-viewed-products-skin-1170": {
+        "type": "recently-viewed-products-skin-1170",
+        "settings": {
+          "display_recently_viewed_products": false,
+          "recently_viewed_products_title": "Recently Viewed Products",
+          "number_of_recently_viewed_products": "8"
+        }
+      },
+      "product-template-grouped": {
+        "type": "product-template-grouped",
+        "settings": {
+          "style_moreview": "horizontal",
+          "enable_zoom_image": false,
+          "enable_hot_stock": false,
+          "number_stock": "3",
+          "show_sold_in": false,
+          "item_prd": "3,5,6,7,8,10,12,15,9",
+          "item_prds": "sold in last",
+          "hours_prs": "10,15,16,17,18,20,25,35",
+          "item_hours": "hours",
+          "display_vendor": false,
+          "text_vendor": "Vendor:",
+          "display_product_sku": false,
+          "text_product_sku": "SKU:",
+          "display_availability": false,
+          "text_availability": "Availability:",
+          "display_product_type": false,
+          "text_product_type": "Product Type:",
+          "enable_countdown": false,
+          "countdown": "countdown_1",
+          "text_countdown": "Limited-Time Offers, End in:",
+          "option_countdown": "different_product",
+          "count_down_timer": "2020-12-25 22:11:00",
+          "custombox_text": "",
+          "progressbar_1": "Please hurry, only",
+          "progressbar_2": "left in stock",
+          "total_items": "100",
+          "min_items_left": "8",
+          "max_items_left": "26",
+          "progressbar_color": "#f5f5f5",
+          "progressbar_active_color": "#69c69c",
+          "dpl_customers_view": false,
+          "title_view": "customers are viewing this product",
+          "number_view": "59, 11, 14, 185, 193, 165, 50, 38, 99, 112, 46, 10, 125, 18, 5, 12, 43,",
+          "show_desc": "short",
+          "display_subtotal": true,
+          "display_qty": true,
+          "display_product_detail_tag": false,
+          "display_product_detail_share": false,
+          "share_text": "Share",
+          "display_trust_img": true,
+          "show_tab": "vertical",
+          "display_product_detail_description": true,
+          "product_description_title": "Description",
+          "display_product_reviews": true,
+          "product_review_title": "Customer Reviews",
+          "display_custom_tab_1": true,
+          "custom_tab_title_1": "more info",
+          "custom_tab_content_1": "",
+          "display_custom_tab_2": true,
+          "custom_tab_title_2": "TECHNICAL SPECIFICATIONS",
+          "custom_tab_content_2": "Custom Tab Content 2",
+          "display_custom_tab_3": true,
+          "custom_tab_title_3": "WHAT'S IN THE BOX",
+          "custom_tab_content_3": "Custom Tab Content 3",
+          "display_custom_tab_4": true,
+          "custom_tab_title_4": "how to use",
+          "custom_tab_content_4": "Custom Tab Content 4",
+          "display_custom_tab_5": false,
+          "custom_tab_title_5": "Custom Tab 5",
+          "custom_tab_content_5": "Custom Tab Content 5",
+          "dpl_lookbook_description": false,
+          "style_lookbook_description": "all_product",
+          "quote_title": "nknknkk",
+          "quote_des": "",
+          "quote_title_2": "",
+          "quote_des_2": "",
+          "dpl_gallery_lookbook": true,
+          "style_lookbook_gallery": "all_product",
+          "dpl_grouped_product": true,
+          "grouped_product_style": "style_2",
+          "grouped_title": "Frequently Bought Together",
+          "grouped_choose_options_text": "Please choose options for all selected products",
+          "choose_options": "Choose Options",
+          "enable_bundle_discount": false,
+          "bundle_discount_text": "Get a [discount]% discount buying these products together | Erhalten Sie einen Rabatt von [discount]%, wenn Sie diese Produkte zusammen kaufen"
+        }
+      },
+      "product-template-full-width": {
+        "type": "product-template-full-width",
+        "settings": {
+          "enable_zoom_image": true,
+          "enable_payment_button": true,
+          "enable_hot_stock": true,
+          "number_stock": "3",
+          "show_sold_in": true,
+          "item_prd": "3,5,6,7,8,10,12,15",
+          "item_prds": "sold in last",
+          "hours_prs": "10,15,16,17,18,20,25,35",
+          "item_hours": "hours",
+          "display_vendor": true,
+          "text_vendor": "Vendor:",
+          "display_product_sku": true,
+          "text_product_sku": "SKU:",
+          "display_availability": true,
+          "text_availability": "Availability:",
+          "display_product_type": true,
+          "text_product_type": "Product Type:",
+          "enable_countdown": true,
+          "countdown": "countdown_1",
+          "text_countdown": "Limited-Time Offers, End in:",
+          "option_countdown": "all_product",
+          "count_down_timer": "2020-12-25 22:11:00",
+          "custombox_text": "",
+          "progressbar_1": "Please hurry, only",
+          "progressbar_2": "left in stock",
+          "total_items": "100",
+          "min_items_left": "8",
+          "max_items_left": "26",
+          "progressbar_color": "#f5f5f5",
+          "progressbar_active_color": "#69c69c",
+          "dpl_customers_view": true,
+          "title_view": "customers are viewing this product",
+          "number_view": "283, 100, 59, 11, 14, 185, 193, 165, 50, 38, 99, 112, 46, 10, 125, 200, 250, 18",
+          "show_desc": "short",
+          "display_subtotal": true,
+          "display_qty": true,
+          "display_product_detail_tag": true,
+          "display_product_detail_share": true,
+          "share_text": "Share",
+          "display_trust_img": true,
+          "display_product_detail_description": true,
+          "product_description_title": "Description",
+          "display_product_reviews": true,
+          "product_review_title": "Customer Reviews",
+          "display_custom_tab_1": true,
+          "custom_tab_title_1": "Custom Tab 1",
+          "custom_tab_content_1": "Custom Tab Content 1",
+          "display_custom_tab_2": true,
+          "custom_tab_title_2": "Custom Tab 2",
+          "custom_tab_content_2": "Custom Tab Content 2",
+          "display_custom_tab_3": true,
+          "custom_tab_title_3": "Custom Tab 3",
+          "custom_tab_content_3": "Custom Tab Content 3",
+          "display_custom_tab_4": true,
+          "custom_tab_title_4": "Custom Tab 4",
+          "custom_tab_content_4": "Custom Tab Content 4",
+          "display_custom_tab_5": true,
+          "custom_tab_title_5": "Custom Tab 5",
+          "custom_tab_content_5": "Custom Tab Content 5",
+          "dpl_lookbook_description": true,
+          "style_lookbook_description": "all_product",
+          "quote_title": "",
+          "quote_des": "",
+          "quote_title_2": "",
+          "quote_des_2": "",
+          "dpl_gallery_lookbook": true,
+          "style_lookbook_gallery": "all_product",
+          "dpl_grouped_product": true,
+          "grouped_title": "Frequently Bought Together",
+          "grouped_choose_options_text": "Please choose options for all selected products",
+          "choose_options": "Choose Options",
+          "enable_bundle_discount": true,
+          "bundle_discount_text": "Get a [discount]% discount buying these products together | Erhalten Sie einen Rabatt von [discount]%, wenn Sie diese Produkte zusammen kaufen"
+        }
+      },
+      "product-template-skin-1": {
+        "type": "product-template-skin-1",
+        "settings": {
+          "enable_zoom_image": true,
+          "enable_zoom_text": true,
+          "enable_payment_button": true,
+          "enable_hot_stock": true,
+          "number_stock": "3",
+          "show_sold_in": true,
+          "item_prd": "3,5,6,7,8,10,12,15",
+          "item_prds": "sold in last",
+          "hours_prs": "10,15,16,17,18,20,25,35",
+          "item_hours": "hours",
+          "display_vendor": true,
+          "text_vendor": "Vendor:",
+          "display_product_sku": true,
+          "text_product_sku": "SKU:",
+          "display_availability": true,
+          "text_availability": "Availability:",
+          "display_product_type": true,
+          "text_product_type": "Product Type:",
+          "enable_countdown": true,
+          "countdown": "countdown_1",
+          "text_countdown": "Limited-Time Offers, End in:",
+          "option_countdown": "all_product",
+          "count_down_timer": "2020-12-25 22:11:00",
+          "custombox_text": "",
+          "progressbar_1": "Please hurry, only",
+          "progressbar_2": "left in stock",
+          "total_items": "100",
+          "min_items_left": "8",
+          "max_items_left": "26",
+          "progressbar_color": "#f5f5f5",
+          "progressbar_active_color": "#69c69c",
+          "dpl_customers_view": true,
+          "title_view": "customers are viewing this product",
+          "number_view": "283, 100, 59, 11, 14, 185, 193, 165, 50, 38, 99, 112, 46, 10, 125, 200, 250, 18",
+          "show_desc": "short",
+          "display_subtotal": true,
+          "display_qty": true,
+          "display_product_detail_tag": true,
+          "display_product_detail_share": true,
+          "share_text": "Share",
+          "display_trust_img": true,
+          "display_product_detail_description": true,
+          "product_description_title": "Description",
+          "display_product_reviews": true,
+          "product_review_title": "Customer Reviews",
+          "display_custom_tab_1": true,
+          "custom_tab_title_1": "Custom Tab 1",
+          "custom_tab_content_1": "Custom Tab Content 1",
+          "display_custom_tab_2": true,
+          "custom_tab_title_2": "Custom Tab 2",
+          "custom_tab_content_2": "Custom Tab Content 2",
+          "display_custom_tab_3": true,
+          "custom_tab_title_3": "Custom Tab 3",
+          "custom_tab_content_3": "Custom Tab Content 3",
+          "display_custom_tab_4": true,
+          "custom_tab_title_4": "Custom Tab 4",
+          "custom_tab_content_4": "Custom Tab Content 4",
+          "display_custom_tab_5": true,
+          "custom_tab_title_5": "Custom Tab 5",
+          "custom_tab_content_5": "Custom Tab Content 5",
+          "dpl_lookbook_description": true,
+          "style_lookbook_description": "all_product",
+          "quote_title": "",
+          "quote_des": "",
+          "quote_title_2": "",
+          "quote_des_2": "",
+          "dpl_gallery_lookbook": true,
+          "style_lookbook_gallery": "all_product",
+          "dpl_grouped_product": true,
+          "grouped_title": "Frequently Bought Together",
+          "grouped_choose_options_text": "Please choose options for all selected products",
+          "choose_options": "Choose Options",
+          "enable_bundle_discount": true,
+          "bundle_discount_text": "Get a [discount]% discount buying these products together | Erhalten Sie einen Rabatt von [discount]%, wenn Sie diese Produkte zusammen kaufen"
+        }
+      },
+      "list-collections_mansory-template": {
+        "type": "list-collections_mansory-template",
+        "settings": {
+          "list_collection_results_per_row": "2",
+          "list_collection_title_size": "20",
+          "style_categories": "style_show_all"
+        }
+      },
+      "list-collections-full-template": {
+        "type": "list-collections-full-template",
+        "settings": {
+          "list_collection_results_per_row": "3",
+          "list_collection_title_size": "20",
+          "style_categories": "style_show_all"
+        }
+      },
+      "collection-header": {
+        "type": "collection-header",
+        "settings": {
+          "display_collection_image": true,
+          "collection_header_style": "style_1",
+          "display_collection_des": true,
+          "color_wrapper": "#202020",
+          "bg_color_content": "#ffffff",
+          "border_color_content": "#bcbcbc",
+          "height_img": "240px",
+          "enable_sub": false,
+          "sub_title": "Jump to:"
+        }
+      },
+      "product-template-slider": {
+        "type": "product-template-slider",
+        "settings": {
+          "enable_zoom_image": true,
+          "enable_payment_button": true,
+          "enable_hot_stock": true,
+          "number_stock": "3",
+          "show_sold_in": true,
+          "item_prd": "3,5,6,7,8,10,12,15",
+          "item_prds": "sold in last",
+          "hours_prs": "10,15,16,17,18,20,25,35",
+          "item_hours": "hours",
+          "display_vendor": true,
+          "text_vendor": "Vendor:",
+          "display_product_sku": true,
+          "text_product_sku": "SKU:",
+          "display_availability": true,
+          "text_availability": "Availability:",
+          "display_product_type": true,
+          "text_product_type": "Product Type:",
+          "enable_countdown": true,
+          "countdown": "countdown_1",
+          "text_countdown": "Limited-Time Offers, End in:",
+          "option_countdown": "all_product",
+          "count_down_timer": "2020-12-25 22:11:00",
+          "custombox_text": "",
+          "progressbar_1": "Please hurry, only",
+          "progressbar_2": "left in stock",
+          "total_items": "100",
+          "min_items_left": "8",
+          "max_items_left": "26",
+          "progressbar_color": "#f5f5f5",
+          "progressbar_active_color": "#69c69c",
+          "dpl_customers_view": true,
+          "title_view": "customers are viewing this product",
+          "number_view": "283, 100, 59, 11, 14, 185, 193, 165, 50, 38, 99, 112, 46, 10, 125, 200, 250, 18",
+          "show_desc": "short",
+          "display_subtotal": true,
+          "display_qty": true,
+          "display_product_detail_tag": true,
+          "display_product_detail_share": true,
+          "share_text": "Share",
+          "display_trust_img": true,
+          "show_tab": "horizontal",
+          "display_product_detail_description": true,
+          "product_description_title": "Description",
+          "display_product_reviews": true,
+          "product_review_title": "Customer Reviews",
+          "display_custom_tab_1": true,
+          "custom_tab_title_1": "Custom Tab 1",
+          "custom_tab_content_1": "Custom Tab Content 1",
+          "display_custom_tab_2": true,
+          "custom_tab_title_2": "Custom Tab 2",
+          "custom_tab_content_2": "Custom Tab Content 2",
+          "display_custom_tab_3": true,
+          "custom_tab_title_3": "Custom Tab 3",
+          "custom_tab_content_3": "Custom Tab Content 3",
+          "display_custom_tab_4": true,
+          "custom_tab_title_4": "Custom Tab 4",
+          "custom_tab_content_4": "Custom Tab Content 4",
+          "display_custom_tab_5": true,
+          "custom_tab_title_5": "Custom Tab 5",
+          "custom_tab_content_5": "Custom Tab Content 5",
+          "dpl_lookbook_description": true,
+          "style_lookbook_description": "all_product",
+          "quote_title": "",
+          "quote_des": "",
+          "quote_title_2": "",
+          "quote_des_2": "",
+          "dpl_gallery_lookbook": true,
+          "style_lookbook_gallery": "all_product",
+          "dpl_grouped_product": true,
+          "grouped_title": "Frequently Bought Together",
+          "grouped_choose_options_text": "Please choose options for all selected products",
+          "choose_options": "Choose Options",
+          "enable_bundle_discount": true,
+          "bundle_discount_text": "Get a [discount]% discount buying these products together | Erhalten Sie einen Rabatt von [discount]%, wenn Sie diese Produkte zusammen kaufen"
+        }
+      },
+      "reseller-01": {
+        "type": "reseller-01",
+        "blocks": {
+          "a4e3aece-b5bc-4539-9259-168aeaba5311": {
+            "type": "image",
+            "settings": {
+              "dpl_slide_img": true,
+              "image_slide": "shopify://shop_images/desktop_reseller.png",
+              "image_slide_mb": "shopify://shop_images/mobile_mission.png",
+              "style_content": "style_1",
+              "alignment": "center",
+              "text_alignment": "center",
+              "bg_color_box": "#ffffff",
+              "color_border_box": "#bcbcbc",
+              "heading": "BECOME A ROLLING SQUARE RESELLER.",
+              "font_size_heading": "35px",
+              "color_heading": "#fafafa",
+              "color_heading_mb": "#ffffff",
+              "sub_heading": "",
+              "font_size_sub_heading": "16px",
+              "color_sub_heading": "#ffffff",
+              "color_sub_heading_mb": "#ffffff",
+              "slide-des": "We are proud to say that our partners love our products as much as we do.\n<br>\n<br>\nRolling Square is working with selected retailers and distributors in Europe, the US and all over the world. If you're interested in distributing our products, get in touch with us!",
+              "font_size_des": "14px",
+              "color_des": "#fafafa",
+              "color_des_mb": "#ffffff",
+              "button_slide": "apply",
+              "link": "https://rollingsquare.support/apply",
+              "bg_button": "rgba(0,0,0,0)",
+              "border_button": "#fafafa",
+              "color_button": "#ffffff",
+              "bg_button_mb": "rgba(0,0,0,0)",
+              "border_button_mb": "#fafafa",
+              "color_button_mb": "#ffffff",
+              "lb_product_1": "",
+              "top_position_1": "10",
+              "left_position_1": "10",
+              "dots_color_1": "#ffffff",
+              "dots_bg_color_1": "#323232",
+              "dots_shadow_color_1": "#ffffff",
+              "lb_product_2": "",
+              "top_position_2": "10",
+              "left_position_2": "10",
+              "dots_color_2": "#ffffff",
+              "dots_bg_color_2": "#323232",
+              "dots_shadow_color_2": "#ffffff",
+              "lb_product_3": "",
+              "top_position_3": "10",
+              "left_position_3": "10",
+              "dots_color_3": "#ffffff",
+              "dots_bg_color_3": "#323232",
+              "dots_shadow_color_3": "#ffffff"
+            }
+          }
+        },
+        "block_order": [
+          "a4e3aece-b5bc-4539-9259-168aeaba5311"
+        ],
+        "settings": {
+          "layout": "full",
+          "margin_bottom_mb": 0,
+          "margin_bottom_tab": 0,
+          "margin_bottom": 0,
+          "style_slideshow": "style_1",
+          "autoplay": true,
+          "slideshow_speed": "5000",
+          "slideshow_transition": "true",
+          "dots": "true",
+          "dots_color": "#707979",
+          "dots_active_color": "#505656",
+          "dots_opacity": false,
+          "bg_dots_color": "#bababa",
+          "arrow_active": true,
+          "arrow_color": "#666d6d",
+          "arrow_border_color": "#666d6d",
+          "arrow_bg_color": "#ffffff",
+          "position_slick_arrow": "10%",
+          "min_width_banner_button": "",
+          "bg_video": "#866965",
+          "bg_overlay_opacity": 40,
+          "video_height": "41.7%",
+          "auto_playvideo": true
+        }
+      },
+      "about-us-1-slideshow": {
+        "type": "about-us-1-slideshow",
+        "settings": {
+          "autoplay": true,
+          "slideshow_speed": "5000",
+          "text_color": "#fff",
+          "title_size": "40",
+          "button_bg_color": "rgba(0,0,0,0)",
+          "button_text_color": "#fff",
+          "button_bd_color": "#fff",
+          "button_bg_color_h": "rgba(0,0,0,0)",
+          "button_text_color_h": "#fff",
+          "button_bd_color_h": "#fff"
+        }
+      },
+      "about-us-1-content": {
+        "type": "about-us-1-content",
+        "settings": {
+          "left_heading": "About Store",
+          "left_content": "Quisquemos sodales suscipit tortor ditaemcos condimentum de cosmo lacus meleifend menean diverra loremous. Nullam sit amet orci rutrum risus laoreet semper vel non magna. Mauris vel sem a lectus vehicula ultricies. Etiam semper sollicitudin lectus indous scelerisque. Curabitur vel tristique lacus. Nam risus mauris, accumsan et eleifend vitae, dignissim at eros. Vivamus pellentesque duiex a interdum.",
+          "right_heading": "Contact Us",
+          "right_content": "Quisquemos sodales suscipit tortor ditaemcos condimentum de cosmo lacus meleifend menean diverra loremous. Nullam sit amet orci rutrum risus laoreet semper vel non magna. Mauris vel sem a lectus vehicula ultricies. Etiam semper sollicitudin lectus indous scelerisque. Curabitur vel tristique lacus. Nam risus mauris, accumsan et eleifend vitae, dignissim at eros. Vivamus pellentesque duiex a interdum."
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "ann2_qmcHiH": {
+            "type": "ann2",
+            "name": "Special",
+            "disabled": true,
+            "settings": {
+              "bkColor": "#e63946",
+              "color": "#ffffff",
+              "announcement": "<p>🎁 Holiday Special - <a href=\"/collections/best-sellers\" title=\"HOLIDAY SPECIAL\">Buy 2, Get 1 Free</a></p>"
+            }
+          },
+          "ann_X6zbt9": {
+            "type": "freeshipping",
+            "settings": {
+              "bkColor": "#1761ff",
+              "color": "#ffffff",
+              "announcement": "<p><strong>Free [country] shipping over [threshold]</strong> - <a href=\"/collections/all\" title=\"All products\">Shop now</a></p>",
+              "unlockedFreeShipping": "<p><strong>You've got FREE SHIPPING! 🎉</strong></p>"
+            }
+          },
+          "ann_EPEXdd": {
+            "type": "ann",
+            "name": "Designed",
+            "settings": {
+              "bkColor": "#242728",
+              "color": "#ffffff",
+              "announcement": "<p>Designed in Switzerland</p>"
+            }
+          }
+        },
+        "block_order": [
+          "ann2_qmcHiH",
+          "ann_X6zbt9",
+          "ann_EPEXdd"
+        ],
+        "settings": {}
+      },
+      "pdp_nav_bar": {
+        "type": "pdp_nav_bar",
+        "settings": {}
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
+        }
+      },
+      "8847685616676869210": {
+        "type": "shopify://apps/webrex-announcement/blocks/app-embed/3494d573-4520-4d27-b2eb-ba0554423f65",
+        "disabled": true,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "17676059084223943535": {
+        "type": "shopify://apps/triplewhale/blocks/triple_pixel_snippet/483d496b-3f1a-4609-aea7-8eee3b6b7a2a",
+        "disabled": false,
+        "settings": {}
+      },
+      "2153490007123654574": {
+        "type": "shopify://apps/consentmo-gdpr/blocks/gdpr_cookie_consent/4fbe573f-a377-4fea-9801-3ee0858cae41",
+        "disabled": false,
+        "settings": {}
+      },
+      "1877152918344802950": {
+        "type": "shopify://apps/intelligems-a-b-testing/blocks/intelligems-script/fa83b64c-0c77-4c0c-b4b2-b94b42f5ef19",
+        "disabled": false,
+        "settings": {}
+      },
+      "15048993943116965467": {
+        "type": "shopify://apps/consentmo-gdpr/blocks/ada_compliance/4fbe573f-a377-4fea-9801-3ee0858cae41",
+        "disabled": false,
+        "settings": {}
+      },
+      "4481935795742301789": {
+        "type": "shopify://apps/consentmo-gdpr/blocks/gdpr_tcf/4fbe573f-a377-4fea-9801-3ee0858cae41",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "presets": {
+    "Default": {
+      "search_placeholder": "search",
+      "mailing_list_form_action": "//halothemes.us3.list-manage.com/subscribe/post?u=0bf85dc81d846feb53a235178&amp;id=89ea28643a",
+      "body_font_size": "12",
+      "body_color": "#3c3c3c",
+      "display_breadcrumb": true,
+      "breadcrumb_color": "#999999",
+      "breadcrumb_text_transform": "capitalize",
+      "page_title_color": "#232323",
+      "page_title_text_align": "left",
+      "display_popup_newsletter": true,
+      "popup_newsletter_title": "Join Our Mailing List",
+      "display_popup_social": true,
+      "enable_wishlist": true,
+      "product_image_border": false,
+      "product_image_border_color": "#e6e6e6",
+      "use_color_swatch": true,
+      "display_size_chart": true,
+      "display_product_reviews": true,
+      "enable_quick_view": true,
+      "display_quickview_availability": true,
+      "display_quickview_product_type": true,
+      "display_quickview_vendor": true,
+      "display_quickview_subtotal": true,
+      "show_shipping_calculator": true,
+      "shipping_calculator_heading": "Get shipping estimates",
+      "shipping_calculator_default_country": "United States",
+      "shipping_calculator_submit_button_label": "Calculate Shipping",
+      "shipping_calculator_submit_button_label_disabled": "Calculating...",
+      "enable_multiple_currencies": false,
+      "currency_1_unit": "USD",
+      "currency_2_unit": "EUR",
+      "currency_3_unit": "GBP",
+      "currency_4_unit": "CHF",
+      "checkout_use_header_image": true,
+      "checkout_banner_background_color": "#ffffff",
+      "checkout_logo": "checkout_logo.png",
+      "checkout_headline": "",
+      "checkout_accent_color": "#2d2d2d",
+      "checkout_button_color": "#000000",
+      "checkout_call_to_action_color": "#000000",
+      "customer_layout": "theme",
+      "link_color": "#0688e2"
+    }
+  }
+}

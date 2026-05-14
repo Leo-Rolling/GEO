@@ -1,0 +1,555 @@
+{% assign _section = section.id | split: '__' | last | slice: -4, 4 | prepend: '#pro_' %}
+
+<style>
+    {{ _section }} .product_img_slider_desktop {
+        display: flex;
+        max-width: 740px;
+        width: 56%;
+        justify-content: center;
+        align-items: flex-start;
+        top: 104px;
+        position: sticky;
+        margin-right: auto;
+    }
+
+    {{ _section }} .product_img_slider_mobile {
+        display: none;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Start Slider Style */
+
+    {{ _section }} .thumb-container {
+        display: flex;
+        flex-direction: column;
+        width: 85px;
+        height: 648px;
+        margin-right: 7px;
+        justify-content: space-around;
+        align-items: center;
+        /* border: 1px solid; */
+    }
+
+    {{ _section }} .swiper {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    {{ _section }} .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+
+    {{ _section }} .desktop_thumb_swiper {
+        height: 100%;
+        width: auto;
+        box-sizing: border-box;
+    }
+
+    {{ _section }} .desktop_thumb_swiper .swiper-slide {
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    {{ _section }} .desktop_thumb_swiper .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+
+    {{ _section }} .desktop_thumb_swiper .swiper-slide-thumb-active img {
+        border: 2px solid #000000;
+    }
+
+    {{ _section }} .swiper-slide {
+        border-radius: 8px;
+    }
+
+    {{ _section }} .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+        box-sizing: border-box;
+        background-color: #F5F5F7;
+    }
+
+    {{ _section }} .button-slide-next,
+    {{ _section }} .button-slide-prev {
+        width: 42px;
+        height: 42px;
+        background-color: white;
+        background-position: center;
+        background-size: 20px;
+        background-repeat: no-repeat;
+        border-radius: 100%;
+        border: 2px solid #000000;
+        color: red;
+        cursor: pointer;
+        user-select: none;
+        display: none;
+    }
+
+    {{ _section }} .button-slide-next {
+        margin-top: 8px;
+        transform: rotate(90deg);
+        background-image: url({{ 'angle-left-solid.svg' | asset_url }});
+    }
+
+    {{ _section }} .button-slide-prev {
+        margin-bottom: 8px;
+        transform: rotate(-90deg);
+        background-image: url({{ 'angle-left-solid.svg' | asset_url }});
+    }
+
+    {{ _section }} .main-slider {
+        width: calc(100% - 92px);
+        /* border: 1px solid; */
+        position: relative;
+    }
+
+    {{ _section }} .desktop_main_swiper {
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid blue; */
+    }
+
+    {{ _section }} .button-detail-view {
+        position: absolute;
+        right: 14px;
+        top: 15px;
+        width: 45px;
+        height: 45px;
+        background: white;
+        background-size: 26px;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 2;
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid #DFDFE1;
+        border-radius: 4px;
+        background-image: url({{ 'zoom.svg' | asset_url }});
+          display:none;
+    }
+
+    {{ _section }} .full_screen_img_holder {
+        display: grid;
+        width: 100%;
+    }
+
+    {{ _section }} .detail-screen-product {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 28px);
+        max-width: 650px;
+        /* height: 75vh; */
+        background-color: gray;
+        z-index: 7;
+        overflow: auto;
+        /* border-radius: 12px; */
+    }
+
+    {{ _section }} .detail-screen-product::-webkit-scrollbar {
+        width: 5px;
+        background-color: #aaa;
+        border-radius: 12px;
+    }
+
+    {{ _section }} .detail-screen-product::-webkit-scrollbar-thumb {
+        background-color: #333;
+    }
+
+    {{ _section }} .button-close-detail-screen {
+        position: absolute;
+        right: 13px;
+        top: 13px;
+        width: 13px;
+        height: 13px;
+        border-radius: 100px;
+        /* background-color: white; */
+        background-size: 13px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        user-select: none;
+        background-image: url({{ 'close.svg' | asset_url }});
+    }
+
+    {{ _section }} .product_img_full_overlay {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #00000094;
+        z-index: 5;
+        display: none;
+    }
+
+    {{ _section }} img.full_screen_img {
+        width: 100%;
+        background-color: white;
+    }
+
+    /* End Slider Style */
+    {{ _section }} .mobile-thumb-container {
+        display: flex;
+        width: 100%;
+        height: 20%;
+        margin-top: 6px;
+    }
+
+    {{ _section }} .swiper-button-next, 
+    {{ _section }} .swiper-button-prev {
+        width: 55px;
+        height: 65px;
+        background-color: white;
+        border-radius: 4px;
+        color: transparent;
+        border: 1px solid #F5F5F7;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 21px;
+    }
+
+    {{ _section }} .swiper-button-next {
+        right: 16px;
+        background-image: url({{ 'arrow-right.svg' | asset_url }});
+    }
+
+    {{ _section }} .swiper-button-prev {
+        left: 16px;
+        background-image: url({{ 'arrow-left.svg' | asset_url }});
+    }
+
+    {{ _section }} .p_3d_img_trigger {
+        width: 150px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font: normal normal 500 14px/25px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+        background: white;
+        position: absolute;
+        bottom: 16px;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+    }
+
+    {{ _section }} .p_3d_img_trigger img {
+        width: 23px;
+        margin-right: 5px;
+    }
+
+
+    @media screen and (max-width: 900px) {
+        {{ _section }} .product_img_slider_desktop {
+            display: none;
+        }
+
+        {{ _section }} .product_img_slider_mobile {
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        /* Start Swiper CSS */
+
+        {{ _section }} .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        {{ _section }} .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0px;
+        }
+
+        {{ _section }} .swiper {
+            width: 100%;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        {{ _section }} .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+
+        {{ _section }} .mobile-main-swiper {
+            height: 80%;
+            width: 100%;
+            background-color: #F5F5F7;
+        }
+
+        {{ _section }} .mobile-thumb-swiper {
+            width: 100%;
+            height: 100%;
+            margin: 0 6px;
+            box-sizing: border-box;
+            padding: 0px 0;
+        }
+
+        {{ _section }} .mobile-thumb-swiper .swiper-slide-thumb-active img {
+            border-bottom: 2px solid #1761FF;
+            padding-bottom: 4px;
+        }
+
+        {{ _section }} .mobile-thumb-swiper .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        {{ _section }} .mobile-thumb-swiper .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+
+        /* End Swiper CSS */
+
+        {{ _section }} .button-detail-view {
+            width: 36px;
+            height: 36px;
+            background-size: 20px;
+            border-radius: 0;
+            top: 9px;
+            right: 8px;
+          display:none;
+        }
+
+        {{ _section }} .swiper-button-next, 
+        {{ _section }} .swiper-button-prev {
+            width: 40px;
+            height: 55px;
+            background-size: 18px;
+        }
+
+        {{ _section }} .swiper-button-next {
+            right: 6px;
+        }
+
+        {{ _section }} .swiper-button-prev {
+            left: 6px;
+        }
+
+        {{ _section }} .p_3d_img_trigger {
+            width: 112px;
+            height: 34px;
+            font: normal normal 500 11px/25px Montserrat;
+            bottom: 6px;
+        }
+
+        {{ _section }} .p_3d_img_trigger img {
+            width: 17px;
+            margin-right: 6px;
+        }
+
+
+    }
+
+</style>
+
+<div class="product_img_slider_desktop">
+    <div class="thumb-container">
+    <div class="button-slide-next"></div>
+    <div thumbsSlider class="swiper desktop_thumb_swiper">
+        <div class="swiper-wrapper">
+            {% for image in product.images %}
+                <div class="swiper-slide">
+                    <img lazy_src="{{ image | img_url: '100x100', crop: 'top' }}" />
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="button-slide-prev"></div>
+</div>
+
+<div class="main-slider">
+    <div class="swiper desktop_main_swiper">
+        <div class="swiper-wrapper">
+            {% for image in product.images %}
+                <div class="swiper-slide" index="{{ forloop.index0 }}">
+                    <img
+  img_id="{{ image.id }}"
+  src="{{ image | img_url: '700x700', crop: 'top' }}"
+  alt="{{ image.alt | escape | default: product.title }}"
+  title="{{ product.title }} - {{ image.alt | escape }}"
+  width="700"
+  height="700"
+  loading="lazy"
+/>
+
+
+                    <div class="button-detail-view" url="{{  image | img_url: 'master'  }}"></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    {% if product.metafields.custom.three_d_view_gif_image %}
+        <div class="p_3d_img_trigger" onclick="show_zoomed_img(`{{ product.metafields.custom.three_d_view_gif_image | img_url: 'master' }}`);">
+            <img src="{{ 'isometric.png' | asset_url }}" alt="isometric">
+            <span>3D VIEW</span>
+        </div>
+    {% endif %}
+
+</div>
+
+</div>
+
+<div class="product_img_slider_mobile">
+    <div class="swiper mobile-main-swiper">
+        <div class="swiper-wrapper">
+            {% for image in product.images %}
+                <div class="swiper-slide" index="{{ forloop.index0 }}">
+                    <img
+  img_id="{{ image.id }}"
+  src="{{ image | img_url: '700x', crop: 'top' }}"
+  alt="{{ image.alt | escape | default: product.title }}"
+  title="{{ product.title }} - {{ image.alt | escape }}"
+  width="700"
+  height="auto"
+  loading="lazy"
+/>
+                    <div class="button-detail-view" url="{{  image | img_url: 'master'  }}"></div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        {% if product.metafields.custom.three_d_view_gif_image %}
+            <div class="p_3d_img_trigger" onclick="show_zoomed_img(`{{ product.metafields.custom.three_d_view_gif_image | img_url: 'master' }}`);">
+                <img src="{{ 'isometric.png' | asset_url }}" alt="isometric">
+                <span>3D VIEW</span>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="mobile-thumb-container">
+        <div thumbsSlider class="swiper mobile-thumb-swiper">
+            <div class="swiper-wrapper">
+                {% for image in product.images %}
+                    <div class="swiper-slide">
+                        <img src="{{ image | img_url: '100x100', crop: 'top' }}" />
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var swiper = new Swiper(".desktop_thumb_swiper", {
+        cssMode: /iPhone|iPad|iPod|Android|Windows Phone/.test(navigator.userAgent),
+        direction: 'vertical',
+        spaceBetween: 6,
+        slidesPerView: 7,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+
+    var swiper2 = new Swiper(".desktop_main_swiper", {
+        cssMode: /iPhone|iPad|iPod|Android|Windows Phone/.test(navigator.userAgent),
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".desktop_main_swiper .swiper-button-next",
+            prevEl: ".desktop_main_swiper .swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+
+    var mobile_thumb_swiper = new Swiper(".mobile-thumb-swiper", {
+        cssMode: /iPhone|iPad|iPod|Android|Windows Phone/.test(navigator.userAgent),
+        spaceBetween: 3,
+        slidesPerView: 8,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+
+    var mobile_m_swiper = new Swiper(".mobile-main-swiper", {
+        cssMode: /iPhone|iPad|iPod|Android|Windows Phone/.test(navigator.userAgent),
+        spaceBetween: 0,
+        slidesPerView: 1,
+        navigation: {
+            nextEl: ".mobile-main-swiper .swiper-button-next",
+            prevEl: ".mobile-main-swiper .swiper-button-prev",
+        },
+        thumbs: {
+            swiper: mobile_thumb_swiper,
+        },
+        breakpoints: {
+            // 520: {
+            //     slidesPerView: 1.3,
+            //     spaceBetween: 20,
+            // },
+            // 750: {
+            //     slidesPerView: 1.9,
+            // },
+        },
+    });
+
+    $('.button-detail-view').click(function () {
+        var url = $(this).attr('url');
+        show_zoomed_img(url);
+    });
+
+    function show_zoomed_img(url) {
+        $('.detail-screen-product').css('display', 'flex');
+        $('img.full_screen_img').attr('src', url);
+        $('.product_img_full_overlay').show();
+
+        disable_scrolling();
+    }
+
+    $('.button-close-detail-screen, .product_img_full_overlay').click(function () {
+        $('.detail-screen-product').css('display', 'none');
+        $('.product_img_full_overlay').hide();
+
+        enable_scrolling();
+    });
+</script>
+
+<!-- lazy script -->
+<script>
+    window.addEventListener('resize', function() {
+        add_swiper_images_src();
+    });
+
+    function add_swiper_images_src() {
+        if (window.innerWidth > 900) {
+            $('.product_img_slider_desktop [lazy_src]').each(function () {
+                $(this).attr('src', $(this).attr('lazy_src'));
+            });
+        } else {
+            $('.product_img_slider_mobile [lazy_src]').each(function () {
+                $(this).attr('src', $(this).attr('lazy_src'));
+            });
+        }
+    }
+
+    add_swiper_images_src();
+</script>

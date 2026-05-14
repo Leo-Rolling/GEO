@@ -1,0 +1,203 @@
+{% assign _ss = section.settings %}
+{% assign _section = section.id | split: '__' | last | slice: -4, 4 | prepend: '#pro_' %}
+
+{%- capture section_content -%}
+
+<style>
+    {{ _section }} {
+        position: relative;
+        /* max-width: 1920px; */
+        margin: auto;
+        padding: 39px 160px 0px;
+    }
+
+    {{ _section }} .product_template_holder {
+        display: flex;
+        width: 100%;
+        /* padding: 32px; */
+        justify-content: center;
+    }
+
+    {{ _section }} .product_details_holder {
+        display: flex;
+        width: 100%;
+        max-width: 1320px;
+        margin: auto;
+        align-items: flex-start;
+    }
+
+    img.close_mobile_sticky_options {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+
+    {{ _section }} .product_txt_part {
+        max-width: 509px;
+        width: calc(44% - 71px);
+        /* border: 1px solid green; */
+    }
+
+    @media screen and (max-width: 1280px) {
+        {{ _section }} .product_txt_part {
+            width: calc(43% - 20px);
+        }
+    }
+
+    @media screen and (max-width: 1500px) {
+        {{ _section }} {
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        {{ _section }} {
+            padding: 0;
+        }
+
+        {{ _section }} .product_template_holder {
+            padding: 0 0px;
+        }
+
+        {{ _section }} .product_details_holder {
+            display: block;
+            max-width: 100%;
+        }
+
+        {{ _section }} .product_txt_part {
+            max-width: 100%;
+            width: 100%;
+            padding: 0 15px;
+        }
+    }
+
+</style>
+
+
+<div id="pro_{{ section.id | split: '__' | last | slice: -4, 4 }}">
+    <!-- section decoration html -->
+    {% include 'section_decoration_component' %}
+
+    <div class="product_template_holder">
+        <div class="product_img_full_overlay"></div>
+        <div class="detail-screen-product">
+            <div class="button-close-detail-screen"></div>
+            <div class="full_screen_img_holder">
+                <img class="full_screen_img" alt="full_screen_img">
+            </div>
+        </div>
+
+        <div class="product_details_holder">
+            {% include 'pdp_img_slider' %}
+
+            <div class="product_txt_part">
+                {% include 'pdp_meta_part' %}
+            </div>
+        </div>
+    </div>
+
+<div>{% include 'press_slider_hardcoded' %}</div>
+
+    {% if product.available %}
+        <div class="sticky_cta_with_options">
+            <div class="sticky_options_holder" style="display: none;">
+                <img src="{{ 'close.svg' | asset_url }}" alt="close" class="close_mobile_sticky_options" onclick="hide_mobile_sticky_options();">
+                <div class="sticky_options_html">
+                    {% if product.has_only_default_variant == false %}
+                        {% if product.options.size == 1 %}
+                            {% include 'variants_pane_with_one_option' %}
+                        {% else %}
+                            {% include 'multiple_options_variants_holder' %}
+                        {% endif %}
+                    {% endif %}
+
+                </div>
+            </div>
+            <div class="sticky_cta_wrapper">
+                {% include 'sticky_pdp_ctas' %}
+            </div>
+
+        </div>
+    {% endif %}
+
+</div>
+
+<script>
+    function show_mobile_sticky_options() {
+        $('.sticky_options_holder').slideDown();
+    }
+
+    function hide_mobile_sticky_options() {
+        $('.sticky_options_holder').slideUp();
+    }
+
+    $('.sticky_p_img').click(function () {
+        if (window.innerWidth < 1100) {
+            show_mobile_sticky_options();
+        }
+    });
+</script>
+
+
+{%- endcapture -%}
+
+{{- section_content | remove: '  ' -}}
+
+{% schema %}
+    {
+        "name": "Product template",
+        "class": "main_product_section",
+        "settings": [
+            {
+                "type": "text",
+                "id": "cta_btn_txt",
+                "label": "CTA button text",
+                "default": "ADD TO CART"
+            },
+            {
+                "type": "text",
+                "id": "upsell_btn_txt",
+                "label": "Upsell button text",
+                "default": "ADD TO CART"
+            },
+            {
+                "type": "text",
+                "id": "sticky_btn_txt",
+                "label": "Sticky CTA button text",
+                "default": "ADD TO CART"
+            },
+
+
+            {
+                "type": "header",
+                "content": "Section separation settings"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_decoration_desktop",
+                "label": "Show separation on desktop",
+                "default": true
+            },
+            {
+                "type": "image_picker",
+                "id": "desktop_decor_icon",
+                "label": "Select scrolling icon for desktop"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_decoration_mobile",
+                "label": "Show separation on mobile",
+                "default": true
+            },
+            {
+                "type": "image_picker",
+                "id": "mobile_decor_icon",
+                "label": "Select scrolling icon for mobile"
+            }
+        ],
+        "blocks": [
+        ]
+    }
+{% endschema %}

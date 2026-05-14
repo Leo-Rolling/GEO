@@ -1,0 +1,361 @@
+            <!doctype html>
+<html class="no-js" lang="en">
+    <head>
+
+        <!-- Google Tag Manager here is lazyloading in lazy_load_scripts -->
+
+        {% style %}
+            [data-handle*="navidium-shipping-protection"] {
+                display: none !important;
+            }
+            .appearance-right-previw .d-flexCstm h4 .btnCstm svg {
+                color: white !important;
+            }
+        {% endstyle %}
+
+        <meta content="brQN4rvAjP7S4aY1hJRozHVWg6OMs7GDNHnB4ohlc9A" name="google-site-verification" />
+
+        <!-- googleoptimize here is lazyloaded in lazy_load_scripts -->
+
+        <!-- Basic page needs ================================================== -->
+        <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="theme-color" content="#000000">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=6, user-scalable=1, minimal-ui">
+
+        <!-- Title and description ================================================== -->
+        <title>
+            {{ page_title }}{% if current_tags %}
+                &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}
+            {% if current_page != 1 %}
+                &ndash; Page {{ current_page }}
+            {% endif %}
+            {% unless page_title contains shop.name %}
+                &ndash; {{ shop.name }}
+            {% endunless %}
+        </title>
+
+        {% if page_description %}
+            <meta name="description" content="{{ page_description | escape | split: '[/countdown]' | last | strip_html }}">
+        {% endif %}
+
+        <!-- Favicon -->
+        {% if settings.favicon != blank %}
+        <link
+            rel="shortcut icon"
+            href="{{ settings.favicon | img_url: '32x32' }}"
+            type="image/png">
+        {% endif %}
+        
+        <!-- Product meta ================================================== -->
+        {% render 'fb-open-graph-tags' %}
+        {% render 'twitter-card' %}
+
+        <!-- Helpers ================================================== -->
+        <link rel="canonical" href="{{ canonical_url }}">
+
+        <!-- Styles -->
+        {% if 
+            template == 'index' 
+            or template.name == 'product' 
+            or template.name == 'collection' 
+        %}
+            
+        {% else %}
+            {% render 'css-variables' %}
+            {% render 'head_styles' %}
+            {% render 'head_scripts' %}
+        {% endif %}
+        
+        {{ 'tw-utils.js' | asset_url | script_tag }}
+
+        <!-- Header hook for plugins == ============================== -->
+        {% render 'treedify' %}
+
+        <!-- _for_header_start -->
+        {{ content_for_header }}
+        <!-- _for_header_end -->
+      
+        {%- comment -%}
+        {{ content_for_header }}
+        <script>
+            var trekkie = [];
+            trekkie.integrations = !0;
+            var Shopify = {};
+        </script>
+        {%- endcomment -%}
+
+
+        {% if template contains 'customers' %}
+            {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+            {{ 'customer_area.js' | shopify_asset_url | script_tag }}
+        {% endif %}
+
+        {% if 
+            template == 'index' 
+            or template.name == 'product' 
+            or template.name == 'collection' 
+        %}
+            
+        {% else %}
+            {% render 'linked-options' %}
+        {% endif %}
+            
+        {% render 'easy-gdpr-settings' %}
+        
+        {%- comment -%}tmp
+        <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/df10b23a543372659f4a42eeb/2a65c2ce1eddf36401bad6a5f.js");</script>
+        {%- endcomment -%}
+        {% include 'kart_discount' %}
+
+        <meta http-equiv="Cache-control" content="public, max-age=31536000">
+
+        {%- comment -%}tmp
+        <script src="https://navidium-static-assets.s3.amazonaws.com/navidium-widgets/extension/navidium-extension-checker.js"></script>
+        {%- endcomment -%}
+        
+        {% include 'matt_css' %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        
+        {% include 'remove_free_gift_on_load' %}
+
+        {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+        {{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+        {{ 'product-card.css' |  asset_url | stylesheet_tag }}
+        {%- comment -%}
+        lazy loaded
+        {%- endcomment -%}
+        {% if request.design_mode %}
+            {{ 'cart_drawer_style.css' |  asset_url | stylesheet_tag }}
+            {{ 'megamenu_style.css' |  asset_url | stylesheet_tag }}
+        {% endif %}
+
+  <script>
+  (function(w,d,t,r,u)
+  {
+    var f,n,i;
+    w[u]=w[u]||[],f=function()
+    {
+      var o={ti:"97200798", enableAutoSpaTracking: true};
+      o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")
+    },
+    n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function()
+    {
+      var s=this.readyState;
+      s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)
+    },
+    i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)
+  })
+  (window,document,"script","//bat.bing.com/bat.js","uetq");
+</script>
+
+      
+        <!-- TrustBox script -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+
+<script>
+function reloadTrustpilot() {
+  if (window.Trustpilot && typeof Trustpilot.loadFromElement === 'function') {
+    document.querySelectorAll('.trustpilot-widget').forEach(el => Trustpilot.loadFromElement(el, true));
+  }
+}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (!('mediaSession' in navigator)) return;
+
+  const defaultArtwork = [
+  { src: 'https://cdn.shopify.com/s/files/1/0057/7604/8197/files/square-cover.webp?v=1760096833', sizes: '512x512', type: 'image/webp' },
+  { src: 'https://cdn.shopify.com/s/files/1/0057/7604/8197/files/square-cover.png?v=1760096937',  sizes: '512x512', type: 'image/png' }
+];
+
+  // Apply to any video or audio that starts playing
+  document.addEventListener('play', (ev) => {
+    const el = ev.target;
+    if (!(el instanceof HTMLMediaElement)) return;
+
+    // If already set once, don’t overwrite custom metadata
+    if (navigator.mediaSession.metadata) return;
+
+    const title  = el.dataset.mediaTitle  || document.title;
+    const artist = el.dataset.mediaArtist || 'Rolling Square';
+    const album  = el.dataset.mediaAlbum  || '';
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title, artist, album,
+      artwork: defaultArtwork
+    });
+  }, true);
+});
+</script>
+
+
+    </head>
+
+    <body
+        data-url-lang="{{ routes.cart_url }}"
+        id="{{ page_title | handle }}"
+        class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} style_product_grid_2">
+
+
+        <div class="site_modal_overlay" onclick="close_all_layers()"></div>
+        {% section 'announcement-bar' %}
+      
+      {% if template contains 'landing-page' %}
+            {% section 'header-landing' %}
+        
+        {% else %}
+        {% section 'header' %}      
+        {% sections 'mega-menu' %}
+        
+        {% if template.name == 'product' %}
+            {% section 'pdp_nav_bar' %}
+        {% endif %}        
+
+        {% section 'mobile_menu' %}
+        {% include 'mobile_menu_lazyload_script' %}
+        {% section 'search' %}
+      
+        {% endif %}  
+
+        {% if template contains 'index' %}
+            <h1 style="display: none">{{ page_title | split: '|' | first }}</h1>
+        {% endif %}
+
+        {% render 'scheme' %}
+
+        <div class="wrapper-container wrapper-body">
+            <main role="main">
+                {{ content_for_layout }}
+                
+                {% render 'treedify_script' %}
+            </main>
+
+            {% section 'footer_usps' %}
+            {% section 'footer' %}
+
+            {% unless template == 'cart' %}
+                {% include 'cart_drawer_holder' %}
+            {% endunless %}
+
+            {% unless template contains 'product' %}
+                <style>
+
+                </style>
+            <div class="footbar-fixed">
+                {%- comment -%}
+                {% section 'someone-purchased' %}
+                {%- endcomment -%}
+                {%- comment -%}
+                {% section 'GDPR-modal' %}
+                {%- endcomment -%}
+            </div>
+            {% endunless %}
+
+        </div>
+
+        {% render 'sweettooth-widgets' %}
+
+        <div class="wrapper-overlay"></div>
+        {%- comment -%}
+        {% include 'subscribe-it-helper' %}
+        {% include 'appikon-discounts' %}
+        {% include 'mw_GP_objects' %}
+        {% render 'mbc-bundles' %}
+        {%- endcomment -%}
+
+        <!-- **BEGIN** Hextom QAB Integration // Main Include - DO NOT MODIFY -->
+        {% render 'hextom_qab_main', product: product, customer: customer %}
+        <!-- **END** Hextom QAB Integration // Main Include - DO NOT MODIFY -->
+
+        <!-- **BEGIN** Hextom FSB Integration // Main Include - DO NOT MODIFY -->{% render 'hextom_fsb_main', product: product, customer: customer %}
+        <!-- **END** Hextom FSB Integration // Main Include - DO NOT MODIFY --><div class="index-section--flush powr-popup" id="3e18a6cf_1642690312"> </div>
+
+        {% if template contains "product" %}
+        <style>
+            .jdgm-preview-badge {
+            font-size: 15px !important;
+            margin-bottom: 10px !important;
+            }
+            .jdgm-star {
+            color: var(--jdgm-star-color) !important;
+            }
+            .jdgm-rev__icon {
+            display: none !important;
+            }
+        </style>
+        {% endif %}
+
+        
+      {% if product %}
+      <script type="text/javascript">
+        
+        window.onload = function() {
+    if (typeof item !== 'undefined') {
+        item.CartURL = "https://www.rollingsquare.com/#cart";
+    }
+    }
+        var _learnq = _learnq || [];
+        document.getElementById("product-add-to-cart").addEventListener('click',function (){
+                 		_learnq.push(['track', 'Added to Cart', item]);
+                	});
+      </script>
+
+      <script type="text/javascript">
+        window.onload = function() {
+    if (typeof item !== 'undefined') {
+        item.CartURL = "https://www.rollingsquare.com/#cart;
+    }
+    }
+        var _learnq = _learnq || [];
+        var classname = document.getElementsByClassName("main_cta has_hover_effect");
+                var addToCart = function() {
+                _learnq.push(['track', 'Added to Cart', item]);
+                }; for (var i = 0; i < classname.length; i++) {
+                classname[i].addEventListener('click', addToCart, false);
+                }
+      </script>
+
+        <script type="text/javascript">
+          window.onload = function() {
+    if (typeof item !== 'undefined') {
+        item.CartURL = "https://www.rollingsquare.com/#cart;
+    }
+    }
+        var _learnq = _learnq || [];
+        var classname = document.getElementsByClassName("sticky_mob_add_to_cart");
+                var addToCart = function() {
+                _learnq.push(['track', 'Added to Cart', item]);
+                }; for (var i = 0; i < classname.length; i++) {
+                classname[i].addEventListener('click', addToCart, false);
+                }
+      </script>
+
+        <script type="text/javascript">
+          window.onload = function() {
+    if (typeof item !== 'undefined') {
+        item.CartURL = "https://www.rollingsquare.com/#cart;
+    }
+    }
+        var _learnq = _learnq || [];
+        var classname = document.getElementsByClassName("sticky_add_to_cart");
+                var addToCart = function() {
+                _learnq.push(['track', 'Added to Cart', item]);
+                }; for (var i = 0; i < classname.length; i++) {
+                classname[i].addEventListener('click', addToCart, false);
+                }
+      </script>
+
+    {% endif %}
+
+        {% render 'judgeme_core' %}
+
+        <!-- **START** matt_js -->
+    {% include 'matt_js' %}
+        <!-- **END** matt_js -->
+</body>
+</html>
+
+        <!-- **END** theme.liquid -->

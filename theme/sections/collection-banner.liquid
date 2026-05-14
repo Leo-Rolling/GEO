@@ -1,0 +1,450 @@
+{% assign _ss = section.settings %}
+{% assign _section = section.id | split: '__' | last | slice: -4, 4 | prepend: '#banner_' %}
+{% assign _press = section.id | split: '__' | last | slice: -4, 4 | prepend: '#press_' %}
+
+{%- capture section_content -%}
+  <style>
+    .md-s {
+      display: none;
+    }
+
+    {{ _section }} {
+      position: relative;
+    }
+
+    {{ _section }} .banner_background {
+      position: relative;
+      background: transparent no-repeat padding-box;
+      background-size: cover;
+      background-position: center;
+      {% if collection.metafields.custom.mobile_cover_image_on_collection_page %}
+        background-image: linear-gradient(15deg, #000000 0%, #9A9A9800 100%), url({{ collection.metafields.custom.mobile_cover_image_on_collection_page | img_url: 'master' }});
+      {% else %}
+        background-image: linear-gradient(15deg, #000000 0%, #9A9A9800 100%), url({{ collection.featured_image | img_url: '1500x' }});
+      {% endif %}
+    }
+
+    {{ _section }} .banner_holder {
+      position: relative;
+      width: 100%;
+      min-height: 316px;
+      padding: 70px 15px 25px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    {{ _section }} .banner_content {
+      position: relative;
+      width: 100%;
+      max-width: 545px;
+    }
+
+    {{ _section }} h1.banner_title,
+    {{ _section }} .banner_title {
+      text-align: left;
+      font: normal normal bold 21px/25px Montserrat;
+      letter-spacing: 0px;
+      color: #FFFFFF;
+      padding-bottom: 8px;
+      margin: 0;
+    }
+
+    {{ _section }} .banner_subtitle {
+      text-align: left;
+      font: normal normal 500 13px/18px Montserrat;
+      letter-spacing: 0px;
+      color: #FFFFFF;
+    }
+    {{ _section }} .banner_subtitle p {
+      margin: 0 0 6px 0;
+    }
+    {{ _section }} .banner_subtitle p:last-child { margin-bottom: 0; }
+    {{ _section }} .banner_subtitle a {
+      color: #FFFFFF;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 600;
+    }
+    {{ _section }} .banner_subtitle a:hover {
+      color: #17e260;
+    }
+
+    @media screen and (min-width: 450px) {
+      {{ _section }} .banner_holder {
+        justify-content: center;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .md-s {
+        display: block;
+      }
+      .md-h {
+        display: none;
+      }
+
+      {{ _section }} .banner_holder {
+        min-height: 400px;
+        padding: 90px min(8.3vw, 160px) 50px;
+      }
+
+      {{ _section }} .banner_content {
+        max-width: min(720px, 50%);
+      }
+
+      {{ _section }} .banner_title {
+        font: normal normal bold 32px/39px Montserrat;
+        padding-bottom: 12px;
+      }
+
+      {{ _section }} .banner_subtitle {
+        font: normal normal 500 17px/26px Montserrat;
+      }
+
+      {{ _section }} .banner_background {
+        background-image: linear-gradient(15deg, #000000 0%, #9A9A9800 100%), url({{ collection.featured_image | img_url: '1500x' }});
+      }
+    }
+
+    @media screen and (min-width: 1920px) {
+      {{ _section }} .banner_holder {
+        max-width: 1920px;
+        margin: auto;
+      }
+    }
+
+    /* ===== Collection press bar (white logos, no scroll-color change) ===== */
+    {{ _press }} {
+      position: relative;
+      pointer-events: none;
+    }
+
+    {{ _press }} .press_holder {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1920px;
+      padding: 14px 16px;
+      box-sizing: border-box;
+      z-index: 3;
+    }
+
+    /* mobile: top of banner */
+    @media (max-width: 767px) {
+      {{ _press }} .press_holder {
+        top: 0;
+      }
+    }
+
+    /* desktop: bottom of banner */
+    @media (min-width: 768px) {
+      {{ _press }} .press_holder {
+        top: 0;
+      }
+    }
+
+    {{ _press }} .press-scroller {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      --gap: 40px;
+      --logo-h: 40px;
+      --mask-edge: 8%;
+      -webkit-mask: linear-gradient(90deg, transparent, #000 var(--mask-edge), #000 calc(100% - var(--mask-edge)), transparent);
+              mask: linear-gradient(90deg, transparent, #000 var(--mask-edge), #000 calc(100% - var(--mask-edge)), transparent);
+      touch-action: pan-y;
+      pointer-events: auto;
+    }
+
+    {{ _press }} .press-track {
+      display: flex;
+      align-items: center;
+      gap: var(--gap);
+      will-change: transform;
+      width: max-content;
+      padding: 6px 0;
+      transform: translate3d(0,0,0);
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    {{ _press }} .press-scroller.is-dragging .press-track {
+      cursor: grabbing;
+    }
+
+    {{ _press }} .press-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: var(--logo-h);
+      flex: 0 0 auto;
+      opacity: .95;
+      transition: opacity .2s, transform .2s;
+    }
+
+    {{ _press }} .press-item:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    {{ _press }} .press-item img {
+      height: 100%;
+      width: auto;
+      display: block;
+      filter: grayscale(100%) invert(1) brightness(1.9); /* always white */
+      -webkit-user-drag: none;
+      user-drag: none;
+    }
+  </style>
+
+  <div id="banner_{{ section.id | split: '__' | last | slice: -4, 4 }}">
+    <div class="banner_background">
+      <div class="banner_holder">
+        <div class="banner_content">
+          <h1 class="banner_title">
+            {{ collection.title }}
+          </h1>
+          {% if collection.description != blank %}
+          <div class="banner_subtitle">
+            {{ collection.description }}
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Press bar over the banner -->
+        <div id="press_{{ section.id | split: '__' | last | slice: -4, 4 }}">
+          <div class="press_holder">
+            <div class="press-scroller" data-speed="40" data-autoplay="true">
+              <div class="press-track" aria-label="Press logos carousel">
+                <a class="press-item" href="https://9to5mac.com/2023/05/26/how-to-overhaul-your-iphone-ipad-and-mac-setup-using-this-clever-magnetic-ecosystem/" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/9to5Mac.webp?v=1761129723" alt="9to5Mac" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.wired.com/gallery/best-usb-c-cables/#:~:text=ADVERTISEMENT-,Best%20Key,-Ring%20Cable" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Wired.webp?v=1761129723" alt="Wired" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.appleinsider.com/articles/25/04/29/better-than-apple-airtag-the-best-find-my-trackers" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Apple_Insider.webp?v=1761129723" alt="AppleInsider" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.cbsnews.com/news/2021-holiday-gift-ideas-from-techno-claus-david-pogue/" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/CBS_News.webp?v=1761129724" alt="CBS News" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.cultofmac.com/reviews/rolling-square-supertiny-review" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Cult_of_Mac.webp?v=1761129724" alt="Cult of Mac" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://gizmodo.com/smartphone-charging-cables-dont-get-much-smaller-than-t-1657305366" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Gizmodo.webp?v=1761129723" alt="Gizmodo" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.entrepreneur.com/living/5-tech-products-that-make-traveling-a-delight/472624" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Entrepreneur.webp?v=1761129723" alt="Entrepreneur" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.forbes.com/sites/marksparrow/2025/08/14/rolling-squares-innovative-and-useful-gadgets-are-designed-in-switzerland-by-italians/" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Forbes.webp?v=1761129724" alt="Forbes" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.tomsguide.com/phones/this-bluetooth-tracker-lets-me-keep-track-of-my-phone-and-wallet-plus-it-has-a-couple-of-secret-tricks" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/toms_guide.webp?v=1761129723" alt="Tom’s Guide" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.androidpolice.com/rolling-square-airnotch-aircard-google-find-my-device-network-trackers/" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Android_Police.webp?v=1761129724" alt="Android Police" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://9to5google.com/2024/09/18/rolling-square-android-find-my-device-trackers/" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/9to5_Google.webp?v=1761129723" alt="9to5Google" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.gearpatrol.com/tech/rolling-square-incharge-xs/" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Gear_Patrol.webp?v=1761129723" alt="Gear Patrol" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.theverge.com/2024/10/11/24267721/this-4-in-1-keychain-cable-supports-240w-charging-speeds" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/The_Verge.webp?v=1761129723" alt="The Verge" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.digitaltrends.com/tablets/how-a-30-accessory-made-my-ipad-air-perfect-for-travel-and-streaming/" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/digitaltrends.webp?v=1761129723" alt="Digital Trends" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.zdnet.com/article/the-worlds-smallest-65w-usb-c-charger-is-my-latest-travel-essential/" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/ZN_Net.webp?v=1761129723" alt="ZDNET" width="160" height="40" loading="lazy">
+                </a>
+                <a class="press-item" href="https://www.androidcentral.com/accessories/rolling-square-incharge-xs-240w-keyring-cable-great-daily-use" target="_blank" rel="noopener" draggable="false">
+                  <img src="https://cdn.shopify.com/s/files/1/0057/7604/8197/files/Android_Central.webp?v=1761129723" alt="Android Central" width="160" height="40" loading="lazy">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /press bar -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const pressRoot = document.querySelector('#{{ _press | remove: "#" }}');
+    if (!pressRoot) return;
+
+    const scroller = pressRoot.querySelector('.press-scroller');
+    const track    = pressRoot.querySelector('.press-track');
+    if (!scroller || !track) return;
+
+    track.addEventListener('dragstart', e => e.preventDefault(), true);
+
+    const speed   = parseFloat(scroller.getAttribute('data-speed') || '40');
+    const autoplayAttr  = scroller.getAttribute('data-autoplay') === 'true';
+    const prefersReduced = false;
+    let autoplay        = autoplayAttr && !prefersReduced;
+
+    let originalsCount = track.children.length;
+    let segmentWidth = 0, offset = 0, dragging = false, startX = 0, startOffset = 0, lastTime = performance.now();
+
+    const round = n => Math.round(n);
+    const norm  = (x, m) => m ? -((m - (x % m)) % m) : 0;
+
+    function gapPx(){
+      const g = getComputedStyle(track).getPropertyValue('gap') || '0px';
+      return Math.round(parseFloat(g) || 0);
+    }
+
+    function oneSetWidth(){
+      let w = 0, g = gapPx();
+      for (let i = 0; i < originalsCount; i++) {
+        const el = track.children[i];
+        if (!el) break;
+        w += el.offsetWidth;
+      }
+      return w + g * Math.max(0, originalsCount - 1);
+    }
+
+    function cloneSet(){
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < originalsCount; i++) {
+        const n = track.children[i].cloneNode(true);
+        n.setAttribute('aria-hidden', 'true');
+        n.setAttribute('draggable', 'false');
+        const img = n.querySelector('img');
+        if (img) img.setAttribute('draggable', 'false');
+        frag.appendChild(n);
+      }
+      track.appendChild(frag);
+    }
+
+    function buildAndMeasure(){
+      const vw = scroller.offsetWidth || window.innerWidth;
+      segmentWidth = oneSetWidth();
+      while (track.scrollWidth < vw * 2 + segmentWidth) cloneSet();
+      segmentWidth = oneSetWidth();
+      offset = norm(offset, segmentWidth);
+    }
+
+    function applyTransform(){
+      if (!segmentWidth) return;
+      track.style.transform = `translate3d(${round(offset)}px,0,0)`;
+    }
+
+    function tick(now){
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+      if (autoplay && segmentWidth) {
+        offset = norm(offset - speed * dt, segmentWidth);
+      }
+      applyTransform();
+      requestAnimationFrame(tick);
+    }
+
+    function bindInteractions(){
+      let moved = false;
+      let suppressClick = false;
+      let downPointerType = 'mouse';
+      const DRAG_THRESHOLD = window.matchMedia('(pointer: fine)').matches ? 8 : 5;
+
+      scroller.addEventListener('pointerdown', (e)=>{
+        dragging = true;
+        moved = false;
+        suppressClick = false;
+        downPointerType = e.pointerType || 'mouse';
+        startX = e.clientX;
+        offset = norm(offset, segmentWidth);
+        startOffset = offset;
+        autoplay = false;
+
+        if (downPointerType === 'touch' || downPointerType === 'pen') {
+          try { scroller.setPointerCapture(e.pointerId); } catch(_) {}
+        }
+      });
+
+      scroller.addEventListener('pointermove', (e)=>{
+        if (!dragging) return;
+        const dx = e.clientX - startX;
+
+        if (!moved && Math.abs(dx) > DRAG_THRESHOLD) {
+          moved = true;
+          scroller.classList.add('is-dragging');
+        }
+
+        if (moved) {
+          offset = norm(startOffset + dx, segmentWidth);
+          applyTransform();
+          if ((e.pointerType === 'touch' || e.pointerType === 'pen') && e.cancelable) {
+            e.preventDefault();
+          }
+        }
+      }, { passive: false });
+
+      function endDrag(e){
+        if (!dragging) return;
+        dragging = false;
+        if (downPointerType === 'touch' || downPointerType === 'pen') {
+          try { scroller.releasePointerCapture(e.pointerId); } catch(_) {}
+        }
+        scroller.classList.remove('is-dragging');
+        suppressClick = moved;
+        autoplay = autoplayAttr && !prefersReduced;
+      }
+
+      scroller.addEventListener('pointerup', endDrag);
+      scroller.addEventListener('pointercancel', endDrag);
+      scroller.addEventListener('pointerleave', endDrag);
+
+      track.addEventListener('click', (e)=>{
+        if (suppressClick) {
+          e.preventDefault();
+          e.stopPropagation();
+          suppressClick = false;
+        }
+      }, true);
+
+      scroller.addEventListener('mouseenter', ()=>{
+        if (!prefersReduced) autoplay = false;
+      });
+      scroller.addEventListener('mouseleave', ()=>{
+        if (!prefersReduced) autoplay = autoplayAttr;
+      });
+
+      let rAF = 0;
+      window.addEventListener('resize', ()=>{
+        if (rAF) cancelAnimationFrame(rAF);
+        rAF = requestAnimationFrame(()=>{ buildAndMeasure(); applyTransform(); });
+      });
+    }
+
+    function init(){
+      if (!originalsCount) return;
+      track.querySelectorAll('a, img').forEach(el => el.setAttribute('draggable','false'));
+      buildAndMeasure();
+      requestAnimationFrame(t => { lastTime = t; requestAnimationFrame(tick); });
+      bindInteractions();
+    }
+
+    init();
+  })();
+  </script>
+{%- endcapture -%}
+
+{{- section_content | remove: '  ' | strip_newlines -}}
+
+{% schema %}
+  {
+    "name": "Collection banner",
+    "settings": []
+  }
+{% endschema %}

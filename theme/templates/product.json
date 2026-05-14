@@ -1,0 +1,193 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "cta_btn_txt": "ADD TO CART",
+        "upsell_btn_txt": "ADD TO CART",
+        "sticky_btn_txt": "ADD TO CART",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/Rs-1.svg",
+        "show_decoration_mobile": false
+      }
+    },
+    "whats_great_about_it_BPNhKx": {
+      "type": "whats_great_about_it",
+      "settings": {
+        "heading": "WHAT'S [GREAT] ABOUT IT",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_3.svg",
+        "show_decoration_mobile": true,
+        "mobile_decor_icon": "shopify://shop_images/section_icon_5.svg"
+      }
+    },
+    "feature_tile_and_press_slider_Fkaf8f": {
+      "type": "feature_tile_and_press_slider",
+      "settings": {
+        "title": "MEDIA TALKING ABOUT US",
+        "desc": "They’re the kind of functional, multipurpose gadgets that could change your life.",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/RS-4.svg",
+        "show_decoration_mobile": false
+      }
+    },
+    "pdp_comparison_table_PqqPew": {
+      "type": "pdp_comparison_table",
+      "settings": {
+        "heading": "[COMPARISON TABLE]",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_6.svg",
+        "show_decoration_mobile": false,
+        "buy_now": "SEE NOW"
+      }
+    },
+    "trustpilot_Bc7GxN": {
+      "type": "trustpilot",
+      "blocks": {
+        "usp_XPKM7w": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_59.png",
+            "uspRichText": "<p>3x Red Dot Design Awards</p>"
+          }
+        },
+        "usp_bnrdj3": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_57.png",
+            "uspRichText": "<p>4x CES Innovation Awards</p>"
+          }
+        },
+        "usp_fJzRY6": {
+          "type": "usp",
+          "settings": {
+            "uspImg": "shopify://shop_images/Frame_58.png",
+            "uspRichText": "<p>1x Good Design Award</p>"
+          }
+        }
+      },
+      "block_order": [
+        "usp_XPKM7w",
+        "usp_bnrdj3",
+        "usp_fJzRY6"
+      ],
+      "settings": {
+        "scoreImg": "shopify://shop_images/TP-39.png",
+        "totalReviews": "",
+        "heading": "3+ MLN PRODUCTS SOLD",
+        "richDesc": "<p>For over a decade, we've delivered millions of products worldwide and won the best awards in technology and design, all made possible by the support of over 650,000 lifehackers like us, fueling our success with crucial feedback and support.</p>",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/Rs-1.svg",
+        "show_decoration_mobile": false,
+        "mobile_decor_icon": "shopify://shop_images/Rs-1.svg"
+      }
+    },
+    "faq_i6wgKm": {
+      "type": "faq",
+      "blocks": {
+        "block_YrGKJr": {
+          "type": "block",
+          "settings": {
+            "q": "Do you ship worldwide?",
+            "a": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>"
+          }
+        },
+        "block_WaYriK": {
+          "type": "block",
+          "settings": {
+            "q": "Do you ship worldwide?",
+            "a": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>"
+          }
+        },
+        "block_tzAL9H": {
+          "type": "block",
+          "settings": {
+            "q": "Do you ship worldwide?",
+            "a": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>"
+          }
+        },
+        "block_BhhRJD": {
+          "type": "block",
+          "settings": {
+            "q": "Do you ship worldwide?",
+            "a": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>"
+          }
+        },
+        "block_wDTD8E": {
+          "type": "block",
+          "settings": {
+            "q": "Do you ship worldwide?",
+            "a": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>"
+          }
+        },
+        "block_fTNKkY": {
+          "type": "block",
+          "settings": {
+            "q": "Do you ship worldwide?",
+            "a": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "block_YrGKJr",
+        "block_WaYriK",
+        "block_tzAL9H",
+        "block_BhhRJD",
+        "block_wDTD8E",
+        "block_fTNKkY"
+      ],
+      "settings": {
+        "heading": "QUESTIONS?",
+        "desc": "Our team is always happy to help!",
+        "bottom_paragraph": "<p>Having trouble finding what you need? We're here to help. <a href=\"/pages/contact\" title=\"Contact-us\">Drop us a line,</a> and we'll make sure to get back to you promptly!</p>",
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_8.svg",
+        "show_decoration_mobile": false
+      }
+    },
+    "pdp_review_section_KRYJUx": {
+      "type": "pdp_review_section",
+      "settings": {
+        "show_decoration_desktop": true,
+        "desktop_decor_icon": "shopify://shop_images/section_icon_7.svg",
+        "show_decoration_mobile": false
+      }
+    },
+    "pdp_recommendation_yRCr8T": {
+      "type": "pdp_recommendation",
+      "settings": {
+        "heading": "[SOLVE MORE] PROBLEMS"
+      }
+    },
+    "featured_blog_geo_pdp": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "READ THE [GUIDES]",
+        "subtitle": "From our editorial team — practical guides where this product fits in.",
+        "blog_handle": "news",
+        "limit": 3,
+        "layout": "compact"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "whats_great_about_it_BPNhKx",
+    "feature_tile_and_press_slider_Fkaf8f",
+    "pdp_comparison_table_PqqPew",
+    "trustpilot_Bc7GxN",
+    "faq_i6wgKm",
+    "pdp_review_section_KRYJUx",
+    "featured_blog_geo_pdp",
+    "pdp_recommendation_yRCr8T"
+  ]
+}
